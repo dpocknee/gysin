@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+.app {
+  background-color: #fffefc;
+  font-family: 'Roboto Mono', monospace;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+header {
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+header h1 {
+  background-color: #89002e;
+  color: #fffefc;
+  max-width: 800px;
+  padding: 20px;
+}
+
+nav {
+  width: 100%;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+}
+
+nav ul li {
+  margin: 0px;
+  padding: 10px;
+}
+
+nav ul li a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #8d8b8f;
+  padding: 10px;
+}
+
+nav ul li a:hover {
+  font-weight: bold;
+  background-color: #e3bb00;
+  color: #fffefc;
+}
+
+/* MAIN SECTION */
+article {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+section {
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: justify;
+  text-justify: auto;
+}
+
+@media (min-width: 601px) {
+  section {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  article {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  section {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+section h1 {
+  font-size: 1.5em;
+  color: #fffefc;
+  padding: 5px 5px 5px 5px;
+  max-width: 300px;
+  background-color: #004c61;
+}
+
+section p {
+  color: #004c61;
+}
+
+section .perm4 p {
+  color: #89002e;
+  background-color: #fffefc;
+}
+
+/* Intro Header */
+
+section .introheader {
+  color: #004c61;
+  background-color: #e3bb00;
+}
+
+section .introheader a {
+  color: #89002e;
+  background-color: #fffefc;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: none;
+}
+
+section .introheader a:hover {
+  text-decoration: underline;
+  color: #004c61;
+}
+section .introheader strong {
+  color: #004c61;
+  background-color: #fffefc;
+  font-weight: bold;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-decoration: none;
+}
+
+/* Images */
+.blockRed {
+  background-color: #89002e;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* padding: 10px; */
+  padding: 0px;
+  width: 100%;
+}
+
+.header {
+  text-align: right;
+  width: 100%;
+}
+
+.header1Red {
+  font-size: 1.2em;
+  color: #89002e;
+  padding: 5px 15px 5px 25px;
+  margin: 0px 0px 5px auto;
+  max-width: 300px;
+  background-color: #fffefc;
+  text-align: right;
+  font-weight: bold;
+}
+.header1Blue {
+  font-size: 1.2em;
+  color: #004c61;
+  padding: 5px 15px 5px 25px;
+  margin: 0px 0px 5px auto;
+  max-width: 300px;
+  background-color: #fffefc;
+  text-align: right;
+  font-weight: bold;
+}
+
+.blockRed .actualImage {
+  padding: 5px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.blockRed .actualImage img {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.blockRed .caption {
+  margin: 10px auto 10px auto;
+  padding: 0px 10px 0px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: justify;
+  text-justify: auto;
+  font-size: 0.8em;
+  color: #e3bb00;
+}
+
+/* Main Text */
+
+.abstract {
+  background-color: #004c61;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+section .abstract p {
+  color: #fffefc;
+  background-color: #004c61;
+}
+
+section .text1 p {
+  background-color: #fffefc;
+  color: #004c61;
+}
+
+section .text1 strong {
+  color: #fffefc;
+  background-color: #004c61;
+}
+
+section .text2 p {
+  background-color: #fffefc;
+  color: #89002e;
+}
+
+section .code {
+  margin: 10px 0px 10px 0px;
+  color: #89002e;
+  background-color: #e3bb00;
+  font-size: 0.8em;
+  text-align: left;
+  text-justify: inter-word;
+}
+
+section .perm2 p {
+  color: #e3bb00;
+  background-color: #89002e;
+}
+
+section .perm3 p {
+  color: #e3bb00;
+  background-color: #004c61;
+}
