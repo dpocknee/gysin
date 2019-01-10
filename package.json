@@ -2,6 +2,7 @@
   "name": "gysin",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://davidpocknee.ricercata.org/gysin",
   "dependencies": {
     "@reach/router": "^1.2.1",
     "escape-html": "^1.0.3",

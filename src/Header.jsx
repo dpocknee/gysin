@@ -12,25 +12,25 @@ const Header = () => (
     <nav>
       <ul>
         <li>
-          <Link to="/">Introduction</Link>
+          <Link to="/gysin">Introduction</Link>
         </li>
         <li>
-          <Link to="/algorithms">Permutation Algorithms</Link>
+          <Link to="/gysin/algorithms">Permutation Algorithms</Link>
         </li>
         <li>
-          <Link to="/timeline">Timeline</Link>
+          <Link to="/gysin/timeline">Timeline</Link>
         </li>
         <li>
-          <Link to="/bibliography">Bibliography</Link>
+          <Link to="/gysin/bibliography">Bibliography</Link>
         </li>
         <li>
-          <Link to="/poems">The Poems</Link>
+          <Link to="/gysin/poems">The Poems</Link>
         </li>
         <li>
-          <Link to="/iamthatiam">I AM THAT I AM</Link>
+          <Link to="/gysin/iamthatiam">I AM THAT I AM</Link>
         </li>
         <li>
-          <Link to="/comparison">Comparison</Link>
+          <Link to="/gysin/comparison">Comparison</Link>
         </li>
       </ul>
     </nav>

@@ -12,7 +12,7 @@ import './index.css';
 const App = () => (
   <div className="app">
     <Header />
-    <Router>
+    <Router basepath="/gysin">
       <Home path="/" />
       <Algorithms path="/algorithms" />
       <Bibliography path="/bibliography" />
