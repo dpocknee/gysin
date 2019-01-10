@@ -1,0 +1,89 @@
+{
+  "1977Sedgewick": {
+    "author": "Robert Sedgewick",
+    "title": "Permutation Generation Methods",
+    "source": "",
+    "year": 1977,
+    "month": "",
+    "link": "robert-sedgewick_permutation-generation--methods_1977.pdf"
+  },
+  "1956Tompkins": {
+    "author": "C. Tompkins",
+    "title": "Machine attacks on problems whose variables are permutations",
+    "source": "Proceedings of the Symposium in Applied Mathematics: Numerical Analysis, Vol 6, McGraw-Hill, NY, 1956, 195-211",
+    "year": 1956,
+    "month": "",
+    "link": ""
+  },
+  "1961Wells": {
+    "author": "M. B. Wells",
+    "title": "Generation of permutations by transposition",
+    "source": "Mathematics of Computation 15 (1961), 192-195",
+    "year": 1961,
+    "month": "",
+    "link": "mark-wells_generation-of-permutations-by-transposition.pdf"
+  },
+  "1962SchackShimrat": {
+    "author": "G. F. Schack and M. Shimrat",
+    "title": "Permutation in lexicographlc order (Algorithm 102)",
+    "source": "Communications of the ACM 5, 6 (June 1962), 346.",
+    "year": 1962,
+    "month": "June",
+    "link": "FIND"
+  },
+  "1963Shen": {
+    "author": "M. K. Shen",
+    "title": "Generation of permutations in lexicographic order (Algorithm 202)",
+    "source": "Communications of the ACM 6, 9 (September 1963), 346.",
+    "year": 1963,
+    "month": "September",
+    "link": "shen_generation-of-permutations-in-lexicographic-order.pdf"
+  },
+  "1962Shen": {
+    "author": "M. K. Shen",
+    "title": "On the generation of permutations and combinations",
+    "source": "BIT 2, (December 1962) Vol. 2, 4, pp. 228-231",
+    "year": "1962",
+    "month": "December",
+    "link": "Shen1962_Article_OnTheGenerationOfPermutations.pdf"
+  },
+  "1963Steinhaus": {
+    "author": "H. Steinhaus",
+    "title": "One Hundred Problems in Elementary Mathematics",
+    "source": "Pergamon Press, 1963",
+    "year": 1963,
+    "link": ""
+  },
+  "1963Johnson": {
+    "author": "S. M. Johnson",
+    "title": "Generation of permutations by adjacent transposition",
+    "source": "Mathematics of Computation 17, 83 (July 1963), pp 282-285",
+    "year": 1963,
+    "month": "July",
+    "link": "selmer-m-johnson_generation-of-permutations-by-adjacent-transposition.pdf"
+  },
+  "1962Trotter": {
+    "author": "H. F. Trotter",
+    "title": "Perm (Algorithm 115)",
+    "source": "Communications of the ACM 5, 8 (August 1962), 434-435.",
+    "year": 1962,
+    "month": "August",
+    "link": "trotter_perm-algorithm-115.pdf"
+  },
+  "1963Heap": {
+    "author": "B. R. Heap",
+    "title": "Permutations by Interchanges",
+    "source": "Computer Journal Vol. 6, 3 (November 1963), 293-4.",
+    "year": 1963,
+    "month": "November",
+    "link": "brian-heap_permutations-by-interchanges.pdf"
+  },
+  "1960Lehmer": {
+    "author": "D. H. Lehmer",
+    "title": "Teaching combinatorial tricks to a computer",
+    "source": "Proceedings of Symposium Applied Mathematics,Combinatorial Analysis Vol. 10, American Mathematical Society, Providence, RI, 1960, 179-193.",
+    "year": 1960,
+    "month": "",
+    "link": "lehmer_teaching-combinatorial-tricks.pdf"
+  }
+}
