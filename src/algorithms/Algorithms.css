@@ -26,11 +26,11 @@
   flex-direction: row;
 }
 
-body {
+/* body {
   background-color: #fff8d3;
   font-family: 'Roboto Mono', monospace;
   font-size: 0.9em;
-}
+} */
 
 .mainwrapper {
   margin: 20px;

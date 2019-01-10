@@ -1,0 +1,6 @@
+.bibliographyTable table,
+td,
+th {
+  border: 1px black solid;
+  font-size: 9px;
+}

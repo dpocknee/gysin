@@ -12,11 +12,11 @@ class SelectContent extends Component {
     numberOfElements: 5,
     plainTextBox: false,
     numberNotText: true,
-    ordering: 'numerical'
+    ordering: 'numerical',
   };
   render() {
     return (
-      <section>
+      <section style={{ width: '100%' }}>
         <h3>Permutation Input</h3>
         <form>
           Element 1:
@@ -80,17 +80,9 @@ class SelectContent extends Component {
             onChange={this.onChangeHandler}
           />
           <br />
-          <input
-            type="checkbox"
-            id="plainTextBox"
-            onClick={this.onChangeHandler}
-          />
+          <input type="checkbox" id="plainTextBox" onClick={this.onChangeHandler} />
           css/plain-text
-          <input
-            type="checkbox"
-            id="numberNotText"
-            onChange={this.onChangeHandler}
-          />
+          <input type="checkbox" id="numberNotText" onChange={this.onChangeHandler} />
           number/text
           <br />
           <input
@@ -109,12 +101,9 @@ class SelectContent extends Component {
   }
   onChangeHandler = event => {
     console.log(event.target.id);
-    const inputType =
-      event.target.type === 'checkbox'
-        ? event.target.checked
-        : event.target.value;
+    const inputType = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
     this.setState({
-      [event.target.id]: inputType
+      [event.target.id]: inputType,
     });
   };
 }

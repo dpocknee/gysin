@@ -3,6 +3,10 @@ import { Router } from '@reach/router';
 import Header from './Header';
 import Home from './home/components/Home';
 import Algorithms from './algorithms/Algorithms';
+import Bibliography from './bibliography/Bibliography';
+import Timeline from './timeline/Timeline';
+import Iamthatiam from './iamthatiam/Iamthatiam';
+import Error from './error/Error';
 import './index.css';
 
 const App = () => (
@@ -11,8 +15,11 @@ const App = () => (
     <Router>
       <Home path="/" />
       <Algorithms path="/algorithms" />
+      <Bibliography path="/bibliography" />
+      <Timeline path="/timeline" />
+      <Iamthatiam path="/iamthatiam" />
+      <Error default />
     </Router>
-    <Home />
   </div>
 );
 
