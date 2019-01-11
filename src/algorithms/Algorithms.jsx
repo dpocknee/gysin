@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Input from './components/Input';
 import SelectContent from './components/SelectContent';
-import './Algorithms.css';
+import './css/Algorithms.css';
 
 export default class Algorithms extends Component {
   state = {
@@ -31,7 +31,7 @@ export default class Algorithms extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="algwrapper">
         <header>
           <h1>Permutation Algorithms</h1>
         </header>

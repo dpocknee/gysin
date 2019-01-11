@@ -1,4 +1,4 @@
-.App {
+.algwrapper {
   text-align: center;
 }
 
@@ -7,11 +7,28 @@
 }
 
 .indivAlg header {
-  height: 200px;
+  /* height: 200px; */
 }
 
 .indivAlg h1 {
   font-size: 0.8em;
+  text-justify: auto;
+  margin: 5px;
+  height: 80px;
+  background-color: #004c61;
+}
+
+.indivAlg .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: auto;
+  padding: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.indivAlg .info .writing {
+  text-align: justify;
   text-justify: auto;
 }
 
@@ -20,17 +37,34 @@
   text-justify: auto;
 }
 
+.buttonwrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.indivAlg button {
+  background-color: #89002e;
+  color: white;
+  text-align: center;
+  border: 0px;
+  padding: 5px;
+  cursor: pointer;
+}
+
 .algorithmWrapper {
   width: 1300px;
   display: flex;
   flex-direction: row;
 }
 
-/* body {
-  background-color: #fff8d3;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.9em;
-} */
+.shift {
+  height: 60px;
+  width: 100%;
+  padding: 5px;
+}
 
 .mainwrapper {
   margin: 20px;
@@ -60,8 +94,6 @@ h3 {
   max-width: 800px;
   text-align: justify;
   text-justify: auto;
-  /*margin-left: auto;
-  margin-right: auto;*/
 }
 
 .historicalPermutationAlgorithms {
@@ -115,7 +147,10 @@ h3 {
   box-sizing: border-box;
 }
 .indivcolumns {
-  margin: 20px;
+  margin: 0px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .element1 {
   background-color: lightcoral;
@@ -135,6 +170,11 @@ h3 {
 .element6 {
   background-color: turquoise;
 }
+
+.popup {
+  font-size: 8px;
+}
+
 .code {
   width: 600px;
   white-space: pre-wrap;

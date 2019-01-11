@@ -1,110 +1,169 @@
 import React, { Component } from 'react';
-import algorithmDatabase from '../data/papers.json';
-import { arrayShift, substituteContent, rotate } from '../utils/utils';
-import { reverse } from 'lodash';
 import Prism from 'prismjs';
 import Parser from 'html-react-parser';
+import PropTypes from 'prop-types';
+import Popup from 'reactjs-popup';
+import { reverse } from 'lodash';
+import algorithmDatabase from '../data/papers.json';
+import { arrayShift, substituteContent } from '../utils/utils';
 import '../css/prism.css';
 import '../css/code.css';
 
 class Algorithm extends Component {
   state = {
     shift: 0,
-    reverse: false,
+    reverseBox: false,
+    infoOpen: false,
+    showCode: false,
+    originalPermutation: [],
   };
+
+  componentDidMount() {
+    const { algorithmType, order } = this.props;
+    const originalPermutation = algorithmType.arguments
+      ? algorithmType.algorithm(order, 1)
+      : algorithmType.algorithm(order);
+
+    this.setState({ originalPermutation });
+  }
+
   shiftHandler = event => {
-    this.setState({ shift: parseInt(event.target.value) });
+    this.setState({ shift: parseInt(event.target.value, 10) });
+  };
+
+  reverseCheckbox = event => {
+    this.setState({ reverseBox: event.target.checked });
+  };
+
+  openCloseInfo = () => {
+    this.setState(state => ({ infoOpen: !state.infoOpen }));
+  };
+
+  showHideCode = () => {
+    this.setState(state => ({ showCode: !state.showCode }));
   };
 
   render() {
-    const originalPermutations = this.props.algorithmType.arguments
-      ? this.props.algorithmType.algorithm(this.props.order, 1)
-      : this.props.algorithmType.algorithm(this.props.order);
+    const {
+      algorithmType, order, numberNotText, content, plainTextBox,
+    } = this.props;
+    const {
+      shift, reverseBox, infoOpen, originalPermutation, showCode,
+    } = this.state;
 
-    const shiftedPermutations =
-      this.state.shift === 0
-        ? originalPermutations
-        : arrayShift(originalPermutations, this.state.shift);
+    const shiftedPermutations = shift === 0 ? originalPermutation : arrayShift(originalPermutation, shift);
 
-    const reversedPermutations = this.state.reverse
-      ? shiftedPermutations.map(row => reverse(row))
+    const reversedPermutations = reverseBox
+      ? shiftedPermutations.map(row => reverse([...row]))
       : shiftedPermutations;
 
-    const substitutedContent = this.props.numberNotText
-      ? substituteContent(reversedPermutations, this.props.order, this.props.content)
+    const substitutedContent = numberNotText
+      ? substituteContent(reversedPermutations, order, content)
       : reversedPermutations.map(row => [row, row]);
 
-    const algRef = this.props.algorithmType.references;
-    const codeTest = this.props.algorithmType.algorithm.toString();
+    const algRef = algorithmType.references;
+    const codeTest = algorithmType.algorithm.toString();
     const highlightedCode = Prism.highlight(codeTest, Prism.languages.javascript, 'javascript');
     return (
       <div className="indivAlg">
         <header>
-          <h1>{this.props.algorithmType.name}</h1>
-          <p>{this.props.algorithmType.info}</p>
-          {algRef.map((reference, index) => (
-            <p key={reference + String(index)}>
-              {algorithmDatabase[algRef[index]].author}
-              <br />
-              <a href={'papers/' + algorithmDatabase[algRef[index]].link}>
-                {algorithmDatabase[algRef[index]].title}
-              </a>{' '}
-              ({algorithmDatabase[algRef[index]].year})
-            </p>
-          ))}
+          <h1>{algorithmType.name}</h1>
+          <div className="info">
+            {infoOpen && (
+              <>
+                <div className="writing">
+                  <p>{algorithmType.info}</p>
+                  {algRef.map((reference, index) => (
+                    <p key={reference + String(index)}>
+                      {algorithmDatabase[algRef[index]].author}
+                      <br />
+                      <a href={`papers/${algorithmDatabase[algRef[index]].link}`}>
+                        {algorithmDatabase[algRef[index]].title}
+                      </a>{' '}
+                      ({algorithmDatabase[algRef[index]].year})
+                    </p>
+                  ))}
+                </div>
+                <div className="buttonwrapper">
+                  <div>
+                    <button type="button" onClick={() => this.openCloseInfo()}>
+                      Close Info
+                    </button>
+                  </div>
+                  <div>
+                    <button type="button" onClick={() => this.showHideCode()}>
+                      Show Code
+                    </button>
+                  </div>
+                </div>
+              </>
+            )}
+            {!infoOpen && (
+              <div className="buttonwrapper">
+                <button type="button" onClick={() => this.openCloseInfo()}>
+                  More info
+                </button>
+              </div>
+            )}
+          </div>
         </header>
         <section className="shift">
           <input
             type="number"
             placeholder="0"
-            onChange={this.shiftHandler}
-            max={this.props.order.length - 1}
-            min={0 - (this.props.order.length - 1)}
-            key={this.props.algorithmType.name + 'shift'}
+            onChange={e => this.shiftHandler(e)}
+            max={order.length - 1}
+            min={0 - (order.length - 1)}
+            key={`${algorithmType.name}shift`}
           />
-          <label htmlFor={`${this.props.algorithmType.name}checkbox`}>Reverse:</label>
+          <label htmlFor={`${algorithmType.name}checkbox`}>Reverse:</label>
           <input
             type="checkbox"
-            name={`${this.props.algorithmType.name}checkbox`}
-            id={`${this.props.algorithmType.name}checkbox`}
-            onChange={this.reverseCheckbox}
+            name={`${algorithmType.name}checkbox`}
+            id={`${algorithmType.name}checkbox`}
+            onChange={e => this.reverseCheckbox(e)}
           />
         </section>
-        <section>
-          <div className="indivcolumns">
-            {substitutedContent.map((perm, index) => (
-              <div key={this.props.algorithmType.name + index} className="allColumns">
-                {this.props.plainTextBox &&
-                  perm[1].map((element, secondIndex) => (
-                    <div
-                      key={
-                        this.props.algorithmType.name + index + secondIndex + perm[0][secondIndex]
-                      }
-                      className={`element${perm[0][secondIndex]} indivElement`}
-                    >
-                      {element}
-                    </div>
-                  ))}
-                {!this.props.plainTextBox && perm[1].join(' ')}
-              </div>
-            ))}
-          </div>
+        <section className="indivcolumns">
+          {substitutedContent.map((perm, index) => (
+            <div key={`${algorithmType.name}${index}`} className="allColumns">
+              {plainTextBox
+                && perm[1].map((element, secondIndex) => (
+                  <div
+                    key={`${algorithmType.name}${index}${secondIndex}${perm[0][secondIndex]}`}
+                    className={`element${perm[0][secondIndex]} indivElement`}
+                  >
+                    {element}
+                  </div>
+                ))}
+              {!plainTextBox && perm[1].join(' ')}
+            </div>
+          ))}
         </section>
-        <div className="code">
-          <pre>
-            <code>{Parser(highlightedCode)}</code>
-          </pre>
-        </div>
+        <Popup open={showCode} closeOnDocumentClick>
+          <div
+            className="popup code"
+            tabIndex={0}
+            role="button"
+            onClick={() => this.showHideCode()}
+            onKeyDown={() => this.showHideCode()}
+          >
+            <pre>
+              <code>{Parser(highlightedCode)}</code>
+            </pre>
+          </div>
+        </Popup>
       </div>
     );
   }
-  reverseCheckbox = event => {
-    const boxState = event.target.checked;
-    this.setState({ reverse: boxState });
-  };
-  componentDidMount() {
-    console.log(`../algorithms/${this.props.algorithmType.code}`);
-  }
 }
+
+Algorithm.propTypes = {
+  algorithmType: PropTypes.string.isRequired,
+  order: PropTypes.string.isRequired,
+  numberNotText: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  plainTextBox: PropTypes.string.isRequired,
+};
 
 export default Algorithm;
