@@ -1,0 +1,18 @@
+.timeline {
+  width: 100%;
+  font-size: 10px;
+}
+
+.timeline .year {
+  color: #fffefc;
+  background-color: #004c61;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 1px;
+}
+
+.timeline strong {
+  color: #fffefc;
+  background-color: #e3bb00;
+  padding: 1px;
+}

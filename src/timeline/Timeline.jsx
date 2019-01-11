@@ -1,17 +1,29 @@
 import React from 'react';
+import Parser from 'html-react-parser';
 import timeline from './data/timeline';
+import './css/Timeline.css';
 
 const Timeline = () => (
   <div>
-    <h1>Timeline Of Early Completist Permutation Works and Related Algorithms</h1>
-    <div style={{ width: '100%' }}>
+    <header>
+      <h2>Timeline Of Early Completist Permutation Works and Related Algorithms</h2>
+    </header>
+    <div className="timeline">
       {timeline.map(date => (
         <div style={{ width: '100%', display: 'flex', flexDirection: 'row' }}>
           <div style={{ width: '50%' }}>
-            {date.forcePosition === 'left' && <p>{`${date.label} - ${date.shortContent}`}</p>}
+            {date.forcePosition === 'left' && (
+              <p>
+                <span className="year">{date.label}</span> {Parser(date.shortContent)}
+              </p>
+            )}
           </div>
           <div style={{ width: '50%' }}>
-            {date.forcePosition === 'right' && <p>{`${date.label} - ${date.shortContent}`}</p>}
+            {date.forcePosition === 'right' && (
+              <p>
+                <span className="year">{date.label}</span> {Parser(date.shortContent)}
+              </p>
+            )}
           </div>
         </div>
       ))}

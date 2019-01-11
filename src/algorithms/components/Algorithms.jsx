@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Input from './components/Input';
-import SelectContent from './components/SelectContent';
-import './css/Algorithms.css';
+import Input from './Input';
+import SelectContent from './SelectContent';
+import '../css/Algorithms.css';
 
 export default class Algorithms extends Component {
   state = {
     content: ['I', 'AM', 'THAT', 'I', 'AM'],
-    plainTextBox: false,
-    numberNotText: false,
+    coloredOrNot: false,
+    numberOrText: false,
   };
 
   clickHandler = (event, allState) => {
@@ -24,20 +24,20 @@ export default class Algorithms extends Component {
     const sectionOfArray = contentArray.slice(0, parseInt(allState.numberOfElements, 10));
     this.setState({
       content: sectionOfArray,
-      plainTextBox: allState.plainTextBox,
-      numberNotText: allState.numberNotText,
+      coloredOrNot: allState.coloredOrNot,
+      numberOrText: allState.numberOrText,
     });
   };
 
   render() {
-    const { content, plainTextBox, numberNotText } = this.state;
+    const { content, coloredOrNot, numberOrText } = this.state;
     return (
       <div className="algwrapper">
         <header>
           <h1>Permutation Algorithms</h1>
         </header>
         <SelectContent clickHandler={this.clickHandler} onChangeHandler={this.onChangeHandler} />
-        <Input content={content} plainTextBox={plainTextBox} numberNotText={numberNotText} />
+        <Input content={content} coloredOrNot={coloredOrNot} numberOrText={numberOrText} />
       </div>
     );
   }

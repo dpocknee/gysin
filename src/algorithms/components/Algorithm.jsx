@@ -55,7 +55,7 @@ class Algorithm extends Component {
 
   render() {
     const {
-      algorithmType, order, numberNotText, content, plainTextBox,
+      algorithmType, order, numberOrText, content, coloredOrNot,
     } = this.props;
     const {
       shift, reverseBox, infoOpen, originalPermutation, showCode,
@@ -67,7 +67,7 @@ class Algorithm extends Component {
       ? shiftedPermutations.map(row => reverse([...row]))
       : shiftedPermutations;
 
-    const substitutedContent = numberNotText
+    const substitutedContent = numberOrText
       ? substituteContent(reversedPermutations, order, content)
       : reversedPermutations.map(row => [row, row]);
 
@@ -137,7 +137,7 @@ class Algorithm extends Component {
         <section className="indivcolumns">
           {substitutedContent.map((perm, index) => (
             <div key={`${algorithmType.name}${index}`} className="allColumns">
-              {plainTextBox
+              {coloredOrNot
                 && perm[1].map((element, secondIndex) => (
                   <div
                     key={`${algorithmType.name}${index}${secondIndex}${perm[0][secondIndex]}`}
@@ -146,7 +146,7 @@ class Algorithm extends Component {
                     {element}
                   </div>
                 ))}
-              {!plainTextBox && perm[1].join(' ')}
+              {!coloredOrNot && perm[1].join(' ')}
             </div>
           ))}
         </section>
@@ -171,9 +171,9 @@ class Algorithm extends Component {
 Algorithm.propTypes = {
   algorithmType: PropTypes.string.isRequired,
   order: PropTypes.string.isRequired,
-  numberNotText: PropTypes.string.isRequired,
+  numberOrText: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  plainTextBox: PropTypes.string.isRequired,
+  coloredOrNot: PropTypes.string.isRequired,
 };
 
 export default Algorithm;

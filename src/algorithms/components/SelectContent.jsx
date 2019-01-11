@@ -10,11 +10,22 @@ class SelectContent extends Component {
     element5: 'AM',
     element6: '6',
     numberOfElements: 5,
-    plainTextBox: false,
-    numberNotText: true,
+    coloredOrNot: false,
+    numberOrText: false,
     ordering: 'numerical',
   };
+
+  onChangeHandler = event => {
+    console.log(event.target.id);
+    const inputType = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+    this.setState({
+      [event.target.id]: inputType,
+    });
+  };
+
   render() {
+    const { clickHandler } = this.props;
+    const { numberOfElements, numberOrText, coloredOrNot } = this.state;
     return (
       <section style={{ width: '100%' }}>
         <h3>Permutation Input</h3>
@@ -75,21 +86,18 @@ class SelectContent extends Component {
             id="numberOfElements"
             min="2"
             max="6"
-            value={this.state.numberOfElements}
-            // placeholder="5"
+            value={numberOfElements}
             onChange={this.onChangeHandler}
           />
           <br />
-          <input type="checkbox" id="plainTextBox" onClick={this.onChangeHandler} />
-          css/plain-text
-          <input type="checkbox" id="numberNotText" onChange={this.onChangeHandler} />
-          number/text
+          <input type="checkbox" id="coloredOrNot" onChange={this.onChangeHandler} />
+          {coloredOrNot ? 'Colour Permutations' : 'Show Permutations as Plain Text'}
+          <input type="checkbox" id="numberOrText" onChange={this.onChangeHandler} />
+          {numberOrText
+            ? 'Show Permutations Using the Elements Above'
+            : 'Show Permutations as Numbers'}
           <br />
-          <input
-            type="submit"
-            value="Submit"
-            onClick={event => this.props.clickHandler(event, this.state)}
-          />
+          <input type="submit" value="Submit" onClick={event => clickHandler(event, this.state)} />
           Ordering{' '}
           <select id="ordering" name="ordering" onChange={this.onChangeHandler}>
             <option select="numerical">Numerical</option>
@@ -99,15 +107,10 @@ class SelectContent extends Component {
       </section>
     );
   }
-  onChangeHandler = event => {
-    console.log(event.target.id);
-    const inputType = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
-    this.setState({
-      [event.target.id]: inputType,
-    });
-  };
 }
 
-SelectContent.propTypes = {};
+SelectContent.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+};
 
 export default SelectContent;
