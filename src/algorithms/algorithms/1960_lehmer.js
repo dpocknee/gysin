@@ -1,10 +1,8 @@
-const moduloAdd = (array, amount, modulo, size) => {
-  return array.reduce((outputArray, currentValue, index) => {
-    const amountToAdd = array.length - index <= size ? amount : 0;
-    outputArray.push((currentValue + amountToAdd) % modulo);
-    return outputArray;
-  }, []);
-};
+const moduloAdd = (array, amount, modulo, size) => array.reduce((outputArray, currentValue, index) => {
+  const amountToAdd = array.length - index <= size ? amount : 0;
+  outputArray.push((currentValue + amountToAdd) % modulo);
+  return outputArray;
+}, []);
 
 function lehmerWrapper(originalInputArray) {
   function lehmer(array, modulo, size, cb) {
@@ -22,9 +20,7 @@ function lehmerWrapper(originalInputArray) {
       }
       array = moduloAdd(array, 1, modulo, size - 1);
       if (size !== array.length) return array;
-      const arraySimilarity = array.every(
-        (number, i) => number === inputArray[i]
-      );
+      const arraySimilarity = array.every((number, i) => number === inputArray[i]);
       if (size === array.length && arraySimilarity) break;
     }
     return array;
@@ -35,17 +31,16 @@ function lehmerWrapper(originalInputArray) {
   const callback = permutation => lehmerArrays.push(permutation);
   const startingModulo = inputArray.length;
   lehmer(inputArray, startingModulo, startingModulo, callback);
-  const readjustedLehmerArrays = lehmerArrays.map(array => {
-    return array.map(num => num + 1);
-  });
+  const readjustedLehmerArrays = lehmerArrays.map(array => array.map(num => num + 1));
   return readjustedLehmerArrays;
 }
 
 module.exports = {
   algorithm: lehmerWrapper,
   code: '1960_lehmer.js',
+  year: 1960,
   arguments: 1,
   name: 'Lehmer Constant Difference Method',
-  info: `This is a permutation algorithm referred to by D.H. Lehmer as the Constant Difference Method.  As described in his 1958 (published in 1960) paper "Teaching Combinatorial Tricks To A Computer".`,
-  references: ['1960Lehmer']
+  info: 'This is a permutation algorithm referred to by D.H. Lehmer as the Constant Difference Method.  As described in his 1958 (published in 1960) paper "Teaching Combinatorial Tricks To A Computer".',
+  references: ['1960Lehmer'],
 };

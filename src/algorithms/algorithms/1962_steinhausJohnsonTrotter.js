@@ -1,17 +1,17 @@
 function steinhausJohnsonTrotter(arr) {
-  var N = arr.length;
-  var directions = [];
-  var indices = [];
+  const N = arr.length;
+  const directions = [];
+  const indices = [];
 
   directions.push(0);
   indices.push(0);
-  for (var i = 1; i < N; i += 1) {
+  for (let i = 1; i < N; i += 1) {
     directions.push(-1);
     indices.push(i);
   }
 
   function swap(i, j) {
-    var tmp = indices[i];
+    let tmp = indices[i];
     indices[i] = indices[j];
     indices[j] = tmp;
 
@@ -21,22 +21,22 @@ function steinhausJohnsonTrotter(arr) {
   }
 
   function result() {
-    var res = [];
-    for (var i = 0; i < N; i += 1) {
+    const res = [];
+    for (let i = 0; i < N; i += 1) {
       res.push(arr[indices[i]]);
     }
     return res;
   }
 
-  var makeResult =
-    typeof arr !== 'string'
-      ? result
-      : function() {
-          return result().join('');
-        };
+  const makeResult = typeof arr !== 'string'
+    ? result
+    : function () {
+      return result().join('');
+    };
 
-  return function() {
-    var i, maxIndex, moveTo;
+  return function () {
+    let i; let maxIndex; let
+      moveTo;
     for (i = 0; i < N; i += 1) {
       if (directions[i] !== 0) {
         maxIndex = i;
@@ -54,9 +54,9 @@ function steinhausJohnsonTrotter(arr) {
     moveTo = maxIndex + directions[maxIndex];
     swap(maxIndex, moveTo);
     if (
-      moveTo === 0 ||
-      moveTo === N - 1 ||
-      indices[moveTo + directions[moveTo]] > indices[moveTo]
+      moveTo === 0
+      || moveTo === N - 1
+      || indices[moveTo + directions[moveTo]] > indices[moveTo]
     ) {
       directions[moveTo] = 0;
     }
@@ -73,10 +73,10 @@ function steinhausJohnsonTrotter(arr) {
   };
 }
 
-steinhausJohnsonTrotter.all = function(arr) {
-  var generator = steinhausJohnsonTrotter(arr);
-  var next = arr;
-  var result = [];
+steinhausJohnsonTrotter.all = function (arr) {
+  const generator = steinhausJohnsonTrotter(arr);
+  let next = arr;
+  const result = [];
   while (next !== undefined) {
     result.push(next);
     next = generator();
@@ -88,6 +88,7 @@ module.exports = {
   algorithm: steinhausJohnsonTrotter.all,
   code: '1962_steinhausJohnsonTrotter.js',
   name: 'Steinhaus-Johnson-Trotter/Bob? major?',
-  info: `This implementation is from https://github.com/nodash/steinhaus-johnson-trotter.  It is a A JavaScript implementation of the Steinhaus-Johnson-Trotter algorithm with Even's speedup to generate the permutations of a string or an array.`,
-  references: ['1963Steinhaus', '1963Johnson', '1962Trotter']
+  year: 1962,
+  info: 'This implementation is from https://github.com/nodash/steinhaus-johnson-trotter.  It is a A JavaScript implementation of the Steinhaus-Johnson-Trotter algorithm with Even\'s speedup to generate the permutations of a string or an array.',
+  references: ['1963Steinhaus', '1963Johnson', '1962Trotter'],
 };

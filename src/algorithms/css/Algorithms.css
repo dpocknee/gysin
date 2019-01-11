@@ -14,7 +14,7 @@
   font-size: 0.8em;
   text-justify: auto;
   margin: 5px;
-  height: 80px;
+  height: 90px;
   background-color: #004c61;
 }
 
@@ -55,7 +55,6 @@
 }
 
 .algorithmWrapper {
-  width: 1300px;
   display: flex;
   flex-direction: row;
 }

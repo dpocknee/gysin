@@ -29,7 +29,8 @@ function heapWrapper(numberArray) {
 module.exports = {
   algorithm: heapWrapper,
   code: '1963_heap.js',
+  year: 1963,
   name: 'Heap Permutations by Interchanges Algorithm',
-  info: `This is an implementation of B.R. Heap's 1963 permutation algorithm as described in Robert Sedgewick's 1977 "Permutation Generation Methods" paper.  NOTE: Because of the fact the original algorithm is based on an array in which the indexes start from 1 rather than 0, the input array should have a meaningless placeholder element in the first position (e.g. the '0' in [0,1,2,3,4,5]).`,
-  references: ['1963Heap']
+  info: 'This is an implementation of B.R. Heap\'s 1963 permutation algorithm as described in Robert Sedgewick\'s 1977 "Permutation Generation Methods" paper.  NOTE: Because of the fact the original algorithm is based on an array in which the indexes start from 1 rather than 0, the input array should have a meaningless placeholder element in the first position (e.g. the \'0\' in [0,1,2,3,4,5]).',
+  references: ['1963Heap'],
 };

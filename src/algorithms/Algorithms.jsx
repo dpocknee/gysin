@@ -21,7 +21,7 @@ export default class Algorithms extends Component {
       allState.element6,
     ];
 
-    const sectionOfArray = contentArray.slice(0, parseInt(allState.numberOfElements));
+    const sectionOfArray = contentArray.slice(0, parseInt(allState.numberOfElements, 10));
     this.setState({
       content: sectionOfArray,
       plainTextBox: allState.plainTextBox,
@@ -30,17 +30,14 @@ export default class Algorithms extends Component {
   };
 
   render() {
+    const { content, plainTextBox, numberNotText } = this.state;
     return (
       <div className="algwrapper">
         <header>
           <h1>Permutation Algorithms</h1>
         </header>
         <SelectContent clickHandler={this.clickHandler} onChangeHandler={this.onChangeHandler} />
-        <Input
-          content={this.state.content}
-          plainTextBox={this.state.plainTextBox}
-          numberNotText={this.state.numberNotText}
-        />
+        <Input content={content} plainTextBox={plainTextBox} numberNotText={numberNotText} />
       </div>
     );
   }

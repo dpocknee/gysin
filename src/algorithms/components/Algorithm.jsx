@@ -27,6 +27,16 @@ class Algorithm extends Component {
     this.setState({ originalPermutation });
   }
 
+  componentDidUpdate(prevProps) {
+    const { algorithmType, order  } = this.props;
+    if (prevProps.order !== order) {
+      const originalPermutation = algorithmType.arguments
+        ? algorithmType.algorithm(order, 1)
+        : algorithmType.algorithm(order);
+      this.setState({ originalPermutation });
+    }
+  }
+
   shiftHandler = event => {
     this.setState({ shift: parseInt(event.target.value, 10) });
   };
@@ -67,7 +77,7 @@ class Algorithm extends Component {
     return (
       <div className="indivAlg">
         <header>
-          <h1>{algorithmType.name}</h1>
+          <h1>{`${algorithmType.name} (${algorithmType.year})`}</h1>
           <div className="info">
             {infoOpen && (
               <>
