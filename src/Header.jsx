@@ -5,9 +5,7 @@ import './Header.css';
 const Header = () => (
   <>
     <header>
-      <h1>
-        Brion Gysin's <i>Permutation Poems</i>
-      </h1>
+      <h1>The Permutated Poems of Brion Gysin</h1>
     </header>
     <nav>
       <ul>
