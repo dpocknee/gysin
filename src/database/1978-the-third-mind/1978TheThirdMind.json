@@ -1,0 +1,83 @@
+{
+  "author": ["Brion Gysin", "William S. Burroughs", "Ian Sommerville"],
+  "title": "The Third Mind",
+  "date": "1978 (US) / 1979 (UK) / Originally finished in 1965",
+  "publisher": "John Calder",
+  "location": "London",
+  "folder": "1978-gysin-burroughs-the-third-mind/",
+  "image": ["copyright-page.jpg", "permutations-intro.jpg", "pg84-85.jpg"],
+  "contents": [
+    {
+      "title": "BREATHE IN THE WORDS",
+      "series": "BREATHE IN THE WORDS",
+      "pages": "68",
+      "version": "?",
+      "ordering": "?",
+      "notes": "Not in 'Permutations' section of book.",
+      "images": ["breathe-in-the-words.jpg"]
+    },
+    {
+      "title": "I AM THAT I AM",
+      "series": "I AM THAT I AM",
+      "pages": "78-79",
+      "version": "?",
+      "ordering": "?",
+      "notes": "In 'Permutations' section of book of poems run through a computer by Ian Sommerville.",
+      "images": ["i-am-that-i-am.jpg"]
+    },
+    {
+      "title": "JUNK IS NO GOOD BABY",
+      "series": "JUNK IS NO GOOD BABY",
+      "pages": "80",
+      "version": "?",
+      "ordering": "?",
+      "notes": "In 'Permutations' section of book of poems run through a computer by Ian Sommerville.",
+      "images": ["junk-is-no-good-baby.jpg"]
+    },
+    {
+      "title": "KICK THAT HABIT MAN",
+      "series": "KICK THAT HABIT MAN",
+      "pages": "81",
+      "version": "?",
+      "ordering": "?",
+      "notes": "In 'Permutations' section of book of poems run through a computer by Ian Sommerville.",
+      "images": ["kick-that-habit-man.jpg"]
+    },
+    {
+      "title": "I THINK THEREFORE I AM",
+      "series": "I THINK THEREFORE I AM",
+      "pages": "82",
+      "version": "?",
+      "ordering": "?",
+      "notes": "In 'Permutations' section of book of poems run through a computer by Ian Sommerville.",
+      "images": ["i-think-therefore-i-am.jpg"]
+    },
+    {
+      "title": "RUB OUT THE WORD",
+      "series": "RUB OUT THE WORD",
+      "pages": "83",
+      "version": "?",
+      "ordering": "?",
+      "notes": "In 'Permutations' section of book of poems run through a computer by Ian Sommerville.",
+      "images": ["rub-out-the-word.jpg"]
+    },
+    {
+      "title": "Pistol Poem",
+      "series": "Pistol Poem",
+      "pages": "86",
+      "version": "?",
+      "ordering": "?",
+      "notes": "In 'Permutations' section of book of poems run through a computer by Ian Sommerville.",
+      "images": ["pistol-poem1.jpg"]
+    },
+    {
+      "title": "Present Time",
+      "series": "Present Time",
+      "pages": "110",
+      "version": "?",
+      "ordering": "?",
+      "notes": "Not in 'Permutations' section of book.",
+      "images": ["present-time.jpg"]
+    }
+  ]
+}

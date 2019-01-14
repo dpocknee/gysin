@@ -1,0 +1,20 @@
+{
+  "author": ["Brion Gysin", "Emmett Williams (ed.)"],
+  "title": "Anthology of Concrete Poetry",
+  "date": "1967",
+  "publisher": "Something Else Press",
+  "location": "",
+  "folder": "1967-anthology-of-concrete-poetry/",
+  "image": ["i-am-that-i-am1.jpg", "i-am-that-i-am2.jpg"],
+  "contents": [
+    {
+      "title": "I AM THAT I AM",
+      "series": "I AM THAT I AM",
+      "pages": "160-161",
+      "version": "",
+      "ordering": "?",
+      "notes": "",
+      "images": ["i-am-that-i-am1.jpg", "i-am-that-i-am2.jpg"]
+    }
+  ]
+}

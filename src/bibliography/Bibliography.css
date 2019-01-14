@@ -4,3 +4,61 @@ th {
   border: 1px black solid;
   font-size: 9px;
 }
+
+.bibliography h2 {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 14px;
+}
+
+.bibliography h3 {
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+.bibliography p {
+  font-size: 11px;
+}
+
+.bibliographySplit {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.bibliography {
+  width: 48%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.bibliography button {
+  border: 0px;
+  background-color: #89002e;
+  color: white;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.textFile {
+  width: 48%;
+  box-sizing: border-box;
+  white-space: pre-line;
+  float: right;
+}
+
+.poemRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.poemColumn {
+  width: 400px;
+  margin-right: 5px;
+  font-size: 11px;
+}
+
+.stanza {
+  margin-bottom: 20px;
+}

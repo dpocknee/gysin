@@ -1,0 +1,58 @@
+{
+  "author": [
+    "Brion Gysin",
+    "William S. Burroughs",
+    "Ian Sommerville",
+    "ed. Jan Herman"
+  ],
+  "title": "Brion Gysin Let The Mice In",
+  "date": "March 1973",
+  "publisher": "Something Else Press",
+  "location": "West Glover, VT",
+  "folder": "1973-brion-gysin-let-the-mice-in",
+  "images": ["copyright-notice.jpg", "page48-49.jpg"],
+  "contents": [
+    {
+      "title": "Pistol Poem",
+      "series": "Pistol Poem",
+      "pages": "51-52",
+      "version": "?",
+      "ordering": "Reverse lexicographic?",
+      "notes": "Only permutations from 14523 to 54321.",
+      "images": ["pistol-poem1.jpg", "pistol-poem2.jpg"]
+    },
+    {
+      "title": "I AM THAT I AM",
+      "series": "I AM THAT I AM",
+      "pages": "53-61",
+      "version": "",
+      "ordering": "Reverse lexicographic? and rotations?",
+      "notes": "",
+      "images": [
+        "iamthatiam1.jpg",
+        "iamthatiam2.jpg",
+        "iamthatiam3.jpg",
+        "iamthatiam4.jpg",
+        "iamthatiam5.jpg"
+      ]
+    },
+    {
+      "title": "JUNK IS NO GOOD BABY",
+      "series": "JUNK IS NO GOOD BABY",
+      "pages": "62-63",
+      "version": "?",
+      "ordering": "?",
+      "notes": "",
+      "images": ["junk-is-no-good-baby.jpg"]
+    },
+    {
+      "title": "KICK THAT HABIT MAN",
+      "series": "KICK THAT HABIT MAN",
+      "pages": "64",
+      "version": "?",
+      "ordering": "?",
+      "notes": "",
+      "images": ["kick-that-habit-man.jpg"]
+    }
+  ]
+}
