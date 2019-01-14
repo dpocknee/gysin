@@ -16,6 +16,7 @@ class Algorithm extends Component {
     infoOpen: false,
     showCode: false,
     originalPermutation: [],
+    tompkinsDirection: 1,
   };
 
   componentDidMount() {
@@ -27,11 +28,12 @@ class Algorithm extends Component {
     this.setState({ originalPermutation });
   }
 
-  componentDidUpdate(prevProps) {
-    const { algorithmType, order  } = this.props;
-    if (prevProps.order !== order) {
-      const originalPermutation = algorithmType.arguments
-        ? algorithmType.algorithm(order, 1)
+  componentDidUpdate(prevProps, prevState) {
+    const { algorithmType, order } = this.props;
+    const { tompkinsDirection } = this.state;
+    if (prevProps.order !== order || tompkinsDirection !== prevState.tompkinsDirection) {
+      const originalPermutation = algorithmType.name === 'Tompkins-Paige Algorithm'
+        ? algorithmType.algorithm(order, tompkinsDirection)
         : algorithmType.algorithm(order);
       this.setState({ originalPermutation });
     }
@@ -51,6 +53,11 @@ class Algorithm extends Component {
 
   showHideCode = () => {
     this.setState(state => ({ showCode: !state.showCode }));
+  };
+
+  tompkinsDirection = event => {
+    const newState = event.target.checked ? -1 : 1;
+    this.setState({ tompkinsDirection: newState });
   };
 
   render() {
@@ -133,6 +140,17 @@ class Algorithm extends Component {
             id={`${algorithmType.name}checkbox`}
             onChange={e => this.reverseCheckbox(e)}
           />
+          {algorithmType.name === 'Tompkins-Paige Algorithm' && (
+            <div>
+              <label htmlFor={`direction${algorithmType.name}checkbox`}>Direction:</label>
+              <input
+                type="checkbox"
+                name={`direction${algorithmType.name}checkbox`}
+                id={`direction${algorithmType.name}checkbox`}
+                onChange={e => this.tompkinsDirection(e)}
+              />
+            </div>
+          )}
         </section>
         <section className="indivcolumns">
           {substitutedContent.map((perm, index) => (
@@ -169,11 +187,11 @@ class Algorithm extends Component {
 }
 
 Algorithm.propTypes = {
-  algorithmType: PropTypes.string.isRequired,
-  order: PropTypes.string.isRequired,
-  numberOrText: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
-  coloredOrNot: PropTypes.string.isRequired,
+  algorithmType: PropTypes.func.isRequired,
+  order: PropTypes.arrayOf(PropTypes.number).isRequired,
+  content: PropTypes.arrayOf(PropTypes.string).isRequired,
+  numberOrText: PropTypes.bool.isRequired,
+  coloredOrNot: PropTypes.bool.isRequired,
 };
 
 export default Algorithm;
