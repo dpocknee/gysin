@@ -1,0 +1,32 @@
+.poemMenuButton {
+  background-color: #e3bb00;
+  color: white;
+  border: 0px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.comparisonTextFile {
+  color: #004c61;
+  margin-right: 20px;
+}
+
+.comparisonPoems {
+  display: flex;
+  flex-direction: row;
+}
+
+.comparisonStanza {
+  margin-bottom: 20px;
+}
+
+.comparisonPoemRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.comparisonPoemColumn {
+  margin-right: 5px;
+  font-size: 11px;
+}

@@ -33,9 +33,9 @@ export default class Algorithms extends Component {
     const { content, coloredOrNot, numberOrText } = this.state;
     return (
       <div className="algwrapper">
-        <header>
+        <section>
           <h1>Permutation Algorithms</h1>
-        </header>
+        </section>
         <SelectContent clickHandler={this.clickHandler} onChangeHandler={this.onChangeHandler} />
         <Input content={content} coloredOrNot={coloredOrNot} numberOrText={numberOrText} />
       </div>

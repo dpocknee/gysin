@@ -4,6 +4,7 @@
 
 .indivAlg {
   width: 200px;
+  color: #004c61;
 }
 
 .indivAlg header {
@@ -178,4 +179,9 @@ h3 {
 .code {
   width: 600px;
   white-space: pre-wrap;
+}
+
+.algorithmsParams {
+  color: white;
+  font-size: 0.9em;
 }

@@ -1,8 +1,8 @@
 # Pistol Poem
-
 ## The Permutated Poems Of Brion Gysin, BBC (1961)
+## Transcribed by D. Pocknee
 
-### Part I
+Part I
 
 12453  
 12534
@@ -11,7 +11,7 @@
 
 ??
 
-### Part 2
+Part 2
 
 12345  
 12435  

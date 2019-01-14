@@ -23,7 +23,7 @@ export default class Bibliography extends Component {
     popup: false,
     showImages: false,
     images: false,
-    folder: false, 
+    folder: false,
   };
 
   textAddressUrl = url => {
@@ -40,41 +40,19 @@ export default class Bibliography extends Component {
 
   render() {
     const {
-      textAddress, popup, textFile, showImages, images, folder
+      popup, textFile, showImages, images, folder,
     } = this.state;
-    const poemMenu = poemDatabase.reduce((poemObj, bookOrCd) => {
-      bookOrCd.poems.forEach(poem => {
-        if (!poemObj[poem.name] && poem.version === bookOrCd.name) {
-          poemObj[poem.name] = 1;
-        }
-        if (poemObj[poem.name] && poem.version === bookOrCd.name) {
-          poemObj[poem.name] = poemObj[poem.name] + 1;
-        }
-      });
-      return poemObj;
-    }, {});
-    const listOfPoems = Object.keys(poemMenu).map(poem => `${poem} (${poemMenu[poem]})`);
     return (
-      <div>
-        <div className="bibliographyTable">
+      <div className="generalBibliography">
+        <section>
           <h1>
-            A Bibliography of all Gysin's <i>Permutation Poems</i>
+            A Bibliography of all Gysin's <strong>Permutation Poems</strong>
           </h1>
-          {/* <BibliographyTable /> */}
-        </div>
-        <div className="poemMenu">
-          {listOfPoems.map((poem, index) => (
-            <span key={`poemCount${index}`} style={{ marginRight: '5px' }}>
-              <strong>{poem}</strong>
-              {' | '}
-            </span>
-          ))}
-        </div>
+        </section>
         <div className="biblographySplit">
           <div className="bibliography">
             {poemDatabase.map((media, mediaIndex) => {
               const authorArray = media.authors.map(author => author).join(', ');
-              const convertName = stringToUrl(media.name);
               const poemsOutput = media.poems.map((poem, poemIndex) => (
                 <p key={`poemIndex${poemIndex}`}>
                   <strong>{poem.name}</strong> (<i>{poem.version}</i> version){' '}
@@ -88,8 +66,11 @@ export default class Bibliography extends Component {
                     </button>
                   )}
                   {poem.images && (
-                    <button type="button" className="imageButton" onClick={() => this.showImages(poem.images, poem.folder)}
-                      >
+                    <button
+                      type="button"
+                      className="imageButton"
+                      onClick={() => this.showImages(poem.images, poem.folder)}
+                    >
                       images
                     </button>
                   )}
@@ -106,11 +87,7 @@ export default class Bibliography extends Component {
           </div>
           {popup && <PoemViewer textAddress={textFile} />}
           <Popup open={showImages} onClose={() => this.hideImages()}>
-            <div
-              className="popup code"
-              tabIndex={0}
-              role="button"
-            >
+            <div className="popup code" tabIndex={0} role="button">
               <ImageViewer imagesArray={images} folder={folder} />
             </div>
           </Popup>
