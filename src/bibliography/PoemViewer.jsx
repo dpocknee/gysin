@@ -29,16 +29,16 @@ export default class PoemViewer extends Component {
 
   splitTextFile = text => {
     const stanzas = text.split('\n\n');
-    return stanzas.map(stanza => {
+    return stanzas.map((stanza, index) => {
       const textLines = stanza.split('\n');
       return (
-        <div className="stanza">
-          {textLines.map(line => {
+        <div className="stanza" key={`stanza${index}`}>
+          {textLines.map((line, textLineIndex) => {
             const splitline = line.split('|');
             return (
-              <div className="poemRow">
-                {splitline.map(column => (
-                  <div className="poemColumn">
+              <div className="poemRow" key={`poemRow${textLineIndex}`}>
+                {splitline.map((column, poemColumnIndex) => (
+                  <div className="poemColumn" key={`poemColumn${poemColumnIndex}`}>
                     <div className="poemElement">{column.replace(/\s/g, '\u00a0')}</div>
                   </div>
                 ))}

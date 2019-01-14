@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import poemDatabase from '../database/poemDatabase';
-import databaseReference from '../database/databaseReference';
 import PoemViewer from './PoemViewer';
-import BibliographyTable from './BibliographyTable';
 import './Bibliography.css';
 
 function stringToUrl(string) {

@@ -7,7 +7,7 @@ I THINK THEREFORE I   AM  | 1 § ** 1 . %
 I THINK THEREFORE   I AM  | 1 § ** . 1 %
 I THINK . THEREFORE I AM  | 1 § . ** 1 %
 I   THEREFORE THINK I AM  | 1 . § ** 1 %
-  I THINK THEREFORE I AM  | 1 § ** 1 %  
+  I THINK THEREFORE I AM  |   1 § ** 1 %  
 
 I THINK THEREFORE I AM .  | 1 § ** 1 % .
 I THINK THEREFORE I .     | 1 § ** 1 % .
