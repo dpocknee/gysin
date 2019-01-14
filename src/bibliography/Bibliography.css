@@ -1,3 +1,5 @@
+@import '../../node_modules/react-image-gallery/styles/css/image-gallery.css';
+
 .bibliographyTable table,
 td,
 th {
@@ -35,10 +37,17 @@ th {
 
 .bibliography button {
   border: 0px;
-  background-color: #89002e;
   color: white;
   padding: 2px;
   cursor: pointer;
+}
+
+.poemButton {
+  background-color: #89002e;
+}
+
+.imageButton {
+  background-color: #e3bb00;
 }
 
 .textFile {

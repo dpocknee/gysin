@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import Popup from 'reactjs-popup';
 import poemDatabase from '../database/poemDatabase';
 import PoemViewer from './PoemViewer';
+import ImageViewer from './ImageViewer';
 import './Bibliography.css';
 
 function stringToUrl(string) {
@@ -19,14 +21,27 @@ export default class Bibliography extends Component {
   state = {
     textFile: '',
     popup: false,
+    showImages: false,
+    images: false,
+    folder: false, 
   };
 
   textAddressUrl = url => {
     this.setState({ textFile: url, popup: true });
   };
 
+  showImages = (images, folder) => {
+    this.setState(state => ({ showImages: true, images, folder }));
+  };
+
+  hideImages = () => {
+    this.setState({ showImages: false });
+  };
+
   render() {
-    const { textAddress, popup, textFile } = this.state;
+    const {
+      textAddress, popup, textFile, showImages, images, folder
+    } = this.state;
     const poemMenu = poemDatabase.reduce((poemObj, bookOrCd) => {
       bookOrCd.poems.forEach(poem => {
         if (!poemObj[poem.name] && poem.version === bookOrCd.name) {
@@ -64,17 +79,20 @@ export default class Bibliography extends Component {
                 <p key={`poemIndex${poemIndex}`}>
                   <strong>{poem.name}</strong> (<i>{poem.version}</i> version){' '}
                   {poem.file && (
-                    <button type="button" onClick={() => this.textAddressUrl(poem.file)}>
+                    <button
+                      className="poemButton"
+                      type="button"
+                      onClick={() => this.textAddressUrl(poem.file)}
+                    >
                       poem
                     </button>
                   )}
-                  {/* <a
-                  href={`../${databaseReference[media.name]}/text/${titleToTextFile(
-                    poem.name,
-                  )}.txt`}
-                >
-                  link
-                </a> */}
+                  {poem.images && (
+                    <button type="button" className="imageButton" onClick={() => this.showImages(poem.images, poem.folder)}
+                      >
+                      images
+                    </button>
+                  )}
                 </p>
               ));
               return (
@@ -87,6 +105,15 @@ export default class Bibliography extends Component {
             })}
           </div>
           {popup && <PoemViewer textAddress={textFile} />}
+          <Popup open={showImages} onClose={() => this.hideImages()}>
+            <div
+              className="popup code"
+              tabIndex={0}
+              role="button"
+            >
+              <ImageViewer imagesArray={images} folder={folder} />
+            </div>
+          </Popup>
         </div>
       </div>
     );

@@ -150,7 +150,7 @@ class Algorithm extends Component {
             </div>
           ))}
         </section>
-        <Popup open={showCode} closeOnDocumentClick>
+        <Popup open={showCode}>
           <div
             className="popup code"
             tabIndex={0}

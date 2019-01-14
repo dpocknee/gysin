@@ -16,6 +16,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-file-reader-input": "^2.0.0",
+    "react-image-gallery": "^0.8.12",
     "react-scripts": "2.1.3",
     "reactjs-popup": "^1.3.2",
     "show-code": "^1.1.1"
