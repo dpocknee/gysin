@@ -29,13 +29,33 @@ export default class Bibliography extends Component {
 
   render() {
     const { textAddress, popup, textFile } = this.state;
+    const poemMenu = poemDatabase.reduce((poemObj, bookOrCd) => {
+      bookOrCd.poems.forEach(poem => {
+        if (!poemObj[poem.name] && poem.version === bookOrCd.name) {
+          poemObj[poem.name] = 1;
+        }
+        if (poemObj[poem.name] && poem.version === bookOrCd.name) {
+          poemObj[poem.name] = poemObj[poem.name] + 1;
+        }
+      });
+      return poemObj;
+    }, {});
+    const listOfPoems = Object.keys(poemMenu).map(poem => `${poem} (${poemMenu[poem]})`);
     return (
       <div>
         <div className="bibliographyTable">
           <h1>
             A Bibliography of all Gysin's <i>Permutation Poems</i>
           </h1>
-          <BibliographyTable />
+          {/* <BibliographyTable /> */}
+        </div>
+        <div className="poemMenu">
+          {listOfPoems.map((poem, index) => (
+            <span key={`poemCount${index}`} style={{ marginRight: '5px' }}>
+              <strong>{poem}</strong>
+              {' | '}
+            </span>
+          ))}
         </div>
         <div className="biblographySplit">
           <div className="bibliography">

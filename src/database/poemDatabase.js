@@ -30,7 +30,18 @@ const poemDatabase = [
     year: 1960,
     authors: ['Brion Gysin', 'William S. Burroughs'],
     medium: 'book',
-    poems: [],
+    poems: [
+      {
+        name: 'JUNK IS NO GOOD BABY',
+        version: 'The Exterminator',
+        file: require('./1960-the-exterminator/text/junk-is-no-good-baby.txt'),
+      },
+      {
+        name: 'KICK THAT HABIT MAN',
+        version: 'The Exterminator',
+        file: require('./1960-the-exterminator/text/kick-that-habit-man.txt'),
+      },
+    ],
   },
   {
     name: 'The Permutated Poems Of Brion Gysin (BBC)',
@@ -108,6 +119,7 @@ const poemDatabase = [
     publisher: 'John Calder',
     location: 'London',
     authors: ['Brion Gysin', 'William S. Burroughs', 'Ian Sommerville'],
+    medium: 'book',
     poems: [
       {
         name: 'BREATHE IN THE WORDS',
@@ -160,6 +172,7 @@ const poemDatabase = [
       {
         name: 'THIS IS SAM FRANCIS',
         version: 'Sam Francis Catalogue',
+        file: require('./1972-sam-francis-catalogue/text/this-is-sam-francis.txt'),
       },
     ],
   },
@@ -183,7 +196,21 @@ const poemDatabase = [
       },
       {
         name: "I DON'T WORK YOU DIG",
-        version: '??',
+        version: 'Songs',
+        file: require('./1981-songs/text/i-dont-work-you-dig.txt'),
+      },
+    ],
+  },
+  {
+    name: 'Orgy Boys',
+    year: 1982,
+    medium: 'CD',
+    authors: ['Brion Gysin'],
+    poems: [
+      {
+        name: "NO POETS DON'T OWN WORDS",
+        version: 'Orgy Boys',
+        file: require('./1982-orgy-boys/text/no-poets-dont-own-words.txt'),
       },
     ],
   },
@@ -271,22 +298,27 @@ const poemDatabase = [
       {
         name: 'JUNK IS NO GOOD BABY',
         version: 'The Exterminator',
+        file: require('./1960-the-exterminator/text/junk-is-no-good-baby.txt'),
       },
       {
         name: 'KICK THAT HABIT MAN',
         version: 'The Exterminator',
+        file: require('./1960-the-exterminator/text/kick-that-habit-man.txt'),
       },
       {
         name: "NO POETS DON'T OWN WORDS",
-        version: '???',
+        version: 'Orgy Boys',
+        file: require('./1982-orgy-boys/text/no-poets-dont-own-words.txt'),
       },
       {
         name: "I DON'T WORK YOU DIG",
         version: 'Songs',
+        file: require('./1981-songs/text/i-dont-work-you-dig.txt'),
       },
       {
         name: 'THIS IS SAM FRANCIS',
         version: 'Sam Francis Catalogue',
+        file: require('./1972-sam-francis-catalogue/text/this-is-sam-francis.txt'),
       },
     ],
   },
@@ -294,11 +326,37 @@ const poemDatabase = [
     name: 'Brion Gysin: Tuning Into The Multimedia Age',
     year: 2003,
     medium: 'book',
-    authors: ['???'],
+    authors: ['Brion Gysin', 'Jose Ferez Kuri'],
     poems: [
       {
-        name: '?????',
-        version: '???',
+        name: 'I AM THAT I AM',
+        version: 'The Third Mind',
+        file: require('./1978-the-third-mind/text/i-am-that-i-am.txt'),
+      },
+      {
+        name: 'CALLING ALL RE ACTIVE AGENTS',
+        version: 'Minutes To Go',
+        file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt'),
+      },
+      {
+        name: 'KICK THAT HABIT MAN',
+        version: 'The Third Mind',
+        file: require('./1978-the-third-mind/text/kick-that-habit-man.txt'),
+      },
+      {
+        name: 'BREATHE IN THE WORDS',
+        version: 'The Third Mind',
+        file: require('./1978-the-third-mind/text/breathe-in-the-words.txt'),
+      },
+      {
+        name: 'JUNK IS NO GOOD BABY',
+        version: 'Brion Gysin Let The Mice In',
+        file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt'),
+      },
+      {
+        name: 'COME TO FREE THE WORDS',
+        version: 'BBC ?',
+        // file: require('./1978-the-third-mind/text/kick-that-habit-man.txt'),
       },
     ],
   },

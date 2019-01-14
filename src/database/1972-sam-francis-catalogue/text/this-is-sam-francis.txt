@@ -1,0 +1,32 @@
+# This Is Sam Francis
+## Sam Francis: Paintings 1947-1972 (1972)
+
+this      is        Sam       Francis
+is        Sam       Francis   this
+Sam       Francis   this      is
+Francis   this      is        Sam
+
+this      Sam       is        Francis
+is        Francis   this      Sam
+Sam       this      Francis   is
+Francis   is        this      Sam
+
+this      Francis   Sam       is
+is        this      Francis   Sam
+Sam       is        this      Francis
+Francis   Sam       is        this
+
+this      is        Francis   Sam
+is        Sam       this      Francis
+Sam       Francis   is        this
+Francis   this      Sam       is
+
+this      Sam       Francis   is
+is        Francis   Sam       this
+Sam       this      is        Francis
+Francis   is        Sam       this
+
+this      Francis   is        Sam
+is        this      Sam       Francis
+Sam       is        Francis   this
+Francis   Sam       this      is

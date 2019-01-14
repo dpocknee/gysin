@@ -19,13 +19,7 @@ const Header = () => (
           <Link to="/gysin/timeline">Timeline</Link>
         </li>
         <li>
-          <Link to="/gysin/bibliography">Bibliography</Link>
-        </li>
-        <li>
-          <Link to="/gysin/poems">The Poems</Link>
-        </li>
-        <li>
-          <Link to="/gysin/iamthatiam">I AM THAT I AM</Link>
+          <Link to="/gysin/bibliography">The Poems</Link>
         </li>
         <li>
           <Link to="/gysin/comparison">Comparison</Link>
