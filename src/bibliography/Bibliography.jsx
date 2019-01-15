@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Popup from 'reactjs-popup';
+import ReactAudioPlayer from 'react-audio-player';
 import poemDatabase from '../database/poemDatabase';
 import PoemViewer from './PoemViewer';
 import ImageViewer from './ImageViewer';
@@ -24,6 +25,7 @@ export default class Bibliography extends Component {
     showImages: false,
     images: false,
     folder: false,
+    playAudio: false,
   };
 
   textAddressUrl = url => {
@@ -38,9 +40,13 @@ export default class Bibliography extends Component {
     this.setState({ showImages: false });
   };
 
+  showAudio = (audio, folder) => {
+    this.setState(state => ({ playAudio: require(`../database/${folder}/audio/${audio}` )}));
+  };
+
   render() {
     const {
-      popup, textFile, showImages, images, folder,
+      popup, textFile, showImages, images, folder, playAudio,
     } = this.state;
     return (
       <div className="generalBibliography">
@@ -51,6 +57,12 @@ export default class Bibliography extends Component {
         </section>
         <div className="biblographySplit">
           <div className="bibliography">
+            {playAudio && (
+              <div>
+                <ReactAudioPlayer src={playAudio} autoPlay controls />
+                {/* <audio src={playAudio} type="audio/mp3" control /> */}
+              </div>
+            )}
             {poemDatabase.map((media, mediaIndex) => {
               const authorArray = media.authors.map(author => author).join(', ');
               const poemsOutput = media.poems.map((poem, poemIndex) => (
@@ -74,6 +86,17 @@ export default class Bibliography extends Component {
                       images
                     </button>
                   )}
+                  {poem.audio
+                    && poem.audio.map((audioFile, audioButtonIndex) => (
+                      <button
+                        type="button"
+                        className="audioButton"
+                        key={`audioButton${poem.name}${audioButtonIndex}`}
+                        onClick={() => this.showAudio(audioFile, poem.folder)}
+                      >
+                        audio
+                      </button>
+                    ))}
                 </p>
               ));
               return (

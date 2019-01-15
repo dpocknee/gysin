@@ -44,10 +44,17 @@ th {
 
 .poemButton {
   background-color: #89002e;
+  margin-right: 2px;
 }
 
 .imageButton {
   background-color: #e3bb00;
+  margin-right: 2px;
+}
+
+.audioButton {
+  background-color: #004c61;
+  margin-right: 2px;
 }
 
 .textFile {
