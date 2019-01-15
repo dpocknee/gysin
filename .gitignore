@@ -24,3 +24,4 @@ yarn-error.log*
 
 **/uncompressed-images
 /src/scratch
+/extra
