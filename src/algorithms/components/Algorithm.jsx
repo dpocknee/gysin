@@ -12,7 +12,8 @@ import '../css/code.css';
 class Algorithm extends Component {
   state = {
     shift: 0,
-    reverseBox: false,
+    reversePattern: false,
+    reverseElements: false,
     infoOpen: false,
     showCode: false,
     originalPermutation: [],
@@ -44,7 +45,11 @@ class Algorithm extends Component {
   };
 
   reverseCheckbox = event => {
-    this.setState({ reverseBox: event.target.checked });
+    this.setState({ reversePattern: event.target.checked });
+  };
+
+  reverseElements = event => {
+    this.setState({ reverseElements: event.target.checked });
   };
 
   openCloseInfo = () => {
@@ -65,17 +70,19 @@ class Algorithm extends Component {
       algorithmType, order, numberOrText, content, coloredOrNot,
     } = this.props;
     const {
-      shift, reverseBox, infoOpen, originalPermutation, showCode,
+      shift, reversePattern, reverseElements, infoOpen, originalPermutation, showCode,
     } = this.state;
 
     const shiftedPermutations = shift === 0 ? originalPermutation : arrayShift(originalPermutation, shift);
 
-    const reversedPermutations = reverseBox
+    const reversedPermutations = reversePattern
       ? shiftedPermutations.map(row => reverse([...row]))
       : shiftedPermutations;
 
+    const reversedContent = reverseElements ? reverse([...content]) : content;
+
     const substitutedContent = numberOrText
-      ? substituteContent(reversedPermutations, order, content)
+      ? substituteContent(reversedPermutations, order, reversedContent)
       : reversedPermutations.map(row => [row, row]);
 
     const algRef = algorithmType.references;
@@ -133,15 +140,26 @@ class Algorithm extends Component {
             min={0 - (order.length - 1)}
             key={`${algorithmType.name}shift`}
           />
-          <label htmlFor={`${algorithmType.name}checkbox`}>Reverse:</label>
-          <input
-            type="checkbox"
-            name={`${algorithmType.name}checkbox`}
-            id={`${algorithmType.name}checkbox`}
-            onChange={e => this.reverseCheckbox(e)}
-          />
+          <div className="checkFonts">
+            <label htmlFor={`${algorithmType.name}checkbox`}>Reverse Pattern:</label>
+            <input
+              type="checkbox"
+              name={`${algorithmType.name}checkbox`}
+              id={`${algorithmType.name}checkbox`}
+              onChange={e => this.reverseCheckbox(e)}
+            />
+          </div>
+          <div className="checkFonts">
+            <label htmlFor={`${algorithmType.name}checkbox`}>Reverse Elements:</label>
+            <input
+              type="checkbox"
+              name={`${algorithmType.name}RevElementsCheckbox`}
+              id={`${algorithmType.name}RevElementsCheckbox`}
+              onChange={e => this.reverseElements(e)}
+            />
+          </div>
           {algorithmType.name === 'Tompkins-Paige Algorithm' && (
-            <div>
+            <div className="checkFonts">
               <label htmlFor={`direction${algorithmType.name}checkbox`}>Direction:</label>
               <input
                 type="checkbox"
