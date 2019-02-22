@@ -12,16 +12,16 @@ const Timeline = () => (
       {timeline.map(date => (
         <div style={{ width: '100%', display: 'flex', flexDirection: 'row' }}>
           <div style={{ width: '50%' }}>
-            {date.forcePosition === 'left' && (
+            {date.position === 'left' && (
               <p>
-                <span className="year">{date.label}</span> {Parser(date.shortContent)}
+                <span className="year">{date.date}</span> {Parser(date.content)}
               </p>
             )}
           </div>
           <div style={{ width: '50%' }}>
             {date.forcePosition === 'right' && (
               <p>
-                <span className="year">{date.label}</span> {Parser(date.shortContent)}
+                <span className="year">{date.date}</span> {Parser(date.content)}
               </p>
             )}
           </div>

@@ -81,18 +81,12 @@ const Home = () => (
       </div>
 
       <div className="text2">
-        <p>
-          Vivamus felis nisi, sollicitudin non ex ac, ornare tempor tortor. Ut elementum diam
-          volutpat erat gravida volutpat. Aenean porttitor ligula eget lorem consequat lacinia ut
-          nec neque. Donec consequat libero dapibus, ultricies purus in, blandit nisi. Phasellus
-          dictum, massa nec interdum viverra, massa lacus porttitor libero, eget porttitor eros sem
-          id sem. Proin commodo nulla odio, eget iaculis dui sollicitudin at. Vivamus a ex risus.
-          Nullam aliquet at diam ut lobortis. Sed vulputate ex velit, sed pulvinar purus auctor a.
-          Etiam convallis volutpat felis, eu pharetra lectus tincidunt in. In vehicula magna orci,
-          vitae iaculis magna elementum sit amet. Sed eu diam orci. Sed sit amet massa in magna
-          fermentum lobortis. Duis at libero quis libero imperdiet vulputate. Donec ac posuere mi.
-          Sed lacinia orci et imperdiet finibus.
-        </p>
+        <p>To do:</p>
+        <p>Get "The Exterminator"</p>
+        <p>Rip "Spoken Word" CD</p>
+        <p>Buy and rip "Steve Lacy Songs" CD</p>
+        <p>Buy and rip "Orgy Boys"</p>
+        <p>Buy and rip "Self Portrait: Jumping"</p>
       </div>
 
       <div className="perm4">

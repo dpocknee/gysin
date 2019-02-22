@@ -77,70 +77,8 @@ const poemDatabase = [
     ],
   },
   {
-    name: 'Anthology Of Concrete Poetry',
-    year: 1967,
-    date: '1967',
-    publisher: 'Something Else Press',
-    authors: ['Brion Gysin', 'Emmett Williams (ed.)'],
-    medium: 'book',
-    poems: [
-      {
-        name: 'I AM THAT I AM',
-        version: 'Anthology Of Concrete Poetry',
-        file: require('./1967-anthology-of-concrete-poetry/text/i-am-that-i-am.txt'),
-        images: ['i-am-that-i-am1.jpg', 'i-am-that-i-am2.jpg'],
-        folder: '1967-anthology-of-concrete-poetry',
-      },
-    ],
-  },
-  {
-    name: 'Brion Gysin Let The Mice In',
-    year: 1973,
-    date: 'March 1973',
-    publisher: 'Something Else Press',
-    location: 'West Glover, VT',
-    authors: ['Brion Gysin', 'William S. Burroughs', 'Ian Sommerville', 'ed. Jan Herman'],
-    medium: 'book',
-    poems: [
-      {
-        name: 'I AM THAT I AM',
-        version: 'Brion Gysin Let The Mice In',
-        file: require('./1973-let-the-mice-in/text/i-am-that-i-am.txt'),
-        images: [
-          'iamthatiam1.jpg',
-          'iamthatiam2.jpg',
-          'iamthatiam3.jpg',
-          'iamthatiam4.jpg',
-          'iamthatiam5.jpg',
-        ],
-        folder: '1973-let-the-mice-in',
-      },
-      {
-        name: 'JUNK IS NO GOOD BABY',
-        version: 'Brion Gysin Let The Mice In',
-        file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt'),
-        images: ['junk-is-no-good-baby.jpg'],
-        folder: '1973-let-the-mice-in',
-      },
-      {
-        name: 'KICK THAT HABIT MAN',
-        version: 'Brion Gysin Let The Mice In',
-        file: require('./1973-let-the-mice-in/text/kick-that-habit-man.txt'),
-        images: ['kick-that-habit-man.jpg'],
-        folder: '1973-let-the-mice-in',
-      },
-      {
-        name: 'PISTOL POEM',
-        version: 'Brion Gysin Let The Mice In',
-        file: require('./1973-let-the-mice-in/text/pistol-poem.txt'),
-        images: ['pistol-poem1.jpg', 'pistol-poem2.jpg'],
-        folder: '1973-let-the-mice-in',
-      },
-    ],
-  },
-  {
     name: 'The Third Mind',
-    year: 1978,
+    year: 1965,
     date: '1978 (US) / 1979 (UK) / Originally finished in 1965',
     publisher: 'John Calder',
     location: 'London',
@@ -206,6 +144,68 @@ const poemDatabase = [
     ],
   },
   {
+    name: 'Anthology Of Concrete Poetry',
+    year: 1967,
+    date: '1967',
+    publisher: 'Something Else Press',
+    authors: ['Brion Gysin', 'Emmett Williams (ed.)'],
+    medium: 'book',
+    poems: [
+      {
+        name: 'I AM THAT I AM',
+        version: 'Anthology Of Concrete Poetry',
+        file: require('./1967-anthology-of-concrete-poetry/text/i-am-that-i-am.txt'),
+        images: ['i-am-that-i-am1.jpg', 'i-am-that-i-am2.jpg'],
+        folder: '1967-anthology-of-concrete-poetry',
+      },
+    ],
+  },
+  {
+    name: 'Brion Gysin Let The Mice In',
+    year: 1973,
+    date: 'March 1973',
+    publisher: 'Something Else Press',
+    location: 'West Glover, VT',
+    authors: ['Brion Gysin', 'William S. Burroughs', 'Ian Sommerville', 'ed. Jan Herman'],
+    medium: 'book',
+    poems: [
+      {
+        name: 'I AM THAT I AM',
+        version: 'Brion Gysin Let The Mice In',
+        file: require('./1973-let-the-mice-in/text/i-am-that-i-am.txt'),
+        images: [
+          'iamthatiam1.jpg',
+          'iamthatiam2.jpg',
+          'iamthatiam3.jpg',
+          'iamthatiam4.jpg',
+          'iamthatiam5.jpg',
+        ],
+        folder: '1973-let-the-mice-in',
+      },
+      {
+        name: 'JUNK IS NO GOOD BABY',
+        version: 'Brion Gysin Let The Mice In',
+        file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt'),
+        images: ['junk-is-no-good-baby.jpg'],
+        folder: '1973-let-the-mice-in',
+      },
+      {
+        name: 'KICK THAT HABIT MAN',
+        version: 'Brion Gysin Let The Mice In',
+        file: require('./1973-let-the-mice-in/text/kick-that-habit-man.txt'),
+        images: ['kick-that-habit-man.jpg'],
+        folder: '1973-let-the-mice-in',
+      },
+      {
+        name: 'PISTOL POEM',
+        version: 'Brion Gysin Let The Mice In',
+        file: require('./1973-let-the-mice-in/text/pistol-poem.txt'),
+        images: ['pistol-poem1.jpg', 'pistol-poem2.jpg'],
+        folder: '1973-let-the-mice-in',
+      },
+    ],
+  },
+  {
     name: 'Exhibition Catalogue for “Sam Fancis, Paintings, 1947-1972”',
     year: 1972,
     medium: 'catalogue',
@@ -224,10 +224,6 @@ const poemDatabase = [
     medium: 'CD',
     authors: ['Brion Gysin', 'Steve Lacy'],
     poems: [
-      {
-        name: 'I AM THAT I AM',
-        version: '???',
-      },
       {
         name: 'JUNK IS NO GOOD BABY',
         version: '???',
@@ -438,11 +434,19 @@ const poemDatabase = [
     authors: ['Brion Gysin', 'William S. Burroughs'],
     poems: [
       {
-        name: 'I AM THAT I AM',
-        version: '???',
+        name: 'PISTOL POEM',
+        version: 'The Permutated Poems Of Brion Gysin (BBC)',
       },
       {
         name: 'COME TO FREE THE WORDS',
+        version: '???',
+      },
+      {
+        name: "NO POETS DON'T OWN WORDS",
+        version: '???',
+      },
+      {
+        name: 'CALLING ALL REACTIVE AGENTS',
         version: '???',
       },
       {
@@ -454,12 +458,8 @@ const poemDatabase = [
         version: '???',
       },
       {
-        name: 'PISTOL POEM',
-        version: '???',
-      },
-      {
-        name: "NO POETS DON'T OWN WORDS",
-        version: '???',
+        name: 'I AM THAT I AM',
+        version: 'The Permutated Poems Of Brion Gysin (BBC)',
       },
     ],
   },
