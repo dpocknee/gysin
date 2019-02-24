@@ -19,7 +19,7 @@ const Timeline = () => (
             )}
           </div>
           <div style={{ width: '50%' }}>
-            {date.forcePosition === 'right' && (
+            {date.position === 'right' && (
               <p>
                 <span className="year">{date.date}</span> {Parser(date.content)}
               </p>
