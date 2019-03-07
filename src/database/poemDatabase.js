@@ -45,49 +45,56 @@ const poemDatabase = [
         name: 'WHO SENDS THE MAN?',
         version: 'The Exterminator',
         file: require('./1960-the-exterminator/text/who-sends-the-man.txt'),
+        images: ['who-sends-the-man.jpg'],
         folder: '1960-the-exterminator',
       },
       {
         name: 'KICK THAT HABIT MAN',
         version: 'The Exterminator',
         file: require('./1960-the-exterminator/text/kick-that-habit-man.txt'),
+        images: ['kick-that-habit-man.jpg'],
         folder: '1960-the-exterminator',
       },
       {
         name: 'JUNK IS NO GOOD BABY',
         version: 'The Exterminator',
         file: require('./1960-the-exterminator/text/junk-is-no-good-baby.txt'),
+        images: ['junk-is-no-good-baby.jpg'],
         folder: '1960-the-exterminator',
       },
       {
         name: 'CAN MOTHER BE WRONG?',
         version: 'The Exterminator',
         file: require('./1960-the-exterminator/text/can-mother-be-wrong.txt'),
+        images: ['can-mother-be-wrong.jpg'],
         folder: '1960-the-exterminator',
       },
       {
         name: 'SHORT TIME TO GO',
         version: 'The Exterminator',
         file: require('./1960-the-exterminator/text/short-time-to-go.txt'),
+        images: ['short-time-to-go.jpg'],
         folder: '1960-the-exterminator',
       },
       {
         name: 'IN THE BEGINNING WAS THE WORD',
         version: 'The Exterminator',
         file: require('./1960-the-exterminator/text/in-the-beginning-was-the-word.txt'),
+        images: ['in-the-beginning-was-the-word_1.jpg', 'in-the-beginning-was-the-word_2.jpg'],
         folder: '1960-the-exterminator',
       },
       {
         name: 'RUB OUT THE WORD(S)',
         version: 'The Exterminator',
         file: require('./1960-the-exterminator/text/rub-out-the-words.txt'),
+        images: ['rub-out-the-words.jpg'],
         folder: '1960-the-exterminator',
       },
       {
         name: 'PROCLAIM PRESENT TIME OVER',
         version: 'The Exterminator',
         file: require('./1960-the-exterminator/text/proclaim-present-time-over.txt'),
-        images: ['present-time.jpg'],
+        images: ['proclaim-present-time-over.jpg'],
         folder: '1960-the-exterminator',
       },
     ],
@@ -99,18 +106,51 @@ const poemDatabase = [
     medium: 'radio',
     poems: [
       {
+        name: 'COME TO FREE THE WORDS',
+        version: 'The Permutated Poems Of Brion Gysin (BBC)',
+        note: 'Mentioned in the BBC listings',
+        file: require('./1961-bbc/text/come-to-free-the-words.txt'),
+      },
+      {
+        name: 'CALLING ALL REACTIVE AGENTS',
+        version: 'The Permutated Poems Of Brion Gysin (BBC)',
+        note: 'Mentioned in the BBC listings',
+        file: require('./1961-bbc/text/calling-all-reactive-agents.txt'),
+      },
+      {
+        name: 'JUNK IS NO GOOD BABY',
+        note:
+          'The recording of this for the broadcast is mentioned in the Geiger book and in the BBC listings',
+        version: 'The Exterminator',
+      },
+      {
+        name: 'KICK THAT HABIT MAN',
+        note:
+          'The recording of this for the broadcast is mentioned in the Geiger book and in the BBC listings',
+        version: 'The Exterminator',
+      },
+      {
+        name: 'LIKE YOU JUST SAID ?',
+        note: 'Mentioned in the BBC listings',
+        version: 'The Permutated Poems Of Brion Gysin (BBC)',
+      },
+      {
         name: 'I AM THAT I AM',
         version: 'The Permutated Poems Of Brion Gysin (BBC)',
+        note:
+          'The recording of this for the broadcast is mentioned in the Geiger book and in the BBC listings',
         file: require('./1961-bbc/text/i-am-that-i-am.txt'),
       },
       {
         name: "NO POETS DON'T OWN WORDS",
         version: 'The Permutated Poems Of Brion Gysin (BBC)',
+        note: 'not mentioned in the BBC listings or in the Geiger book but is on The Spoken Word',
         file: require('./1961-bbc/text/no-poets-dont-own-words.txt'),
       },
       {
         name: 'PISTOL POEM',
         version: 'The Permutated Poems Of Brion Gysin (BBC)',
+        note: 'mentioned in the Geiger book and many other places',
         file: require('./1961-bbc/text/pistol-poem.txt'),
       },
     ],
@@ -154,7 +194,7 @@ const poemDatabase = [
       },
       {
         name: 'JUNK IS NO GOOD BABY',
-        version: 'Brion Gysin Let The Mice In',
+        version: 'The Third Mind',
         file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt'),
         images: ['junk-is-no-good-baby.jpg'],
         folder: '1978-the-third-mind',
@@ -223,7 +263,7 @@ const poemDatabase = [
       },
       {
         name: 'JUNK IS NO GOOD BABY',
-        version: 'Brion Gysin Let The Mice In',
+        version: 'The Third Mind',
         file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt'),
         images: ['junk-is-no-good-baby.jpg'],
         folder: '1973-let-the-mice-in',
@@ -388,15 +428,14 @@ const poemDatabase = [
       },
       {
         name: 'JUNK IS NO GOOD BABY',
-        version:
-          'it says it is from "The Exterminator" [it is not] - might be from "The Last Museum"',
+        version: 'Back In No Time',
         file: require('./2002-back-in-no-time/text/junk-is-no-good-baby.txt'),
         images: ['junk-is-no-good-baby.jpg'],
         folder: '2002-back-in-no-time',
       },
       {
         name: 'KICK THAT HABIT MAN',
-        version: 'it says it is from "The Exterminator" [it is not]',
+        version: 'Back In No Time',
         file: require('./2002-back-in-no-time/text/kick-that-habit-man.txt'),
         images: ['kick-that-habit-man.jpg'],
         folder: '2002-back-in-no-time',

@@ -180,6 +180,37 @@ section .text2 p {
   color: #89002e;
 }
 
+.text2 h1 {
+  font-size: 1.5em;
+  color: #fffefc;
+  padding: 5px 5px 5px 5px;
+  max-width: 300px;
+  background-color: #89002e;
+}
+
+section .text2 strong {
+  color: #fffefc;
+  background-color: #89002e;
+}
+
+section .text3 p {
+  background-color: #fffefc;
+  color: #e3bb00;
+}
+
+.text3 h1 {
+  font-size: 1.5em;
+  color: #fffefc;
+  padding: 5px 5px 5px 5px;
+  max-width: 300px;
+  background-color: #e3bb00;
+}
+
+section .text3 strong {
+  color: #fffefc;
+  background-color: #e3bb00;
+}
+
 section .code {
   margin: 10px 0px 10px 0px;
   color: #89002e;
