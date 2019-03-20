@@ -242,6 +242,10 @@ const Home = () => (
           <strong>Magic Square</strong> style ordering which I still haven't cracked! These included
           the poems <strong>THIS IS SAM FRANCIS</strong>, <strong>I DON'T WORK YOU DIG</strong> and
           the <strong>Orgy Boys</strong> version of <strong>NO POETS DON'T OWN WORDS</strong>.
+          Perhaps this change back to an older style of arrangement, first used in the BBC radio
+          version of <strong>NO POETS DON'T OWN WORDS</strong> might partly have been due to the
+          loss of his collaborator, Ian Sommerville who was killed in a car accident at the age of
+          36 on 5 February 1976.
         </p>
       </div>
       <div className="introheader">

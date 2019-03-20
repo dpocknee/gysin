@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../css/Algorithms.css';
 
-class SelectContent extends Component {
+class Form extends Component {
   state = {
     element1: 'I',
     element2: 'AM',
@@ -17,7 +17,6 @@ class SelectContent extends Component {
   };
 
   onChangeHandler = event => {
-    console.log(event.target.id);
     const inputType = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
     this.setState({
       [event.target.id]: inputType,
@@ -109,7 +108,8 @@ class SelectContent extends Component {
             Ordering{' '}
             <select id="ordering" name="ordering" onChange={this.onChangeHandler}>
               <option select="numerical">Numerical</option>
-              <option select="grayCode">Gray code</option>
+              {/* <option select="lcg">LCG</option>
+              <option select="fischerYates">Fischer-Yates</option> */}
             </select>
           </form>
         </div>
@@ -118,8 +118,8 @@ class SelectContent extends Component {
   }
 }
 
-SelectContent.propTypes = {
+Form.propTypes = {
   clickHandler: PropTypes.func.isRequired,
 };
 
-export default SelectContent;
+export default Form;

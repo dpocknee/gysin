@@ -2,7 +2,7 @@ import React from 'react';
 import { Router } from '@reach/router';
 import Header from './Header';
 import Home from './home/components/Home';
-import Algorithms from './algorithms/components/Algorithms';
+import Algorithms from './algorithms/components/AlgorithmPage';
 import Bibliography from './bibliography/Bibliography';
 import Timeline from './timeline/Timeline';
 import Comparison from './comparison/Comparison';

@@ -87,3 +87,37 @@
     "link": "lehmer_teaching-combinatorial-tricks.pdf"
   }
 }
+
+
+const papers =   
+  [
+  "1956_tompkins_computer-attacks-on-problems.pdf",
+  "1963_johnson_generation-of-permutations-by-adjacent-transposition.pdf",
+  "1960_combinatorial-analysis.pdf",
+  "1963_shen_ACM-202_generation-of-permutations-in-lexicographic-order.pdf",
+  "1960_lehmer_teaching-combinatorial-tricks.pdf",
+  "1965_hall-knuth_combinatorial-analysis-and-computers.pdf",
+  "1960_papworth_change-ringing-and-computers.pdf",
+  "1970_ord-smith_generation-of-permutation-sequences-1.pdf",
+  "1961_coveyou-sullivan_ACM-71_permutation.pdf",
+  "1970_treble_computers-and-composition-in-change-ringing.pdf",
+  "1961_wells_generation-of-permutations-by-transposition.pdf",      
+  "1971_ord-smith_generation-of-permutation-sequences-2.pdf",
+  "1962_certification-of-ACM-87-and-115.pdf",         
+  "1975_fike_a-permutation-generation-method.pdf",
+  "1962_eaves_ACM-133.pdf",                    
+  "1975_rohl_improving-fikes-algorithm.pdf",
+  "1962_howell_ACM-87_permutation-generator.pdf",
+  "1977_sedgewick_permutation-generation-methods.pdf",
+  "1962_howell_generation-of-permutations-by-addition.pdf",
+  "1977_woodall_generation-of-permutation-sequences.pdf",
+  "1962_peck-schrack_ACM-86-permute.pdf",             
+  "1978_roy_evaluation-of-permutation-algorithms.pdf",
+  "1962_schrack-shimrat_ACM-102_perutation-in-lexicographic-order.pdf",
+  "1982_topor_functional-programs-for-generating-permutations.pdf",
+  "1962_shen_on-the-generation-of-permutations.pdf",   
+  "1984_spoletini_generation-of-permutations-lehmer-howell.pdf",
+  "1962_trotter_ACM-115_perm.pdf",      
+  "2012_durocher-et-al_cool-lex-order-and-k-ary-catalan-structures.pdf",
+  "1963_heap_permutations-by-interchanges.pdf"
+];

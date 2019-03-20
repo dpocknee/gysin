@@ -1,47 +1,246 @@
 import React, { Component } from 'react';
-import Prism from 'prismjs';
-import Parser from 'html-react-parser';
 import PropTypes from 'prop-types';
+import { Parser } from 'prismjs';
+// import  from 'html-react-parse';
 import Popup from 'reactjs-popup';
-import { reverse } from 'lodash';
-import algorithmDatabase from '../data/papers.json';
-import { arrayShift, substituteContent } from '../utils/utils';
+import {
+  rotate,
+  rotateArrays,
+  replace,
+  reverseArrays
+} from 'historical-permutations';
 import '../css/prism.css';
 import '../css/code.css';
 
+function deepEquals(array1, array2) {
+  array1.every((value, index) => {
+    return value === array2[index];
+  });
+}
+
 class Algorithm extends Component {
   state = {
-    shift: 0,
+    rotation: 0,
     reversePattern: false,
     reverseElements: false,
     infoOpen: false,
     showCode: false,
-    originalPermutation: [],
     tompkinsDirection: 1,
+    originalPermutation: [],
+    replacedPermutations: [],
+    rotatedPermutations: [],
+    cssReference: {}
   };
 
   componentDidMount() {
-    const { algorithmType, order } = this.props;
-    const originalPermutation = algorithmType.arguments
-      ? algorithmType.algorithm(order, 1)
-      : algorithmType.algorithm(order);
+    const { arrayOfNumbers, userSelectedArray } = this.props;
 
-    this.setState({ originalPermutation });
+    const originalPermutation = this.generatePermutation();
+    const replacedPermutations = replace(
+      originalPermutation,
+      arrayOfNumbers,
+      userSelectedArray,
+      0
+    );
+    this.setState({
+      originalPermutation,
+      replacedPermutations,
+      rotatedPermutations: replacedPermutations
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { algorithmType, order } = this.props;
-    const { tompkinsDirection } = this.state;
-    if (prevProps.order !== order || tompkinsDirection !== prevState.tompkinsDirection) {
-      const originalPermutation = algorithmType.name === 'Tompkins-Paige Algorithm'
-        ? algorithmType.algorithm(order, tompkinsDirection)
-        : algorithmType.algorithm(order);
-      this.setState({ originalPermutation });
+    const {
+      numberOrText,
+      numberOfElements,
+      userSelectedArray,
+      arrayOfNumbers
+    } = this.props;
+
+    const { rotation, reverseElements, reversePattern } = this.state;
+
+    // Number of Elements Changes
+
+    if (
+      numberOfElements !== prevProps.numberOfElements &&
+      deepEquals(userSelectedArray, prevProps.userSelectedArray)
+    ) {
+      const originalPermutation = this.generatePermutation();
+
+      const reversedPattern = reversePattern
+        ? reverseArrays(originalPermutation)
+        : originalPermutation;
+      const reversedElements = reverseElements
+        ? arrayOfNumbers.reverse()
+        : arrayOfNumbers;
+
+      const numberTextArray =
+        numberOrText === 'number' ? arrayOfNumbers : userSelectedArray;
+
+      const replacedPermutations = replace(
+        reversedPattern,
+        reversedElements,
+        numberTextArray,
+        0
+      );
+      const cssReference = numberTextArray.reduce(
+        (referenceObject, value, index) => {
+          referenceObject[String(value)] = reverseElements[index];
+          return referenceObject;
+        },
+        {}
+      );
+
+      const permutationShown =
+        numberOrText === 'number'
+          ? replacedPermutations[0]
+          : replacedPermutations[1];
+
+      const rotatedPermutations =
+        rotation === 0
+          ? permutationShown
+          : rotateArrays(permutationShown, rotation);
+
+      this.setState({
+        originalPermutation,
+        replacedPermutations,
+        rotatedPermutations,
+        cssReference
+      });
     }
   }
 
+  permutationUpdate = amountToUpdate => {
+    const { arrayOfNumbers, numberOrText, userSelectedArray } = this.props;
+    const { reverseElements, reversePattern, rotation } = this.state;
+
+    const originalPermutation =
+      amountToUpdate >= 0
+        ? this.generatePermutation()
+        : state.originalPermutation;
+
+    let reversedPattern;
+    let reversedElements;
+    let replacedPermutations = state.replacedPermutations;
+    let numberTextArray;
+    let permutationShown =
+      numberOrText === 'number'
+        ? replacedPermutations[0]
+        : replacedPermutations[1];
+    let cssReference = state.cssReference;
+
+    if (amountToUpdate >= 1) {
+      reversedPattern = reversePattern
+        ? reverseArrays(originalPermutation)
+        : originalPermutation;
+      reversedElements = reverseElements
+        ? arrayOfNumbers.reverse()
+        : arrayOfNumbers;
+      numberTextArray =
+        numberOrText === 'number' ? arrayOfNumbers : userSelectedArray;
+    }
+    if (amountToUpdate >= 2) {
+      replacedPermutations = replace(
+        reversedPattern,
+        reversedElements,
+        numberTextArray,
+        0
+      );
+      cssReference = numberTextArray.reduce((referenceObject, value, index) => {
+        referenceObject[String(value)] = reverseElements[index];
+        return referenceObject;
+      }, {});
+    }
+    if (amountToUpdate >= 3) {
+      permutationShown =
+        numberOrText === 'number'
+          ? replacedPermutations[0]
+          : replacedPermutations[1];
+    }
+    const rotatedPermutations =
+      rotation === 0
+        ? permutationShown
+        : rotateArrays(permutationShown, rotation);
+    this.setState({
+      originalPermutation,
+      replacedPermutations,
+      rotatedPermutations,
+      cssReference
+    });
+  };
+
+  generatePermutation = () => {
+    const { algorithmData, arrayOfNumbers, numberOfElements } = this.props;
+    const { tompkinsDirection } = this.state;
+
+    let originalPermutation;
+    // 2 = 2 parameters, 1 = array, 0 = number
+    if (algorithmData.arguments === 2) {
+      originalPermutation = algorithmData.algorithm(
+        arrayOfNumbers,
+        tompkinsDirection
+      );
+    } else if (algorithmData.arguments === 1) {
+      originalPermutation = algorithmData.algorithm(arrayOfNumbers);
+    } else if (algorithmData.arguments === 0) {
+      originalPermutation = algorithmData.algorithm(numberOfElements);
+    }
+    return originalPermutation;
+  };
+
+  replaceContent = (originalPermutation, reverseElements, reversePattern) => {
+    // console.log(originalPermutation, reverseElements, reversePattern);
+    const { userSelectedArray, arrayOfNumbers, numberOrText } = this.props;
+    const reversePatternOrNot = reversePattern
+      ? reverseArrays(originalPermutation)
+      : originalPermutation;
+    const numberOrTextArray = numberOrText ? arrayOfNumbers : userSelectedArray;
+    // console.log(
+    //   'numberOrText',
+    //   numberOrTextArray,
+    //   numberOrText,
+    //   arrayOfNumbers,
+    //   userSelectedArray
+    // );
+    const reversedElementsOrNot = reverseElements
+      ? numberOrTextArray.reverse()
+      : numberOrTextArray;
+    // console.log(
+    //   'replace',
+    //   reversePatternOrNot,
+    //   arrayOfNumbers,
+    //   reversedElementsOrNot
+    // );
+    return replace(
+      reversePatternOrNot,
+      arrayOfNumbers,
+      reversedElementsOrNot,
+      1
+    );
+  };
+
+  reversePattern = permutation => {
+    const { reversePattern } = this.state;
+    return reversePattern ? reverseArrays(permutation) : permutation;
+  };
+
+  rotateOutputArray = () => {
+    const { numberOrText } = this.props;
+    this.setState(state => {
+      const {
+        originalPermutation,
+        rotatedReversedPermutations,
+        rotation
+      } = state;
+      const arrayToUse = numberOrText
+        ? originalPermutation
+        : rotatedReversedPermutations;
+      return { displayedPermutation: rotate(arrayToUse, rotation) };
+    });
+  };
+
   shiftHandler = event => {
-    this.setState({ shift: parseInt(event.target.value, 10) });
+    this.setState({ rotation: parseInt(event.target.value, 10) });
   };
 
   reverseCheckbox = event => {
@@ -66,45 +265,26 @@ class Algorithm extends Component {
   };
 
   render() {
-    const {
-      algorithmType, order, numberOrText, content, coloredOrNot,
-    } = this.props;
-    const {
-      shift, reversePattern, reverseElements, infoOpen, originalPermutation, showCode,
-    } = this.state;
+    const { algorithmData, numberOfElements, coloredOrNot } = this.props;
+    const { displayedPermutation, infoOpen, showCode } = this.state;
+    console.log('displayedPermutation', displayedPermutation);
 
-    const shiftedPermutations = shift === 0 ? originalPermutation : arrayShift(originalPermutation, shift);
-
-    const reversedPermutations = reversePattern
-      ? shiftedPermutations.map(row => reverse([...row]))
-      : shiftedPermutations;
-
-    const reversedContent = reverseElements ? reverse([...content]) : content;
-
-    const substitutedContent = numberOrText
-      ? substituteContent(reversedPermutations, order, reversedContent)
-      : reversedPermutations.map(row => [row, row]);
-
-    const algRef = algorithmType.references;
-    const codeTest = algorithmType.algorithm.toString();
-    const highlightedCode = Prism.highlight(codeTest, Prism.languages.javascript, 'javascript');
+    const paperAddress = 'papers';
+    const highlightedCode = algorithmData.code; // Prism.highlight(algorithmData.code, Prism.languages.javascript, 'javascript');
     return (
       <div className="indivAlg">
         <header>
-          <h1>{`${algorithmType.name} (${algorithmType.year})`}</h1>
+          <h1>{`${algorithmData.name} (${algorithmData.year})`}</h1>
           <div className="info">
             {infoOpen && (
               <>
                 <div className="writing">
-                  <p>{algorithmType.info}</p>
-                  {algRef.map((reference, index) => (
-                    <p key={reference + String(index)}>
-                      {algorithmDatabase[algRef[index]].author}
-                      <br />
-                      <a href={`papers/${algorithmDatabase[algRef[index]].link}`}>
-                        {algorithmDatabase[algRef[index]].title}
-                      </a>{' '}
-                      ({algorithmDatabase[algRef[index]].year})
+                  <p>{algorithmData.info}</p>
+                  {algorithmData.references.map((reference, index) => (
+                    <p key={reference[1] + String(index)}>
+                      <a href={`${paperAddress}/${reference[1]}`}>
+                        {reference[0]}
+                      </a>
                     </p>
                   ))}
                 </div>
@@ -136,53 +316,61 @@ class Algorithm extends Component {
             type="number"
             placeholder="0"
             onChange={e => this.shiftHandler(e)}
-            max={order.length - 1}
-            min={0 - (order.length - 1)}
-            key={`${algorithmType.name}shift`}
+            max={numberOfElements - 1}
+            min={0 - (numberOfElements - 1)}
+            key={`${algorithmData.name}shift`}
           />
           <div className="checkFonts">
-            <label htmlFor={`${algorithmType.name}checkbox`}>Reverse Pattern:</label>
+            <label htmlFor={`${algorithmData.name}checkbox`}>
+              Reverse Pattern:
+            </label>
             <input
               type="checkbox"
-              name={`${algorithmType.name}checkbox`}
-              id={`${algorithmType.name}checkbox`}
+              name={`${algorithmData.name}checkbox`}
+              id={`${algorithmData.name}checkbox`}
               onChange={e => this.reverseCheckbox(e)}
             />
           </div>
           <div className="checkFonts">
-            <label htmlFor={`${algorithmType.name}checkbox`}>Reverse Elements:</label>
+            <label htmlFor={`${algorithmData.name}checkbox`}>
+              Reverse Elements:
+            </label>
             <input
               type="checkbox"
-              name={`${algorithmType.name}RevElementsCheckbox`}
-              id={`${algorithmType.name}RevElementsCheckbox`}
+              name={`${algorithmData.name}RevElementsCheckbox`}
+              id={`${algorithmData.name}RevElementsCheckbox`}
               onChange={e => this.reverseElements(e)}
             />
           </div>
-          {algorithmType.name === 'Tompkins-Paige Algorithm' && (
+          {algorithmData.name === 'Tompkins-Paige Algorithm' && (
             <div className="checkFonts">
-              <label htmlFor={`direction${algorithmType.name}checkbox`}>Direction:</label>
+              <label htmlFor={`direction${algorithmData.name}checkbox`}>
+                Direction:
+              </label>
               <input
                 type="checkbox"
-                name={`direction${algorithmType.name}checkbox`}
-                id={`direction${algorithmType.name}checkbox`}
+                name={`direction${algorithmData.name}checkbox`}
+                id={`direction${algorithmData.name}checkbox`}
                 onChange={e => this.tompkinsDirection(e)}
               />
             </div>
           )}
         </section>
         <section className="indivcolumns">
-          {substitutedContent.map((perm, index) => (
-            <div key={`${algorithmType.name}${index}`} className="allColumns">
-              {coloredOrNot
-                && perm[1].map((element, secondIndex) => (
+          {displayedPermutation.map((perm, index) => (
+            <div key={`${algorithmData.name}${index}`} className="allColumns">
+              {coloredOrNot &&
+                perm.map((element, secondIndex) => (
                   <div
-                    key={`${algorithmType.name}${index}${secondIndex}${perm[0][secondIndex]}`}
-                    className={`element${perm[0][secondIndex]} indivElement`}
+                    key={`${algorithmData.name}${index}${secondIndex}${
+                      perm[secondIndex]
+                    }`}
+                    className={`element${perm[secondIndex]} indivElement`}
                   >
                     {element}
                   </div>
                 ))}
-              {!coloredOrNot && perm[1].join(' ')}
+              {!coloredOrNot && perm.join(' ')}
             </div>
           ))}
         </section>
@@ -195,7 +383,8 @@ class Algorithm extends Component {
             onKeyDown={() => this.showHideCode()}
           >
             <pre>
-              <code>{Parser(highlightedCode)}</code>
+              {/* <code>{Parser(highlightedCode)}</code> */}
+              <code>{highlightedCode}</code>
             </pre>
           </div>
         </Popup>
@@ -205,11 +394,11 @@ class Algorithm extends Component {
 }
 
 Algorithm.propTypes = {
-  algorithmType: PropTypes.func.isRequired,
+  algorithmData: PropTypes.func.isRequired,
   order: PropTypes.arrayOf(PropTypes.number).isRequired,
   content: PropTypes.arrayOf(PropTypes.string).isRequired,
   numberOrText: PropTypes.bool.isRequired,
-  coloredOrNot: PropTypes.bool.isRequired,
+  coloredOrNot: PropTypes.bool.isRequired
 };
 
 export default Algorithm;

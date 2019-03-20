@@ -3,25 +3,26 @@ import Algorithm from '../algorithms/components/Algorithm';
 import ComparisonPoemViewer from './ComparisonPoemViewer';
 import PoemMenu from './PoemMenu';
 import poemDatabase from '../database/poemDatabase';
-import algorithmData from '../algorithms/algorithms';
+import algorithmData from '../algorithms/data/algorithmDatabase';
 
 export default class Comparison extends Component {
   state = {
     selectedPoem: null,
-    selectedAlgorithm: 'tompkins',
+    selectedAlgorithm: 'tompkins'
   };
 
   choosePoem = poemChosen => {
     this.setState({ selectedPoem: poemChosen });
   };
 
-  filterPoems = selectedPoem => poemDatabase.reduce((filteredArr, bookOrCd) => {
-    const validPoems = bookOrCd.poems.filter(
-      poem => poem.name === selectedPoem && poem.version === bookOrCd.name,
-    );
-    if (validPoems.length > 0) return [...filteredArr, ...validPoems];
-    return filteredArr;
-  }, []);
+  filterPoems = selectedPoem =>
+    poemDatabase.reduce((filteredArr, bookOrCd) => {
+      const validPoems = bookOrCd.poems.filter(
+        poem => poem.name === selectedPoem && poem.version === bookOrCd.name
+      );
+      if (validPoems.length > 0) return [...filteredArr, ...validPoems];
+      return filteredArr;
+    }, []);
 
   changeAlgorithm = event => {
     this.setState({ selectedAlgorithm: event.target.value });
@@ -55,17 +56,27 @@ export default class Comparison extends Component {
                     <option value="tompkins">Tompkins-Paige</option>
                     <option value="lehmer">Lehmer Constant Difference</option>
                     <option value="wells">Wells</option>
-                    <option value="shenShimratFischer">Reverse Lexicographic</option>
-                    <option value="steinhausJohnsonTrotter">Steinhaus-Johnson-Trotter</option>
+                    <option value="shenShimratFischer">
+                      Reverse Lexicographic
+                    </option>
+                    <option value="steinhausJohnsonTrotter">
+                      Steinhaus-Johnson-Trotter
+                    </option>
                     <option value="heap">Heap</option>
                   </select>
                 </div>
               </div>
             </div>
-            <PoemMenu poemDatabase={poemDatabase} choosePoem={this.choosePoem} />
+            <PoemMenu
+              poemDatabase={poemDatabase}
+              choosePoem={this.choosePoem}
+            />
             <div className="comparisonPoems">
               {filteredPoems.map((poem, index) => (
-                <ComparisonPoemViewer key={`filteredPoems${index}`} textAddress={poem.file} />
+                <ComparisonPoemViewer
+                  key={`filteredPoems${index}`}
+                  textAddress={poem.file}
+                />
               ))}
             </div>
           </div>
