@@ -168,6 +168,7 @@ section .abstract p {
 section .text1 p {
   background-color: #fffefc;
   color: #004c61;
+  font-size: 0.8em;
 }
 
 section .text1 strong {
@@ -178,6 +179,7 @@ section .text1 strong {
 section .text2 p {
   background-color: #fffefc;
   color: #89002e;
+  font-size: 0.8em;
 }
 
 .text2 h1 {
@@ -196,6 +198,7 @@ section .text2 strong {
 section .text3 p {
   background-color: #fffefc;
   color: #e3bb00;
+  font-size: 0.8em;
 }
 
 .text3 h1 {
@@ -228,4 +231,11 @@ section .perm2 p {
 section .perm3 p {
   color: #e3bb00;
   background-color: #004c61;
+}
+section .perm7 {
+  font-size: 0.8em;
+}
+
+section .perm8 {
+  font-size: 0.8em;
 }

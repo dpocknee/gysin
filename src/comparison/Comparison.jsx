@@ -94,3 +94,16 @@ export default class Comparison extends Component {
     );
   }
 }
+
+{
+  /* <Algorithm
+key={`algorithm${algorithm.name.split(' ')[0]}${index}`}
+algorithmData={algorithm}
+coloredOrNot={coloredOrNot}
+numberOrText={numberOrText}
+arrayOfNumbers={arrayOfNumbers}
+numberOfElements={numberOfElements}
+userSelectedArray={userSelectedArray}
+orderArray={orderArray}
+/> */
+}
