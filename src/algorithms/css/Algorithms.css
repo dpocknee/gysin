@@ -173,12 +173,15 @@ h3 {
 }
 
 .popup {
-  font-size: 8px;
+  font-size: 12px;
+  width: 580px;
+  word-wrap: break-word;
 }
 
 .code {
   width: 600px;
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
+  word-wrap: break-word;
 }
 
 .algorithmsParams {

@@ -25,11 +25,9 @@ const algorithmDatabase = [
       <b>endif</b>;
   <b>while</b> <i>i</i>&le;<i>N</i> <b>repeat</b>;
   </code>
-  </pre>
 
   NOTE: In the algorithm above, rotate() is a function that does a cyclic left-rotation of the first <i>i</i> elments of the array:
 
-  <pre>
   <code>
     <i>t</i>:=P[1]; <i>k</i>:=2;
     <b>loop while</b> <i>k</i>&le;<i>i</i>: P[<i>k</i>-1]:=P[<i>k</i>] <b>repeat</b>;
@@ -54,38 +52,39 @@ const algorithmDatabase = [
   },
   {
     algorithm: lehmer,
-    code: `> "We pass on to what may be called the Constant Difference Method. Given a permutation like
-    >
-    > 2 3 1 5 4 0 7 6 8
-    >
-    > one can obtain immediately another one by increasing every mark by unity, replacing 9 by 0 rather than by 10; thus
-    >
-    > 3 4 2 6 5 1 8 0 7 9
-    >
-    > In fact, we get in this way 10 permutations all with the same set o differences modulo 10 between consecutive marks, namely
-    >
-    > 1 8 4 9 6 7 2 5 2
-    >
-    > One may take as representative of these 10 permutation whose first element
-    > is zero, namely
-    >
-    > 0 1 9 3 2 8 5 7 4 6.
-    >
-    > Similarly the permutation
-    >
-    > 1 0 3 2 8 5 7 4 6
-    >
-    > in which we have taken the marks modulo 9, is one of 9 represented by
-    >
-    > 0 8 2 1 7 4 6 3 5.
-    >
-    > This continues on down to the case of only two marks 0 1. This suggests the following method exemplified by the case of n = 5. We begin with the permutation 0 1 2 3 4. Adding 1 1 1 1 1 modulo 5 five times to return to 0 1 2 3 4. We now subtract 1 1 1 1 and then add it back again, this time modulo 4, obtaining 0 1 2 3 0. Once more we add 1 1 1 1, this time modulo 5, obtaining 0 2 3 4 1. This is our next permutation and there are four others it represents. Continuing we come to 0 4 1 2 3 which, after giving 1 0 2 3 4, 2 1 3 4 0, 3 2 4 0 1, 4 3 0 1 2, 0 4 1 2 3 gives rise in turn to
-    >
-    > 0 3 0 1 2, 0 0 1 2 3, 0 0 0 1 2, 0 0 1 2 0, 0 0 2 3 1
-    >
-    > and finally 0 1 3 4 2, our next permutation. The process finally returns to 0 1 2 3 4.
-    >
-    > This process has been coded for the SWAC and for the 701. It is about as fast as the Walker method. If permutations with specified properties of the differences between consecutive marks are required the process is very much faster than any previous one. An example of such a property is the requirement of the differences themselves forming a permutation as in cable splicing and other management problems. The method lends itself to fractional precision representation. For n = 8, for example, one permutation can be made from its predecessor in 128 microseconds on the SWAC."`,
+    code: `
+    We pass on to what may be called the Constant Difference Method. Given a permutation like
+    
+    2 3 1 5 4 0 7 6 8
+
+    one can obtain immediately another one by increasing every mark by unity, replacing 9 by 0 rather than by 10; thus
+    
+    3 4 2 6 5 1 8 0 7 9
+    
+     In fact, we get in this way 10 permutations all with the same set o differences modulo 10 between consecutive marks, namely
+    
+     1 8 4 9 6 7 2 5 2
+    
+     One may take as representative of these 10 permutation whose first element
+     is zero, namely
+    
+     0 1 9 3 2 8 5 7 4 6.
+    
+     Similarly the permutation
+    
+     1 0 3 2 8 5 7 4 6
+    
+     in which we have taken the marks modulo 9, is one of 9 represented by
+    
+     0 8 2 1 7 4 6 3 5.
+    
+     This continues on down to the case of only two marks 0 1. This suggests the following method exemplified by the case of n = 5. We begin with the permutation 0 1 2 3 4. Adding 1 1 1 1 1 modulo 5 five times to return to 0 1 2 3 4. We now subtract 1 1 1 1 and then add it back again, this time modulo 4, obtaining 0 1 2 3 0. Once more we add 1 1 1 1, this time modulo 5, obtaining 0 2 3 4 1. This is our next permutation and there are four others it represents. Continuing we come to 0 4 1 2 3 which, after giving 1 0 2 3 4, 2 1 3 4 0, 3 2 4 0 1, 4 3 0 1 2, 0 4 1 2 3 gives rise in turn to
+    
+     0 3 0 1 2, 0 0 1 2 3, 0 0 0 1 2, 0 0 1 2 0, 0 0 2 3 1
+    
+     and finally 0 1 3 4 2, our next permutation. The process finally returns to 0 1 2 3 4.
+    
+     This process has been coded for the SWAC and for the 701. It is about as fast as the Walker method. If permutations with specified properties of the differences between consecutive marks are required the process is very much faster than any previous one. An example of such a property is the requirement of the differences themselves forming a permutation as in cable splicing and other management problems. The method lends itself to fractional precision representation. For n = 8, for example, one permutation can be made from its predecessor in 128 microseconds on the SWAC."`,
     year: 1960,
     arguments: 1,
     name: 'D. H. Lehmer Constant Difference Method',
@@ -100,31 +99,32 @@ const algorithmDatabase = [
   },
   {
     algorithm: hall,
-    code: `> "We turn now to a second way of making a permutation correspond to its
-    > factorial digits. This method was suggested by Marshall Hall and may be
-    > called the Method of Derangements. In the previous method the objects
-    > being permuted can be any computer words. In the Hall method the
-    > objects must be the numbers 0(1)_n_ — 1. In any such permutation we may,
-    > for each mark _k_ > 0, ask how many of the _k_ marks less than k actually
-    > follow k. Denoting this number by Sx we see at once that
-    >
-    > _S_<sub>_n_-1</sub>, _S_<sub>_n_-2</sub>, ... _S_<sub>2</sub>, _S_<sub>1</sub>
-    >
-    > is a set of factorial digits of a number which corresponds to the given
-    > permutation and which, conversely, characterizes this permutation. We
-    > have for example the following correspondencies when n = 7.
-    >
-    > | _S_<sub>6</sub> | _S_<sub>5</sub> | _S_<sub>4</sub> | _S_<sub>3</sub> | _S_<sub>2</sub> | _S_<sub>1</sub> |     |     |     |     |     |     |     |     |
-    > | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- | --- | --- | --- | --- | --- | --- | --- | --- |
-    > | 0               | 0               | 0               | 0               | 0               | 0               |     | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
-    > | 3               | 1               | 4               | 1               | 2               | 1               |     | 4   | 2   | 1   | 6   | 3   | 5   | 0   |
-    > | 1               | 2               | 2               | 3               | 1               | 1               |     | 3   | 1   | 4   | 5   | 2   | 6   | 0   |
-    > | 6               | 5               | 4               | 3               | 2               | 1               |     | 6   | 5   | 4   | 3   | 2   | 1   | 0   |
-    >
-    > The coding of this method is fairly straightforward. The resulting routine
-    > is a good deal slower than the Tompkins-Paige method. The parities of
-    > successive permutations strictly alternate. The method is well suited to
-    > requirement (c) [in the paper]."`,
+    code: `
+    We turn now to a second way of making a permutation correspond to its
+    factorial digits. This method was suggested by Marshall Hall and may be
+    called the Method of Derangements. In the previous method the objects
+    being permuted can be any computer words. In the Hall method the
+    objects must be the numbers 0(1)_n_ — 1. In any such permutation we may,
+    for each mark _k_ > 0, ask how many of the _k_ marks less than k actually
+     follow k. Denoting this number by Sx we see at once that
+    
+     _S_<sub>_n_-1</sub>, _S_<sub>_n_-2</sub>, ... _S_<sub>2</sub>, _S_<sub>1</sub>
+    
+     is a set of factorial digits of a number which corresponds to the given
+     permutation and which, conversely, characterizes this permutation. We
+     have for example the following correspondencies when n = 7.
+    
+     | _S_<sub>6</sub> | _S_<sub>5</sub> | _S_<sub>4</sub> | _S_<sub>3</sub> | _S_<sub>2</sub> | _S_<sub>1</sub> |     |     |     |     |     |     |     |     |
+     | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- | --- | --- | --- | --- | --- | --- | --- | --- |
+     | 0               | 0               | 0               | 0               | 0               | 0               |     | 0   | 1   | 2   | 3   | 4   | 5   | 6   |
+     | 3               | 1               | 4               | 1               | 2               | 1               |     | 4   | 2   | 1   | 6   | 3   | 5   | 0   |
+     | 1               | 2               | 2               | 3               | 1               | 1               |     | 3   | 1   | 4   | 5   | 2   | 6   | 0   |
+     | 6               | 5               | 4               | 3               | 2               | 1               |     | 6   | 5   | 4   | 3   | 2   | 1   | 0   |
+    
+     The coding of this method is fairly straightforward. The resulting routine
+     is a good deal slower than the Tompkins-Paige method. The parities of
+     successive permutations strictly alternate. The method is well suited to
+     requirement (c) [in the paper].`,
     year: 1960,
     arguments: 0,
     name: 'Hall',
@@ -244,8 +244,10 @@ const algorithmDatabase = [
     info:
       'This algorithm was implemented in `ALGOL` by Peck and Schrack in 1962.',
     references: [
-      'J. E. L. Peck and G. F. Schrack "Algorithm 86: Permute" (1962)',
-      '1962_peck-schrack_ACM-86-permute.pdf'
+      [
+        'J. E. L. Peck and G. F. Schrack "Algorithm 86: Permute" (1962)',
+        '1962_peck-schrack_ACM-86-permute.pdf'
+      ]
     ]
   },
   {
@@ -329,15 +331,16 @@ const algorithmDatabase = [
   },
   {
     algorithm: myrvoldRuskey,
-    code: `> "The second order, which we call remainder order, was used by Myrvold and Ruskey [15]. Informally, let ( x , y ) denote the swap of the xth and yth symbol of a string. For example, applying ( 4 , 2 ) to 456123 gives 416523. Swaps are also called transpositions. In remainder order, the ith permutation is obtained from the identity permutation by a series of _n_ − 1 transpositions. The first indices of the transpositions are _n_, _n_ − 1 , ... , 2. The second indices are remainders when _i_ is successively divided by _n_, *n*− 1 , ... , 2, plus one. For example, here are the calculations for _i_ = 92 and _n_ = 5
-    >
-    > | 92 ÷ 5 = 18 | 18 ÷ 4 = 4  | 4 ÷ 3 = 1   | 1 ÷ 2 = 0     |
-    > | ----------- | ----------- | ----------- | ------------- |
-    > | remainder 2 | remainder 2 | remainder 1 | remainder 1 . |
-    >
-    > In this calculation, each successive quotient is used in the next division, and the divisors are in turn 5, 4, 3, 2. The underlined remainders (plus one) imply that the 92nd permutation for n = 5 is obtained from 12345 by successively applying the following transpositions: ( 5 , 3 ), ( 4 , 3 ), ( 3 , 2 ), ( 2 , 2 ) . The resulting permutation is 14253... [the first object has rank 0]... Although this description is somewhat unorthodox, it directly translates into a simple unranking algorithm, which converts an integer _i_ into the object of rank _i_. In remainder order, the unranking and ranking algorithms use O(_n_) arithmetic operations on values that can be as large as _n!_ ."
-    >
-    > Stephane Durocher, Pak Ching Li, Debajyoti Mondal, Frank Ruskey, Aaron Williams "Cool-lex order and k-ary Catalan structures", _Journal of Discrete Algorithms_, Volume 16, 2012, Pages 287-307,`,
+    code: `
+    "The second order, which we call remainder order, was used by Myrvold and Ruskey [15]. Informally, let ( x , y ) denote the swap of the xth and yth symbol of a string. For example, applying ( 4 , 2 ) to 456123 gives 416523. Swaps are also called transpositions. In remainder order, the ith permutation is obtained from the identity permutation by a series of _n_ − 1 transpositions. The first indices of the transpositions are _n_, _n_ − 1 , ... , 2. The second indices are remainders when _i_ is successively divided by _n_, *n*− 1 , ... , 2, plus one. For example, here are the calculations for _i_ = 92 and _n_ = 5
+    
+     | 92 ÷ 5 = 18 | 18 ÷ 4 = 4  | 4 ÷ 3 = 1   | 1 ÷ 2 = 0     |
+     | ----------- | ----------- | ----------- | ------------- |
+     | remainder 2 | remainder 2 | remainder 1 | remainder 1 . |
+    
+     In this calculation, each successive quotient is used in the next division, and the divisors are in turn 5, 4, 3, 2. The underlined remainders (plus one) imply that the 92nd permutation for n = 5 is obtained from 12345 by successively applying the following transpositions: ( 5 , 3 ), ( 4 , 3 ), ( 3 , 2 ), ( 2 , 2 ) . The resulting permutation is 14253... [the first object has rank 0]... Although this description is somewhat unorthodox, it directly translates into a simple unranking algorithm, which converts an integer _i_ into the object of rank _i_. In remainder order, the unranking and ranking algorithms use O(_n_) arithmetic operations on values that can be as large as _n!_ ."
+    
+     Stephane Durocher, Pak Ching Li, Debajyoti Mondal, Frank Ruskey, Aaron Williams "Cool-lex order and k-ary Catalan structures", _Journal of Discrete Algorithms_, Volume 16, 2012, Pages 287-307,`,
     year: 2001,
     name: 'Myrvold-Ruskey (remainder order)',
     arguments: 0,

@@ -6,18 +6,6 @@ import PoemViewer from './PoemViewer';
 import ImageViewer from './ImageViewer';
 import './Bibliography.css';
 
-function stringToUrl(string) {
-  const splitWords = string.split(' ');
-  const decapitalize = splitWords.map(word => `${word[0].toLowerCase()}${word.slice(1)}`);
-  return decapitalize.join('-');
-}
-
-function titleToTextFile(string) {
-  const splitWords = string.split(' ');
-  const decapitalize = splitWords.map(word => `${word.toLowerCase()}`);
-  return decapitalize.join('-');
-}
-
 export default class Bibliography extends Component {
   state = {
     textFile: '',
@@ -25,7 +13,7 @@ export default class Bibliography extends Component {
     showImages: false,
     images: false,
     folder: false,
-    playAudio: false,
+    playAudio: false
   };
 
   textAddressUrl = url => {
@@ -41,12 +29,19 @@ export default class Bibliography extends Component {
   };
 
   showAudio = (audio, folder) => {
-    this.setState(state => ({ playAudio: require(`../database/${folder}/audio/${audio}` )}));
+    this.setState(state => ({
+      playAudio: require(`../database/${folder}/audio/${audio}`)
+    }));
   };
 
   render() {
     const {
-      popup, textFile, showImages, images, folder, playAudio,
+      popup,
+      textFile,
+      showImages,
+      images,
+      folder,
+      playAudio
     } = this.state;
     return (
       <div className="generalBibliography">
@@ -64,7 +59,9 @@ export default class Bibliography extends Component {
               </div>
             )}
             {poemDatabase.map((media, mediaIndex) => {
-              const authorArray = media.authors.map(author => author).join(', ');
+              const authorArray = media.authors
+                .map(author => author)
+                .join(', ');
               const poemsOutput = media.poems.map((poem, poemIndex) => (
                 <p key={`poemIndex${poemIndex}`}>
                   <strong>{poem.name}</strong> (<i>{poem.version}</i> version){' '}
@@ -86,8 +83,8 @@ export default class Bibliography extends Component {
                       images
                     </button>
                   )}
-                  {poem.audio
-                    && poem.audio.map((audioFile, audioButtonIndex) => (
+                  {poem.audio &&
+                    poem.audio.map((audioFile, audioButtonIndex) => (
                       <button
                         type="button"
                         className="audioButton"

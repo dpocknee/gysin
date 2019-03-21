@@ -11,15 +11,18 @@ class Form extends Component {
     element5: 'AM',
     element6: '6',
     numberOfElements: 5,
-    coloredOrNot: false,
-    numberOrText: false,
-    ordering: 'numerical',
+    coloredOrNot: true,
+    numberOrText: true,
+    ordering: 'numerical'
   };
 
   onChangeHandler = event => {
-    const inputType = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+    const inputType =
+      event.target.type === 'checkbox'
+        ? event.target.checked
+        : event.target.value;
     this.setState({
-      [event.target.id]: inputType,
+      [event.target.id]: inputType
     });
   };
 
@@ -93,9 +96,21 @@ class Form extends Component {
               onChange={this.onChangeHandler}
             />
             <br />
-            <input type="checkbox" id="coloredOrNot" onChange={this.onChangeHandler} />
-            {coloredOrNot ? 'Colour Permutations' : 'Show Permutations as Plain Text'}
-            <input type="checkbox" id="numberOrText" onChange={this.onChangeHandler} />
+            <input
+              type="checkbox"
+              id="coloredOrNot"
+              defaultChecked
+              onChange={this.onChangeHandler}
+            />
+            {coloredOrNot
+              ? 'Colour Permutations'
+              : 'Show Permutations as Plain Text'}
+            <input
+              type="checkbox"
+              id="numberOrText"
+              defaultChecked
+              onChange={this.onChangeHandler}
+            />
             {numberOrText
               ? 'Show Permutations Using the Elements Above'
               : 'Show Permutations as Numbers'}
@@ -106,7 +121,11 @@ class Form extends Component {
               onClick={event => clickHandler(event, this.state)}
             />
             Ordering{' '}
-            <select id="ordering" name="ordering" onChange={this.onChangeHandler}>
+            <select
+              id="ordering"
+              name="ordering"
+              onChange={this.onChangeHandler}
+            >
               <option select="numerical">Numerical</option>
               {/* <option select="lcg">LCG</option>
               <option select="fischerYates">Fischer-Yates</option> */}
@@ -119,7 +138,7 @@ class Form extends Component {
 }
 
 Form.propTypes = {
-  clickHandler: PropTypes.func.isRequired,
+  clickHandler: PropTypes.func.isRequired
 };
 
 export default Form;

@@ -5,8 +5,9 @@
   "homepage": "http://davidpocknee.ricercata.org/gysin",
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "historical-permutations": "^0.2.0",
+    "historical-permutations": "^0.2.2",
     "html-react-parser": "^0.4.7",
+    "markdown-it": "^8.4.2",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",

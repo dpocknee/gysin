@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Parser } from 'prismjs';
-// import  from 'html-react-parse';
+import MarkdownIt from 'markdown-it';
+import parse from 'html-react-parser';
 import Popup from 'reactjs-popup';
-import {
-  rotate,
-  rotateArrays,
-  replace,
-  reverseArrays
-} from 'historical-permutations';
+import { rotateArrays, replace, reverseArrays } from 'historical-permutations';
 import '../css/prism.css';
 import '../css/code.css';
 
@@ -17,6 +12,19 @@ function deepEquals(array1, array2) {
     return value === array2[index];
   });
 }
+
+function reverseNonMutate(array) {
+  const maxIndex = array.length - 1;
+  return array.map((value, index) => {
+    return array[maxIndex - index];
+  });
+}
+
+const md = new MarkdownIt({
+  html: true,
+  linkify: true,
+  typographer: true
+});
 
 class Algorithm extends Component {
   state = {
@@ -28,151 +36,49 @@ class Algorithm extends Component {
     tompkinsDirection: 1,
     originalPermutation: [],
     replacedPermutations: [],
-    rotatedPermutations: [],
-    cssReference: {}
+    rotatedNumberArray: [],
+    rotatedTextArray: []
   };
 
-  componentDidMount() {
-    const { arrayOfNumbers, userSelectedArray } = this.props;
-
-    const originalPermutation = this.generatePermutation();
-    const replacedPermutations = replace(
-      originalPermutation,
-      arrayOfNumbers,
-      userSelectedArray,
-      0
-    );
-    this.setState({
-      originalPermutation,
-      replacedPermutations,
-      rotatedPermutations: replacedPermutations
-    });
+  componentWillMount() {
+    this.permutationUpdate(0);
   }
 
   componentDidUpdate(prevProps, prevState) {
+    const { numberOrText, numberOfElements, userSelectedArray } = this.props;
+
     const {
-      numberOrText,
-      numberOfElements,
-      userSelectedArray,
-      arrayOfNumbers
-    } = this.props;
-
-    const { rotation, reverseElements, reversePattern } = this.state;
-
-    // Number of Elements Changes
-
+      rotation,
+      reverseElements,
+      reversePattern,
+      tompkinsDirection
+    } = this.state;
     if (
-      numberOfElements !== prevProps.numberOfElements &&
+      numberOfElements !== prevProps.numberOfElements ||
+      tompkinsDirection !== prevState.tompkinsDirection
+    ) {
+      // Number of Elements Changes
+      this.permutationUpdate(0);
+    } else if (
+      reversePattern !== prevState.reversePattern ||
+      reverseElements !== prevState.reverseElements ||
+      numberOrText !== prevProps.numberOrText ||
       deepEquals(userSelectedArray, prevProps.userSelectedArray)
     ) {
-      const originalPermutation = this.generatePermutation();
-
-      const reversedPattern = reversePattern
-        ? reverseArrays(originalPermutation)
-        : originalPermutation;
-      const reversedElements = reverseElements
-        ? arrayOfNumbers.reverse()
-        : arrayOfNumbers;
-
-      const numberTextArray =
-        numberOrText === 'number' ? arrayOfNumbers : userSelectedArray;
-
-      const replacedPermutations = replace(
-        reversedPattern,
-        reversedElements,
-        numberTextArray,
-        0
-      );
-      const cssReference = numberTextArray.reduce(
-        (referenceObject, value, index) => {
-          referenceObject[String(value)] = reverseElements[index];
-          return referenceObject;
-        },
-        {}
-      );
-
-      const permutationShown =
-        numberOrText === 'number'
-          ? replacedPermutations[0]
-          : replacedPermutations[1];
-
-      const rotatedPermutations =
-        rotation === 0
-          ? permutationShown
-          : rotateArrays(permutationShown, rotation);
-
-      this.setState({
-        originalPermutation,
-        replacedPermutations,
-        rotatedPermutations,
-        cssReference
-      });
+      // pattern or elements are reversed or inputted user array changes
+      this.permutationUpdate(1);
+    } else if (rotation !== prevState.rotation) {
+      // rotation changes
+      this.permutationUpdate(2);
     }
   }
 
-  permutationUpdate = amountToUpdate => {
-    const { arrayOfNumbers, numberOrText, userSelectedArray } = this.props;
-    const { reverseElements, reversePattern, rotation } = this.state;
-
-    const originalPermutation =
-      amountToUpdate >= 0
-        ? this.generatePermutation()
-        : state.originalPermutation;
-
-    let reversedPattern;
-    let reversedElements;
-    let replacedPermutations = state.replacedPermutations;
-    let numberTextArray;
-    let permutationShown =
-      numberOrText === 'number'
-        ? replacedPermutations[0]
-        : replacedPermutations[1];
-    let cssReference = state.cssReference;
-
-    if (amountToUpdate >= 1) {
-      reversedPattern = reversePattern
-        ? reverseArrays(originalPermutation)
-        : originalPermutation;
-      reversedElements = reverseElements
-        ? arrayOfNumbers.reverse()
-        : arrayOfNumbers;
-      numberTextArray =
-        numberOrText === 'number' ? arrayOfNumbers : userSelectedArray;
-    }
-    if (amountToUpdate >= 2) {
-      replacedPermutations = replace(
-        reversedPattern,
-        reversedElements,
-        numberTextArray,
-        0
-      );
-      cssReference = numberTextArray.reduce((referenceObject, value, index) => {
-        referenceObject[String(value)] = reverseElements[index];
-        return referenceObject;
-      }, {});
-    }
-    if (amountToUpdate >= 3) {
-      permutationShown =
-        numberOrText === 'number'
-          ? replacedPermutations[0]
-          : replacedPermutations[1];
-    }
-    const rotatedPermutations =
-      rotation === 0
-        ? permutationShown
-        : rotateArrays(permutationShown, rotation);
-    this.setState({
-      originalPermutation,
-      replacedPermutations,
-      rotatedPermutations,
-      cssReference
-    });
-  };
-
-  generatePermutation = () => {
-    const { algorithmData, arrayOfNumbers, numberOfElements } = this.props;
-    const { tompkinsDirection } = this.state;
-
+  generatePermutation = (
+    algorithmData,
+    arrayOfNumbers,
+    numberOfElements,
+    tompkinsDirection
+  ) => {
     let originalPermutation;
     // 2 = 2 parameters, 1 = array, 0 = number
     if (algorithmData.arguments === 2) {
@@ -188,54 +94,72 @@ class Algorithm extends Component {
     return originalPermutation;
   };
 
-  replaceContent = (originalPermutation, reverseElements, reversePattern) => {
-    // console.log(originalPermutation, reverseElements, reversePattern);
-    const { userSelectedArray, arrayOfNumbers, numberOrText } = this.props;
-    const reversePatternOrNot = reversePattern
-      ? reverseArrays(originalPermutation)
-      : originalPermutation;
-    const numberOrTextArray = numberOrText ? arrayOfNumbers : userSelectedArray;
-    // console.log(
-    //   'numberOrText',
-    //   numberOrTextArray,
-    //   numberOrText,
-    //   arrayOfNumbers,
-    //   userSelectedArray
-    // );
-    const reversedElementsOrNot = reverseElements
-      ? numberOrTextArray.reverse()
-      : numberOrTextArray;
-    // console.log(
-    //   'replace',
-    //   reversePatternOrNot,
-    //   arrayOfNumbers,
-    //   reversedElementsOrNot
-    // );
-    return replace(
-      reversePatternOrNot,
-      arrayOfNumbers,
-      reversedElementsOrNot,
-      1
-    );
-  };
-
-  reversePattern = permutation => {
-    const { reversePattern } = this.state;
-    return reversePattern ? reverseArrays(permutation) : permutation;
-  };
-
-  rotateOutputArray = () => {
-    const { numberOrText } = this.props;
-    this.setState(state => {
+  permutationUpdate = amountToUpdate => {
+    this.setState((state, props) => {
       const {
-        originalPermutation,
-        rotatedReversedPermutations,
-        rotation
+        arrayOfNumbers,
+        numberOrText,
+        userSelectedArray,
+        algorithmData,
+        numberOfElements
+      } = props;
+
+      const {
+        reverseElements,
+        reversePattern,
+        rotation,
+        tompkinsDirection
       } = state;
-      const arrayToUse = numberOrText
-        ? originalPermutation
-        : rotatedReversedPermutations;
-      return { displayedPermutation: rotate(arrayToUse, rotation) };
+
+      let replacedPermutationsUpdate = state.replacedPermutations.map(x => x);
+
+      // generate permutation
+      const originalPermutationUpdate =
+        amountToUpdate <= 0
+          ? this.generatePermutation(
+              algorithmData,
+              arrayOfNumbers,
+              numberOfElements,
+              tompkinsDirection
+            ).map(x => x)
+          : state.originalPermutation.map(x => x);
+
+      // reverse pattern or elements
+      if (amountToUpdate <= 1) {
+        const reversedPattern = reversePattern
+          ? reverseArrays(originalPermutationUpdate)
+          : originalPermutationUpdate;
+        const reversedElements = reverseElements
+          ? reverseNonMutate(arrayOfNumbers)
+          : arrayOfNumbers;
+        const numberTextArray = numberOrText
+          ? userSelectedArray
+          : arrayOfNumbers;
+        replacedPermutationsUpdate = replace(
+          reversedPattern,
+          reversedElements,
+          numberTextArray,
+          2
+        );
+      }
+
+      // rotate array
+      const rotatedNumberArray =
+        rotation === 0
+          ? replacedPermutationsUpdate[0]
+          : rotateArrays(replacedPermutationsUpdate[0], rotation);
+
+      const rotatedTextArray =
+        rotation === 0
+          ? replacedPermutationsUpdate[1]
+          : rotateArrays(replacedPermutationsUpdate[1], rotation);
+
+      return {
+        originalPermutation: originalPermutationUpdate,
+        replacedPermutations: replacedPermutationsUpdate,
+        rotatedNumberArray,
+        rotatedTextArray
+      };
     });
   };
 
@@ -244,6 +168,7 @@ class Algorithm extends Component {
   };
 
   reverseCheckbox = event => {
+    console.log('reversed', event.target.checked);
     this.setState({ reversePattern: event.target.checked });
   };
 
@@ -265,12 +190,21 @@ class Algorithm extends Component {
   };
 
   render() {
-    const { algorithmData, numberOfElements, coloredOrNot } = this.props;
-    const { displayedPermutation, infoOpen, showCode } = this.state;
-    console.log('displayedPermutation', displayedPermutation);
+    const {
+      orderArray,
+      algorithmData,
+      numberOfElements,
+      coloredOrNot
+    } = this.props;
+
+    const {
+      rotatedNumberArray,
+      rotatedTextArray,
+      infoOpen,
+      showCode
+    } = this.state;
 
     const paperAddress = 'papers';
-    const highlightedCode = algorithmData.code; // Prism.highlight(algorithmData.code, Prism.languages.javascript, 'javascript');
     return (
       <div className="indivAlg">
         <header>
@@ -357,20 +291,25 @@ class Algorithm extends Component {
           )}
         </section>
         <section className="indivcolumns">
-          {displayedPermutation.map((perm, index) => (
-            <div key={`${algorithmData.name}${index}`} className="allColumns">
-              {coloredOrNot &&
-                perm.map((element, secondIndex) => (
-                  <div
-                    key={`${algorithmData.name}${index}${secondIndex}${
-                      perm[secondIndex]
-                    }`}
-                    className={`element${perm[secondIndex]} indivElement`}
-                  >
-                    {element}
-                  </div>
-                ))}
-              {!coloredOrNot && perm.join(' ')}
+          {orderArray.map((permNumber, index) => (
+            <div
+              key={`${algorithmData.name}${index}Perm`}
+              className="allColumns"
+            >
+              {coloredOrNot
+                ? rotatedTextArray[permNumber].map((element, secondIndex) => (
+                    <div
+                      key={`${
+                        algorithmData.name
+                      }${index}${secondIndex}${element}`}
+                      className={`element${
+                        rotatedNumberArray[index][secondIndex]
+                      } indivElement`}
+                    >
+                      {element}
+                    </div>
+                  ))
+                : rotatedTextArray[permNumber].join(' ')}
             </div>
           ))}
         </section>
@@ -382,10 +321,7 @@ class Algorithm extends Component {
             onClick={() => this.showHideCode()}
             onKeyDown={() => this.showHideCode()}
           >
-            <pre>
-              {/* <code>{Parser(highlightedCode)}</code> */}
-              <code>{highlightedCode}</code>
-            </pre>
+            {parse(md.render(algorithmData.code))}
           </div>
         </Popup>
       </div>
@@ -394,11 +330,21 @@ class Algorithm extends Component {
 }
 
 Algorithm.propTypes = {
-  algorithmData: PropTypes.func.isRequired,
-  order: PropTypes.arrayOf(PropTypes.number).isRequired,
-  content: PropTypes.arrayOf(PropTypes.string).isRequired,
+  algorithmData: PropTypes.shape({
+    algorithm: PropTypes.func,
+    code: PropTypes.string,
+    year: PropTypes.number,
+    name: PropTypes.string,
+    arguments: PropTypes.number,
+    info: PropTypes.string,
+    references: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
+  }).isRequired,
+  coloredOrNot: PropTypes.bool.isRequired,
   numberOrText: PropTypes.bool.isRequired,
-  coloredOrNot: PropTypes.bool.isRequired
+  arrayOfNumbers: PropTypes.arrayOf(PropTypes.number).isRequired,
+  numberOfElements: PropTypes.number.isRequired,
+  userSelectedArray: PropTypes.arrayOf(PropTypes.string).isRequired,
+  orderArray: PropTypes.arrayOf(PropTypes.number).isRequired
 };
 
 export default Algorithm;
