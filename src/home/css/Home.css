@@ -17,6 +17,10 @@ section {
   text-justify: auto;
 }
 
+.home {
+  font-size: 0.9em;
+}
+
 @media (min-width: 601px) {
   section {
     width: 50%;
@@ -142,7 +146,7 @@ section .introheader strong {
   width: 100%;
   text-align: justify;
   text-justify: auto;
-  font-size: 0.8em;
+  font-size: 1em;
   color: #e3bb00;
 }
 
@@ -156,8 +160,10 @@ section .introheader strong {
   padding: 0px;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 0.9em;
+  margin-left: 10px;
+  margin-right: 10px;
   box-sizing: border-box;
+  font-size: 0.8em;
 }
 
 section .abstract p {
@@ -168,7 +174,7 @@ section .abstract p {
 section .text1 p {
   background-color: #fffefc;
   color: #004c61;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 section .text1 strong {
@@ -179,7 +185,7 @@ section .text1 strong {
 section .text2 p {
   background-color: #fffefc;
   color: #89002e;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .text2 h1 {
@@ -198,7 +204,7 @@ section .text2 strong {
 section .text3 p {
   background-color: #fffefc;
   color: #e3bb00;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .text3 h1 {
@@ -218,7 +224,7 @@ section .code {
   margin: 10px 0px 10px 0px;
   color: #89002e;
   background-color: #e3bb00;
-  font-size: 0.8em;
+  font-size: 1em;
   text-align: left;
   text-justify: inter-word;
 }
@@ -233,9 +239,9 @@ section .perm3 p {
   background-color: #004c61;
 }
 section .perm7 {
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 section .perm8 {
-  font-size: 0.8em;
+  font-size: 1em;
 }

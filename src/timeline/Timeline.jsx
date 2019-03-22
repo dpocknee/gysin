@@ -12,7 +12,7 @@ const Timeline = () => (
     <div className="timeline">
       {timeline.map((date, index) =>
         date.position === 'year' ? (
-          <h2>{date.date}</h2>
+          <h2 key={`timelineHeader${index}_${date.date}`}>{date.date}</h2>
         ) : (
           <div
             key={`timeline${index}_${date.date}`}

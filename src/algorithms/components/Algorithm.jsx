@@ -25,6 +25,8 @@ const md = new MarkdownIt({
   typographer: true
 });
 
+const papersFolder = '../../public/papers/';
+
 class Algorithm extends Component {
   state = {
     rotation: 0,
@@ -199,7 +201,6 @@ class Algorithm extends Component {
       showCode
     } = this.state;
 
-    const paperAddress = 'papers';
     return (
       <div className="indivAlg">
         <header>
@@ -211,7 +212,7 @@ class Algorithm extends Component {
                   <p>{algorithmData.info}</p>
                   {algorithmData.references.map((reference, index) => (
                     <p key={reference[1] + String(index)}>
-                      <a href={`${paperAddress}/${reference[1]}`}>
+                      <a href={`${papersFolder}/${reference[1]}`}>
                         {reference[0]}
                       </a>
                     </p>
