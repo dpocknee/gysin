@@ -25,7 +25,7 @@ const md = new MarkdownIt({
   typographer: true
 });
 
-const papersFolder = '../../public/papers/';
+const papersFolder = './papers/';
 
 class Algorithm extends Component {
   state = {
@@ -212,7 +212,7 @@ class Algorithm extends Component {
                   <p>{algorithmData.info}</p>
                   {algorithmData.references.map((reference, index) => (
                     <p key={reference[1] + String(index)}>
-                      <a href={`${papersFolder}/${reference[1]}`}>
+                      <a href={`${papersFolder}${reference[1]}`}>
                         {reference[0]}
                       </a>
                     </p>

@@ -1,8 +1,8 @@
 import React from 'react';
 import './Bibliography.css';
 
-const papersFolder = '../../public/papers/';
-const booksFolder = '../../public/books/';
+const papersFolder = './papers/';
+const booksFolder = './books/';
 
 const Bibliography = () => (
   <article>

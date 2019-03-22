@@ -44,14 +44,14 @@ export default class Poems extends Component {
       playAudio
     } = this.state;
     return (
-      <div className="generalBibliography">
+      <div className="generalPoems">
         <section>
           <h1>
             A Bibliography of all Gysin's <strong>Permutation Poems</strong>
           </h1>
         </section>
-        <div className="biblographySplit">
-          <div className="bibliography">
+        <div className="PoemsSplit">
+          <div className="Poems">
             {playAudio && (
               <div>
                 <ReactAudioPlayer src={playAudio} autoPlay controls />
