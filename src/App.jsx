@@ -3,9 +3,10 @@ import { Router } from '@reach/router';
 import Header from './Header';
 import Home from './home/components/Home';
 import Algorithms from './algorithms/components/AlgorithmPage';
-import Bibliography from './bibliography/Bibliography';
+import Poems from './poems/Poems';
 import Timeline from './timeline/Timeline';
 import Comparison from './comparison/Comparison';
+import Bibliography from './bibliography/Bibliography';
 import Error from './error/Error';
 import './index.css';
 
@@ -15,9 +16,10 @@ const App = () => (
     <Router basepath="/gysin">
       <Home path="/" />
       <Algorithms path="/algorithms" />
-      <Bibliography path="/bibliography" />
+      <Poems path="/poems" />
       <Timeline path="/timeline" />
       <Comparison path="/comparison" />
+      <Bibliography path="/bibliography" />
       <Error default />
     </Router>
   </div>

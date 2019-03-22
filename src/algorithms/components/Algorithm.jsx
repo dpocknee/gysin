@@ -4,7 +4,6 @@ import MarkdownIt from 'markdown-it';
 import parse from 'html-react-parser';
 import Popup from 'reactjs-popup';
 import { rotateArrays, replace, reverseArrays } from 'historical-permutations';
-import '../css/prism.css';
 import '../css/code.css';
 
 function deepEquals(array1, array2) {
@@ -158,7 +157,8 @@ class Algorithm extends Component {
         originalPermutation: originalPermutationUpdate,
         replacedPermutations: replacedPermutationsUpdate,
         rotatedNumberArray,
-        rotatedTextArray
+        rotatedTextArray,
+        orderArray: props.orderArray
       };
     });
   };
@@ -168,7 +168,6 @@ class Algorithm extends Component {
   };
 
   reverseCheckbox = event => {
-    console.log('reversed', event.target.checked);
     this.setState({ reversePattern: event.target.checked });
   };
 
@@ -190,14 +189,10 @@ class Algorithm extends Component {
   };
 
   render() {
-    const {
-      orderArray,
-      algorithmData,
-      numberOfElements,
-      coloredOrNot
-    } = this.props;
+    const { algorithmData, numberOfElements, coloredOrNot } = this.props;
 
     const {
+      orderArray,
       rotatedNumberArray,
       rotatedTextArray,
       infoOpen,

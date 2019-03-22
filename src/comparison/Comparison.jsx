@@ -3,13 +3,43 @@ import Algorithm from '../algorithms/components/Algorithm';
 import ComparisonPoemViewer from './ComparisonPoemViewer';
 import PoemMenu from './PoemMenu';
 import poemDatabase from '../database/poemDatabase';
-import algorithmData from '../algorithms/data/algorithmDatabase';
+import algorithmDatabase from '../algorithms/data/algorithmDatabase';
 
 export default class Comparison extends Component {
   state = {
     selectedPoem: null,
-    selectedAlgorithm: 'tompkins'
+    poemTitleArray: [],
+    arrayOfNumbers: [],
+    orderArray: [],
+    chosenAlgorithm: {}
   };
+
+  componentWillMount() {
+    this.setState({ chosenAlgorithm: algorithmDatabase[0] });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { selectedPoem } = this.state;
+    if (selectedPoem !== prevState.selectedPoem && selectedPoem) {
+      const poemTitleArray = selectedPoem.split(' ');
+      const arrayOfNumbers = poemTitleArray.map((el, i) => i + 1);
+      const factorial = arrayOfNumbers.reduce(
+        (outputFactorial, value, index) => {
+          return outputFactorial * value;
+        },
+        1
+      );
+      const orderArray = Array.from(
+        { length: factorial },
+        (value, index) => index
+      );
+      this.setState({
+        arrayOfNumbers,
+        orderArray,
+        poemTitleArray
+      });
+    }
+  }
 
   choosePoem = poemChosen => {
     this.setState({ selectedPoem: poemChosen });
@@ -25,14 +55,22 @@ export default class Comparison extends Component {
     }, []);
 
   changeAlgorithm = event => {
-    this.setState({ selectedAlgorithm: event.target.value });
+    const chosenAlgorithm = algorithmDatabase.find(
+      (algorithm, index) => algorithm.name === event.target.value
+    );
+    this.setState({ chosenAlgorithm });
   };
 
   render() {
-    const { selectedPoem, selectedAlgorithm } = this.state;
+    const {
+      selectedPoem,
+      arrayOfNumbers,
+      orderArray,
+      chosenAlgorithm,
+      poemTitleArray
+    } = this.state;
     const filteredPoems = this.filterPoems(selectedPoem);
-    const content = selectedPoem ? selectedPoem.split(' ') : null;
-    const order = selectedPoem ? content.map((el, i) => i + 1) : null;
+
     return (
       <div>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -50,19 +88,17 @@ export default class Comparison extends Component {
                     name="algorithmSelect"
                     onChange={e => this.changeAlgorithm(e)}
                   >
-                    <option value="" selected>
+                    <option value="" defaultValue>
                       Please choose
                     </option>
-                    <option value="tompkins">Tompkins-Paige</option>
-                    <option value="lehmer">Lehmer Constant Difference</option>
-                    <option value="wells">Wells</option>
-                    <option value="shenShimratFischer">
-                      Reverse Lexicographic
-                    </option>
-                    <option value="steinhausJohnsonTrotter">
-                      Steinhaus-Johnson-Trotter
-                    </option>
-                    <option value="heap">Heap</option>
+                    {algorithmDatabase.map(algorithm => (
+                      <option
+                        key={`algoOptions_${algorithm.name.split(' ')[0]}`}
+                        value={algorithm.name}
+                      >
+                        {algorithm.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -82,28 +118,18 @@ export default class Comparison extends Component {
           </div>
           {selectedPoem && (
             <Algorithm
-              algorithmType={algorithmData[selectedAlgorithm]}
-              order={order}
+              key={`algorithmComp${chosenAlgorithm.name.split(' ')[0]}`}
+              algorithmData={chosenAlgorithm}
               coloredOrNot={false}
               numberOrText
-              content={content}
+              arrayOfNumbers={arrayOfNumbers}
+              numberOfElements={poemTitleArray.length}
+              userSelectedArray={poemTitleArray}
+              orderArray={orderArray}
             />
           )}
         </div>
       </div>
     );
   }
-}
-
-{
-  /* <Algorithm
-key={`algorithm${algorithm.name.split(' ')[0]}${index}`}
-algorithmData={algorithm}
-coloredOrNot={coloredOrNot}
-numberOrText={numberOrText}
-arrayOfNumbers={arrayOfNumbers}
-numberOfElements={numberOfElements}
-userSelectedArray={userSelectedArray}
-orderArray={orderArray}
-/> */
 }

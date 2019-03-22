@@ -90,7 +90,7 @@ class Form extends Component {
             <input
               type="number"
               id="numberOfElements"
-              min="2"
+              min="3"
               max="6"
               value={numberOfElements}
               onChange={this.onChangeHandler}
