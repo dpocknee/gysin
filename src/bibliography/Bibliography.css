@@ -1,0 +1,26 @@
+article {
+  color: #004c61;
+  font-size: 0.7em;
+}
+article h2 {
+  font-size: 1.5em;
+  color: #fffefc;
+  padding: 5px 5px 5px 5px;
+  background-color: #e3bb00;
+}
+
+dt {
+  margin-top: 1em;
+  font-weight: bold;
+}
+.ref {
+  margin-bottom: 10px;
+}
+@media print {
+  dt {
+    page-break-after: avoid;
+  }
+  dd {
+    page-break-before: avoid;
+  }
+}

@@ -476,4 +476,3 @@
   address:    {Providence, R.I.},
 }
 
-'jabref-meta: databaseType:bibtex;': {
