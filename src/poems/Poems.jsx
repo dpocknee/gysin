@@ -45,13 +45,11 @@ export default class Poems extends Component {
     } = this.state;
     return (
       <div className="generalPoems">
-        <section>
-          <h1>
-            A Bibliography of all Gysin's <strong>Permutation Poems</strong>
-          </h1>
-        </section>
-        <div className="PoemsSplit">
-          <div className="Poems">
+        <h1>
+          All Gysin's <strong>Permutation Poems</strong>
+        </h1>
+        <div className="poemsSplit">
+          <div className="poems">
             {playAudio && (
               <div>
                 <ReactAudioPlayer src={playAudio} autoPlay controls />

@@ -1,5 +1,13 @@
 @import '../../node_modules/react-image-gallery/styles/css/image-gallery.css';
 
+.generalPoems h1 {
+  font-size: 1.5em;
+  color: #fffefc;
+  padding: 5px 5px 5px 5px;
+  max-width: 60%;
+  background-color: #004c61;
+}
+
 .poems h2 {
   margin-top: 20px;
   margin-bottom: 0px;

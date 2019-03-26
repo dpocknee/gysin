@@ -1,20 +1,4 @@
 const timeline = [
-  { date: '1950', position: 'year' },
-  {
-    date: '1950',
-    content:
-      'The Wilhelm-Baynes English translation of the <strong>I Ching</strong> is published.',
-    position: 'left'
-  },
-  { date: '1951', position: 'year' },
-  { date: '1952', position: 'year' },
-  {
-    date: '1952',
-    content:
-      'Brion Gysin finds a curse in the form of a magic word square in the vent of the restaurant he runs in Tangiers.',
-    position: 'right'
-  },
-  { date: '1953', position: 'year' },
   {
     date: '1953',
     content:
@@ -48,6 +32,12 @@ const timeline = [
     position: 'left'
   },
   { date: '1956', position: 'year' },
+  {
+    date: '1956',
+    content:
+      'Brion Gysin finds a curse in the form of a magic word square in the vent of the restaurant he runs in Tangiers.',
+    position: 'right'
+  },
   {
     date: 'August 1956',
     content: "Gysin's restaurant closes.",
@@ -98,7 +88,8 @@ const timeline = [
   },
   {
     date: '1958',
-    content: 'Gysin writes I AM THAT I AM (without computer assistance).',
+    content:
+      'Gysin writes <strong>I AM THAT I AM</strong> (without computer assistance).',
     position: 'right'
   },
   {
@@ -160,7 +151,7 @@ const timeline = [
     date: '1960',
     content: `<strong>PERMUTATION ALGORITHMS PUBLISHED</strong> in D H. Lehmer "Teaching combinatorial tricks to a computer," and R. J. Walker "An Enumerative Techniqe for a Class of Combinatorial Problem" in <i>Proceedings of Symposium Applied Mathematics,Combinatorial Analysis</i>, Vol. 10.  This contained:
       <br>Lehmer Constant Difference Method 
-      <br>A previously unmethod by Marshall Hall Jr.
+      <br>A previously unpublished method by Marshall Hall Jr.
       <br>Walker Backtrack Method`,
     position: 'left'
   },
@@ -399,7 +390,7 @@ const timeline = [
   },
   { date: '1972', position: 'year' },
   {
-    date: '1973',
+    date: '1972',
     content:
       'The poem <strong>THIS IS SAM FRANCIS</strong> is published in the exhibition catalogue for <strong>Sam Fancis, Paintings, 1947-1972</strong>.',
     position: 'right'
