@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default class ComparisonPoemViewer extends Component {
   state = {
     isLoading: false,
-    textFile: null,
+    textFile: null
   };
 
   componentDidMount() {
@@ -37,10 +37,18 @@ export default class ComparisonPoemViewer extends Component {
           {removeInfo.map((line, textLineIndex) => {
             const splitline = line.split('|');
             return (
-              <div className="comparisonPoemRow" key={`poemRow${textLineIndex}`}>
+              <div
+                className="comparisonPoemRow"
+                key={`poemRow${textLineIndex}`}
+              >
                 {splitline.map((column, poemColumnIndex) => (
-                  <div className="comparisonPoemColumn" key={`poemColumn${poemColumnIndex}`}>
-                    <div className="comparisonPoemElement">{column.replace(/\s/g, '\u00a0')}</div>
+                  <div
+                    className="comparisonPoemColumn"
+                    key={`poemColumn${poemColumnIndex}`}
+                  >
+                    <div className="comparisonPoemElement">
+                      {column.replace(/\s/g, '\u00a0')}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -53,7 +61,6 @@ export default class ComparisonPoemViewer extends Component {
 
   render() {
     const { isLoading, textFile } = this.state;
-    console.log('loaded ComparisonPoemViewer');
     return isLoading ? (
       <div>
         <p>Loading poem...</p>
@@ -65,5 +72,5 @@ export default class ComparisonPoemViewer extends Component {
 }
 
 ComparisonPoemViewer.propTypes = {
-  textAddress: PropTypes.string.isRequired,
+  textAddress: PropTypes.string.isRequired
 };

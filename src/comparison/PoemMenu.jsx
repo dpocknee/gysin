@@ -14,7 +14,10 @@ const PoemMenu = props => {
     });
     return poemObj;
   }, {});
-  const listOfPoems = Object.keys(poemMenu).map(poem => [`${poem} (${poemMenu[poem]})`, poem]);
+  const listOfPoems = Object.keys(poemMenu).map(poem => [
+    `${poem} (${poemMenu[poem]})`,
+    poem
+  ]);
 
   return (
     <div className="poemMenu">
@@ -28,13 +31,14 @@ const PoemMenu = props => {
           <strong>{poem[0]}</strong>
         </button>
       ))}
+      <p>Number of Poems: {listOfPoems.length}</p>
     </div>
   );
 };
 
 PoemMenu.propTypes = {
   choosePoem: PropTypes.func.isRequired,
-  poemDatabase: PropTypes.arrayOf(PropTypes.object).isRequired,
+  poemDatabase: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default PoemMenu;
