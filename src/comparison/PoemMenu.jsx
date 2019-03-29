@@ -18,6 +18,7 @@ const PoemMenu = props => {
     `${poem} (${poemMenu[poem]})`,
     poem
   ]);
+  listOfPoems.sort((a, b) => a > b);
 
   return (
     <div className="poemMenu">

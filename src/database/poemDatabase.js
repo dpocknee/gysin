@@ -244,6 +244,27 @@ const poemDatabase = [
         name: 'LIKE YOU JUST SAID',
         version: 'British Library Brion Gysin Tapes: C1400/4',
         file: require('./1986-british-library-tapes/C1400-4/like-you-just-said.txt')
+      },
+      {
+        name: 'I LOVE YOU I DO',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        notes: 'files from here on are on side 2',
+        file: require('./1986-british-library-tapes/C1400-4/i-love-you-i-do.txt')
+      },
+      {
+        name: 'I GOT THE FEAR',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/i-got-the-fear.txt')
+      },
+      {
+        name: 'EVERYONE IS AHEAD NOW',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/everyone-is-ahead-now.txt')
+      },
+      {
+        name: 'BE ON THE BEAT',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/be-on-the-beat.txt')
       }
     ]
   },
