@@ -1,0 +1,70 @@
+# per-mu-ta-tions
+## British Library 
+## Brion Gysin Tapes 
+## C1400/3
+## Brion Gysin and J. L. Philippe
+## each set of numbers mirrors 
+## the order of syllables in the line before
+## pronunciation and counting are in french.
+## there seem to be various mistakes in the delivery
+
+2 4 1 3 | ta per tions mu
+3 1 4 2 | tions per ta mu
+4 1 3 2 | per tions ta mu
+1 4 3 2 | mu per tions ta
+2 1 4 3 | ta mu tions per
+3 2 4 1 | 
+
+per mu ta tions | 1 2 3 4 
+mu ta tions per | 2 3 4 1
+ta tions per mu | 3 4 1 2
+tions per mu ta | 4 1 2 3
+per ta mu tions | 1 3 2 4
+mu tions per ta | 1 4 3 2
+ta per tions mu | 3 1 4 2
+tions per ta mu | 4 1 3 2
+per tions ta mu | 1 4 3 2 
+mu per tions ta | 2 1 4 3
+ta mu tions per | 3 2 4 1
+tions ta per mu | 4 3 1 2
+
+[Moroccan? music]
+
+per tions mu ta | 1 4 2 3
+mu per ta tions | 2 1 3 4
+ta mu per tions | 3 2 1 4
+tions per mu ta | 4 3 2 1
+per mu tions ta | 1 2 3 4
+mu ta per tions | 2 3 1 4
+ta tions mu per | 3 4 2 1
+tions per ta mu | 4 1 3 2
+per ta tions mu | 1 3 4 2
+mu tions ta per | 4 3 2 1
+ta per mu tions | 3 1 2 4
+tions mu per ta | 4 2 1 3
+
+per mu ta tions | 1 2 3 4
+per ta mu tions | 1 3 4 2
+per tions mu ta | 1 4 2 3
+per ta tions mu | 2 4 3 1
+per tions ta mu | 1 4 3 2
+mu ta tions per | 2 3 4 1
+mu tions per ta | 2 4 1 3
+mu per ta tions | 2 1 3 4
+mu ta per tions | 2 4 3 1
+mu tions ta per | 2 4 1 3
+mu per tions ta | 2 1 4 3
+
+ta tions per mu | 3 4 1 2
+ta per tions mu | 3 1 4 2
+ta mu per tions | 3 2 1 4
+ta tions mu per | 3 4 2 1
+ta per mu tions | 3 1 2 4
+ta mu tions per | 3 2 4 1
+tions per mu ta | 4 1 2 3
+tions mu ta per | 4 1 3 2
+[at this point in the recording Gysin and Philippe move out of sync.]
+tions ta mu per | 
+tions per ta mu | 1 2 3 
+tions mu per ta | 
+tions ta mu per 

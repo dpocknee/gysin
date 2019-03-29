@@ -1,4 +1,5 @@
 const timeline = [
+  { date: '1953', position: 'year' },
   {
     date: '1953',
     content:

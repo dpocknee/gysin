@@ -267,7 +267,7 @@ const Home = () => (
           ordering to <strong>The Third Mind</strong>.
         </p>
       </div>
-      <div className="perm7">
+      <div className="text1">
         <p>
           The <strong>Brion Gysin Let The Mice In</strong> version of{' '}
           <strong>KICK THAT HABIT MAN</strong> is an outlier in Gysin and
@@ -292,7 +292,7 @@ const Home = () => (
         </p>
       </div>
 
-      <div className="perm8">
+      <div className="text1">
         <p>
           The sporadic poems produced from the 1970s onwards tended to use a{' '}
           <strong>Magic Square</strong> style ordering which I still haven't

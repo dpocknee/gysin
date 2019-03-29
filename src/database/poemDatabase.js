@@ -111,56 +111,45 @@ const poemDatabase = [
     name: 'The Permutated Poems Of Brion Gysin (BBC)',
     year: 1961,
     authors: ['Brion Gysin', 'Ian Somerville'],
+    notes: `This recording can be found in The British Library (shelfmark C1400/5)
+    Side 1a (3:46): Pistol Poem / I've Come TO Free The Words / Pistol Poem (interlude) / No Poets Don't Own Words
+    Side 1b (5:01): Calling All Reactive Agents / Pistol Poem (interlude) / Junk Is No Good Baby (Exterminator Version) / Pistol Poem (interlude) / Kick That Habit Man (Exterminator version) / Pistol Poem (interlude)
+    Side 1c (3:07): I AM THAT I AM
+    Total Time: 11:54`,
     medium: 'radio',
     poems: [
       {
+        name: 'PISTOL POEM',
+        version: 'The Permutated Poems Of Brion Gysin (BBC)',
+        file: require('./1961-bbc/text/pistol-poem.txt')
+      },
+      {
         name: 'COME TO FREE THE WORDS',
         version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        note: 'Mentioned in the BBC listings',
         file: require('./1961-bbc/text/come-to-free-the-words.txt')
-      },
-      {
-        name: 'CALLING ALL REACTIVE AGENTS',
-        version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        note: 'Mentioned in the BBC listings',
-        file: require('./1961-bbc/text/calling-all-reactive-agents.txt')
-      },
-      {
-        name: 'JUNK IS NO GOOD BABY',
-        note:
-          'The recording of this for the broadcast is mentioned in the Geiger book and in the BBC listings',
-        version: 'The Exterminator'
-      },
-      {
-        name: 'KICK THAT HABIT MAN',
-        note:
-          'The recording of this for the broadcast is mentioned in the Geiger book and in the BBC listings',
-        version: 'The Exterminator'
-      },
-      {
-        name: 'LIKE YOU JUST SAID',
-        note: 'Mentioned in the BBC listings',
-        version: 'The Permutated Poems Of Brion Gysin (BBC)'
-      },
-      {
-        name: 'I AM THAT I AM',
-        version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        note:
-          'The recording of this for the broadcast is mentioned in the Geiger book and in the BBC listings',
-        file: require('./1961-bbc/text/i-am-that-i-am.txt')
       },
       {
         name: "NO POETS DON'T OWN WORDS",
         version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        note:
-          'not mentioned in the BBC listings or in the Geiger book but is on The Spoken Word',
         file: require('./1961-bbc/text/no-poets-dont-own-words.txt')
       },
       {
-        name: 'PISTOL POEM',
+        name: 'CALLING ALL REACTIVE AGENTS',
         version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        note: 'mentioned in the Geiger book and many other places',
-        file: require('./1961-bbc/text/pistol-poem.txt')
+        file: require('./1961-bbc/text/calling-all-reactive-agents.txt')
+      },
+      {
+        name: 'JUNK IS NO GOOD BABY',
+        version: 'The Exterminator'
+      },
+      {
+        name: 'KICK THAT HABIT MAN',
+        version: 'The Exterminator'
+      },
+      {
+        name: 'I AM THAT I AM',
+        version: 'The Permutated Poems Of Brion Gysin (BBC)',
+        file: require('./1961-bbc/text/i-am-that-i-am.txt')
       }
     ]
   },
@@ -557,6 +546,91 @@ const poemDatabase = [
       {
         name: 'I AM THAT I AM',
         version: 'The Permutated Poems Of Brion Gysin (BBC)'
+      }
+    ]
+  },
+  {
+    name: 'British Library Brion Gysin Tapes: C1400/1 (side 1)',
+    year: 1900,
+    medium: 'Tape (digitized)',
+    authors: ['Brion Gysin'],
+    notes: `Side 1: 5mins: "I am Brion Gysin the painter" / NO POETS DON'T OWN WORDS / I am the poet Brion Gysin (continued)`,
+    poems: [
+      {
+        name: "NO POETS DON'T OWN WORDS",
+        version: 'The Spoken Word"'
+      }
+    ]
+  },
+  {
+    name: 'British Library Brion Gysin Tapes: C1400/1 (side 2)',
+    year: 1900,
+    medium: 'Tape (digitized)',
+    notes:
+      'highly manipulated tape version of I AM THAT I AM (different to version on The Spoken Word.  This is the same version as on "The Spoken Word" and almost sounds like a second half of the recording',
+    authors: ['Brion Gysin'],
+    poems: [
+      {
+        name: 'I AM THAT I AM',
+        version: 'British Library Brion Gysin Tapes: C1400/1 (side 2)',
+        file: require('./1986-british-library-tapes/C1400-1/i-am-that-i-am.txt'),
+        length: '1:40'
+      }
+    ]
+  },
+  {
+    name: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
+    year: 1963,
+    medium: 'Tape (digitized)',
+    notes: `This is a live performance of Gysin.  The tape label states "Brion ICA 28 Mars 63.`,
+    authors: ['Brion Gysin'],
+    poems: [
+      {
+        name: "NO POETS DON'T OWN WORDS",
+        version: 'The Spoken Word"',
+        timing: '2:07'
+      },
+      {
+        name: 'JUNK IS NO GOOD BABY',
+        version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
+        file: require('./1986-british-library-tapes/C1400-2/junk-is-no-good-baby.txt'),
+        timing: '8:24'
+      },
+      {
+        name: 'KICK THAT HABIT MAN',
+        version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
+        file: require('./1986-british-library-tapes/C1400-2/kick-that-habit-man.txt'),
+        timing: '9:34'
+      }
+    ]
+  },
+  {
+    name: 'British Library Brion Gysin Tapes: C1400/3',
+    year: 1900,
+    medium: 'Tape (digitized)',
+    notes: `This recording features Gysin with J. L. Philippe simultaneously reading a permutation poem, counting and pronunciation is rhythmic and in French.  This is then interrupted by what is presumably Moroccan music.  The sticker on the spool says 'Sveriges Radio'`,
+    authors: ['Brion Gysin', 'J. L. Philippe'],
+    poems: [
+      {
+        name: 'per-mu-ta-tions',
+        version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
+        file: require('./1986-british-library-tapes/C1400-3/per-mu-ta-tions.txt'),
+        length: '4:41'
+      }
+    ]
+  },
+  {
+    name: 'British Library Brion Gysin Tapes: C1400/6',
+    year: 1962,
+    medium: 'Tape (digitized)',
+    authors: ['Brion Gysin'],
+    notes:
+      'Two versions being read simultaneously.  It might be that the second part is the version playing under the first part.',
+    poems: [
+      {
+        name: 'IN THE BEGINNING WAS THE WORD',
+        version: 'British Library Brion Gysin Tapes: C1400/6',
+        file: require('./1986-british-library-tapes/C1400-6/in-the-beginning-was-the-word.txt')
       }
     ]
   }
