@@ -160,6 +160,135 @@ const poemDatabase = [
     ]
   },
   {
+    name: 'British Library Brion Gysin Tapes: C1400/4',
+    year: 1900,
+    medium: 'Tape (digitized)',
+    authors: ['Brion Gysin'],
+    poems: [
+      {
+        name: 'IN THE BEGINNING WAS THE WORD',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/in-the-beginning-was-the-word.txt')
+      },
+      {
+        name: 'LORD I AM NOT WERE THEE',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/lord-i-am-not-worthy.txt')
+      },
+      {
+        name: 'WHO SENDS THE MAN',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/who-sends-the-man.txt')
+      },
+      {
+        name: 'THIS REALLY SENDS ME MAN',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/this-really-sends-me.txt')
+      },
+      {
+        name: 'PROCLAIM PRESENT TIME OVER',
+        version: 'The Exterminator',
+        file: require('./1960-the-exterminator/text/proclaim-present-time-over.txt'),
+        images: ['proclaim-present-time-over.jpg'],
+        folder: '1960-the-exterminator'
+      },
+      {
+        name: 'SHORT TIME TO GO',
+        version: 'The Exterminator',
+        file: require('./1960-the-exterminator/text/short-time-to-go.txt'),
+        images: ['short-time-to-go.jpg'],
+        folder: '1960-the-exterminator'
+      },
+      {
+        name: 'PLAY IT COOL FOOL',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/play-it-cool-fool.txt')
+      },
+      {
+        name: 'I AM I WHO ARE YOU',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/i-am-i-who-are-you.txt')
+      },
+      {
+        name: 'THIS COULD BE YOU',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/this-could-be-you.txt')
+      },
+      {
+        name: 'WHAT WORDS TO STEAL',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/what-words-to-steal.txt')
+      },
+      {
+        name: 'DO THEIR WORDS RUB OUT THERE',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/do-their-words-rub-out-there.txt')
+      },
+      {
+        name: 'YOU BELONG TO ME',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/you-belong-to-me.txt')
+      },
+      {
+        name: 'CALLING ALL REACTIVE AGENTS',
+        version: 'Minutes To Go',
+        file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt'),
+        images: [
+          'calling-all-reactive-agents-1.jpg',
+          'calling-all-reactive-agents-2.jpg',
+          'calling-all-reactive-agents-3.jpg'
+        ],
+        folder: '1960-minutes-to-go'
+      },
+      {
+        name: 'LIKE YOU JUST SAID',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/like-you-just-said.txt')
+      }
+    ]
+  },
+  {
+    name: 'British Library Brion Gysin Tapes: C1400/6',
+    year: 1962,
+    medium: 'Tape (digitized)',
+    authors: ['Brion Gysin'],
+    notes:
+      'Two versions being read simultaneously.  It might be that the second part is the version playing under the first part.',
+    poems: [
+      {
+        name: 'IN THE BEGINNING WAS THE WORD',
+        version: 'British Library Brion Gysin Tapes: C1400/6',
+        file: require('./1986-british-library-tapes/C1400-6/in-the-beginning-was-the-word.txt')
+      }
+    ]
+  },
+  {
+    name: 'British Library Brion Gysin Tapes: C1400/2',
+    year: 1963,
+    medium: 'Tape (digitized)',
+    notes: `This is a live performance of Gysin.  The tape label states "Brion ICA 28 Mars 63. All from side 1.`,
+    authors: ['Brion Gysin'],
+    poems: [
+      {
+        name: "NO POETS DON'T OWN WORDS",
+        version: 'The Permutated Poems Of Brion Gysin (BBC)',
+        timing: '2:07'
+      },
+      {
+        name: 'JUNK IS NO GOOD BABY',
+        version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
+        file: require('./1986-british-library-tapes/C1400-2/junk-is-no-good-baby.txt'),
+        timing: '8:24'
+      },
+      {
+        name: 'KICK THAT HABIT MAN',
+        version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
+        file: require('./1986-british-library-tapes/C1400-2/kick-that-habit-man.txt'),
+        timing: '9:34'
+      }
+    ]
+  },
+  {
     name: 'The Third Mind',
     year: 1965,
     date: '1978 (US) / 1979 (UK) / Originally finished in 1965',
@@ -565,7 +694,7 @@ const poemDatabase = [
       {
         name: "NO POETS DON'T OWN WORDS",
         notes: 'side 1',
-        version: 'Permutated "'
+        version: 'The Permutated Poems Of Brion Gysin (BBC)'
       },
       {
         name: 'I AM THAT I AM',
@@ -573,32 +702,6 @@ const poemDatabase = [
         notes: 'side 2',
         file: require('./1986-british-library-tapes/C1400-1/i-am-that-i-am.txt'),
         length: '1:40'
-      }
-    ]
-  },
-  {
-    name: 'British Library Brion Gysin Tapes: C1400/2',
-    year: 1963,
-    medium: 'Tape (digitized)',
-    notes: `This is a live performance of Gysin.  The tape label states "Brion ICA 28 Mars 63. All from side 1.`,
-    authors: ['Brion Gysin'],
-    poems: [
-      {
-        name: "NO POETS DON'T OWN WORDS",
-        version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        timing: '2:07'
-      },
-      {
-        name: 'JUNK IS NO GOOD BABY',
-        version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
-        file: require('./1986-british-library-tapes/C1400-2/junk-is-no-good-baby.txt'),
-        timing: '8:24'
-      },
-      {
-        name: 'KICK THAT HABIT MAN',
-        version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
-        file: require('./1986-british-library-tapes/C1400-2/kick-that-habit-man.txt'),
-        timing: '9:34'
       }
     ]
   },
@@ -614,114 +717,6 @@ const poemDatabase = [
         version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
         file: require('./1986-british-library-tapes/C1400-3/per-mu-ta-tions.txt'),
         length: '4:41'
-      }
-    ]
-  },
-  {
-    name: 'British Library Brion Gysin Tapes: C1400/4',
-    year: 1900,
-    medium: 'Tape (digitized)',
-    authors: ['Brion Gysin'],
-    poems: [
-      {
-        name: 'IN THE BEGINNING WAS THE WORD',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/in-the-beginning-was-the-word.txt')
-      },
-      {
-        name: 'LORD I AM NOT WERE THEE',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/lord-i-am-not-worthy.txt')
-      },
-      {
-        name: 'WHO SENDS THE MAN',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/who-sends-the-man.txt')
-      },
-      {
-        name: 'THIS REALLY SENDS ME MAN',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/this-really-sends-me.txt')
-      },
-      {
-        name: 'THIS REALLY SENDS ME MAN',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/this-really-sends-me.txt')
-      },
-      {
-        name: 'PROCLAIM PRESENT TIME OVER',
-        version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/proclaim-present-time-over.txt'),
-        images: ['proclaim-present-time-over.jpg'],
-        folder: '1960-the-exterminator'
-      },
-      {
-        name: 'SHORT TIME TO GO',
-        version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/short-time-to-go.txt'),
-        images: ['short-time-to-go.jpg'],
-        folder: '1960-the-exterminator'
-      },
-      {
-        name: 'PLAY IT COOL FOOL',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/play-it-cool-fool.txt')
-      },
-      {
-        name: 'I AM I WHO ARE YOU',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/i-am-i-who-are-you.txt')
-      },
-      {
-        name: 'THIS COULD BE YOU',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/this-could-be-you.txt')
-      },
-      {
-        name: 'WHAT WORDS TO STEAL',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/what-words-to-steal.txt')
-      },
-      {
-        name: 'DO THEIR WORDS RUB OUT THERE',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/do-their-words-rub-out-there.txt')
-      },
-      {
-        name: 'YOU BELONG TO ME',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/you-belong-to-me.txt')
-      },
-      {
-        name: 'CALLING ALL REACTIVE AGENTS',
-        version: 'Minutes To Go',
-        file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt'),
-        images: [
-          'calling-all-reactive-agents-1.jpg',
-          'calling-all-reactive-agents-2.jpg',
-          'calling-all-reactive-agents-3.jpg'
-        ],
-        folder: '1960-minutes-to-go'
-      },
-      {
-        name: 'LIKE YOU JUST SAID',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/like-you-just-said.txt')
-      }
-    ]
-  },
-  {
-    name: 'British Library Brion Gysin Tapes: C1400/6',
-    year: 1962,
-    medium: 'Tape (digitized)',
-    authors: ['Brion Gysin'],
-    notes:
-      'Two versions being read simultaneously.  It might be that the second part is the version playing under the first part.',
-    poems: [
-      {
-        name: 'IN THE BEGINNING WAS THE WORD',
-        version: 'British Library Brion Gysin Tapes: C1400/6',
-        file: require('./1986-british-library-tapes/C1400-6/in-the-beginning-was-the-word.txt')
       }
     ]
   }
