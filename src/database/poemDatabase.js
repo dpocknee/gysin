@@ -265,6 +265,50 @@ const poemDatabase = [
         name: 'BE ON THE BEAT',
         version: 'British Library Brion Gysin Tapes: C1400/4',
         file: require('./1986-british-library-tapes/C1400-4/be-on-the-beat.txt')
+      },
+      {
+        name: 'JUNK IS NO GOOD BABY',
+        version: 'The Exterminator',
+        file: require('./1960-the-exterminator/text/junk-is-no-good-baby.txt'),
+        images: ['junk-is-no-good-baby.jpg'],
+        folder: '1960-the-exterminator'
+      },
+      {
+        name: 'KICK THAT HABIT MAN',
+        version: 'The Exterminator',
+        file: require('./1960-the-exterminator/text/kick-that-habit-man.txt'),
+        images: ['kick-that-habit-man.jpg'],
+        folder: '1960-the-exterminator'
+      },
+      {
+        name: 'WHAT ARE YOU THINKING',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/what-are-you-thinking.txt')
+      },
+      {
+        name: 'I DIG YOU MAN',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/i-dig-you-man.txt')
+      },
+      {
+        name: 'THIS TURNS ME ON',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/this-turns-me-on.txt')
+      },
+      {
+        name: 'I AM OUT ARE YOU IN',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/i-am-out-are-you-in.txt')
+      },
+      {
+        name: 'THAT REALLY BUGS ME',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/that-really-bugs-me.txt')
+      },
+      {
+        name: 'WHAT YOU NOT GOT IN THERE',
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./1986-british-library-tapes/C1400-4/what-you-not-got-in-there.txt')
       }
     ]
   },
