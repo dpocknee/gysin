@@ -47,7 +47,7 @@ const poemDatabase = [
     medium: 'book',
     poems: [
       {
-        name: 'WHO SENDS THE MAN?',
+        name: 'WHO SENDS THE MAN',
         version: 'The Exterminator',
         file: require('./1960-the-exterminator/text/who-sends-the-man.txt'),
         images: ['who-sends-the-man.jpg'],
