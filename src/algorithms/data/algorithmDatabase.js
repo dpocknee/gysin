@@ -2,8 +2,10 @@ import {
   tompkinsPaige,
   lehmer,
   hall,
+  gysinSommerville,
   coveyouSullivan,
   wells,
+  steinhausJohnsonTrotter,
   peckSchrack,
   schrackShimrat,
   heap,
@@ -136,6 +138,50 @@ const algorithmDatabase = [
         '1960_lehmer_teaching-combinatorial-tricks.pdf'
       ]
     ]
+  },
+  {
+    algorithm: gysinSommerville,
+    code: ``,
+    year: 1960,
+    arguments: 3,
+    gysinVersion: 1,
+    name: 'Gysin-Sommerville #1',
+    info:
+      'This is one of my attempts to implement possible algorithms that could be used to generate early (pre-1965) Gysin-Sommerville permutation poems".',
+    references: [['', '']]
+  },
+  {
+    algorithm: gysinSommerville,
+    code: ``,
+    year: 1960,
+    arguments: 3,
+    gysinVersion: 2,
+    name: 'Gysin-Sommerville #2',
+    info:
+      'This is one of my attempts to implement possible algorithms that could be used to generate early (pre-1965) Gysin-Sommerville permutation poems".',
+    references: [['', '']]
+  },
+  {
+    algorithm: gysinSommerville,
+    code: ``,
+    year: 1960,
+    arguments: 3,
+    gysinVersion: 3,
+    name: 'Gysin-Sommerville #3',
+    info:
+      'This is one of my attempts to implement possible algorithms that could be used to generate early (pre-1965) Gysin-Sommerville permutation poems".',
+    references: [['', '']]
+  },
+  {
+    algorithm: gysinSommerville,
+    code: ``,
+    year: 1960,
+    arguments: 3,
+    gysinVersion: 4,
+    name: 'Gysin-Sommerville #4',
+    info:
+      'This is one of my attempts to implement possible algorithms that could be used to generate early (pre-1965) Gysin-Sommerville permutation poems".',
+    references: [['', '']]
   },
   {
     algorithm: coveyouSullivan,
@@ -297,6 +343,45 @@ const algorithmDatabase = [
       [
         'G. F. Schrack and M. Shimrat. "Algorithm 102: Permutation in lexicographical order" (June 1962)',
         '1962_schrack-shimrat_ACM-102_perutation-in-lexicographic-order.pdf'
+      ]
+    ]
+  },
+  {
+    algorithm: steinhausJohnsonTrotter,
+    code: `<pre>
+    <code>
+    <i>i</i>:=1;
+    <b>loop while</b> <i>i</i>&le;<i>N</i>; <i>i</i>:=<i>i</i>+1; <i>c[i]</i>:=1;
+                    <i>d[i]</i>:= <b>true</b>; <b>repeat</b>;
+    <i>c[1]</i>:=0;
+    <i>process</i>;
+    <b>loop</b>:
+      <i>i</i>:=<i>N</i>; <i>x</i>:=0;
+      <b>loop while</b> <i>c[i]</i>=<i>i</i>;
+        <b>if not</b> <i>d[i]</i> <b>then</b> <i>x</i>:=<i>x</i>+1 <b>endif</b>;
+        <i>d[i]</i>:=<b>not</b> <i>d[i]</i>; <i>c[i]</i>:=1; <i>i</i>= <i>i</i>-1;
+      <b>repeat</b>;
+    <b>while</b> <i>i</i>>1;
+      <b>if</b> <i>d[i]</i> <b>then</b> <i>k</i>:=<i>c[i]</i>+<i>x</i>
+            <b>else</b> <i>k</i>:=<i>i</i>-<i>c[i]</i>+<i>x</i> <b>endif</b>;
+      P[<i>k</i>]:=:P[<i>k</i>+1];
+      <i>process</i>;
+      <i>c[i]</i>:=:<i>c[i]</i>+1;
+    <b>repeat</b>;
+    </code>
+    </pre>`,
+    year: 1962,
+    name: 'Steinhaus-Johnson-Trotter',
+    arguments: 4,
+    info: `These are two separate implementations of the Steinhaus-Johnson-Trotter algorithm, with (ticked 'Directions' box) and without Even's Speedup (unticked 'Directions' box).`,
+    references: [
+      [
+        `Trotter, H. F. "Algorithm 115: Perm" (May 1962)`,
+        '1962_trotter_ACM-115_perm.pdf'
+      ],
+      [
+        `S. M. Johnson "Generation of permutations by adjacent transposition" (1963)`,
+        '1963_johnson_generation-of-permutations-by-adjacent-transposition.pdf'
       ]
     ]
   },

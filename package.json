@@ -6,7 +6,7 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "citation-js": "^0.4.0-12",
-    "historical-permutations": "^0.2.2",
+    "historical-permutations": "^0.5.0",
     "html-react-parser": "^0.4.7",
     "markdown-it": "^8.4.2",
     "prismjs": "^1.15.0",

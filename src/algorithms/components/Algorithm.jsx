@@ -34,7 +34,7 @@ class Algorithm extends Component {
     reverseElements: false,
     infoOpen: false,
     showCode: false,
-    tompkinsDirection: 1,
+    rotationDirection: 1,
     originalPermutation: [],
     replacedPermutations: [],
     rotatedNumberArray: [],
@@ -52,11 +52,11 @@ class Algorithm extends Component {
       rotation,
       reverseElements,
       reversePattern,
-      tompkinsDirection
+      rotationDirection
     } = this.state;
     if (
       numberOfElements !== prevProps.numberOfElements ||
-      tompkinsDirection !== prevState.tompkinsDirection
+      rotationDirection !== prevState.rotationDirection
     ) {
       // Number of Elements Changes
       this.permutationUpdate(0);
@@ -78,14 +78,26 @@ class Algorithm extends Component {
     algorithmData,
     arrayOfNumbers,
     numberOfElements,
-    tompkinsDirection
+    rotationDirection
   ) => {
     let originalPermutation;
-    // 2 = 2 parameters, 1 = array, 0 = number
+    // 4 = steinhaus, 3 = My Gysin, 2 = 2 parameters, 1 = array, 0 = number
     if (algorithmData.arguments === 2) {
       originalPermutation = algorithmData.algorithm(
         arrayOfNumbers,
-        tompkinsDirection
+        rotationDirection
+      );
+    } else if (algorithmData.arguments === 4) {
+      if (rotationDirection === -1) {
+        originalPermutation = algorithmData.algorithm(numberOfElements, 'even');
+      } else {
+        originalPermutation = algorithmData.algorithm(numberOfElements);
+      }
+    } else if (algorithmData.arguments === 3) {
+      originalPermutation = algorithmData.algorithm(
+        numberOfElements,
+        algorithmData.gysinVersion,
+        rotationDirection
       );
     } else if (algorithmData.arguments === 1) {
       originalPermutation = algorithmData.algorithm(arrayOfNumbers);
@@ -109,7 +121,7 @@ class Algorithm extends Component {
         reverseElements,
         reversePattern,
         rotation,
-        tompkinsDirection
+        rotationDirection
       } = state;
 
       let replacedPermutationsUpdate = state.replacedPermutations.map(x => x);
@@ -121,7 +133,7 @@ class Algorithm extends Component {
               algorithmData,
               arrayOfNumbers,
               numberOfElements,
-              tompkinsDirection
+              rotationDirection
             ).map(x => x)
           : state.originalPermutation.map(x => x);
 
@@ -185,9 +197,9 @@ class Algorithm extends Component {
     this.setState(state => ({ showCode: !state.showCode }));
   };
 
-  tompkinsDirection = event => {
+  rotationDirection = event => {
     const newState = event.target.checked ? -1 : 1;
-    this.setState({ tompkinsDirection: newState });
+    this.setState({ rotationDirection: newState });
   };
 
   render() {
@@ -272,7 +284,7 @@ class Algorithm extends Component {
               onChange={e => this.reverseElements(e)}
             />
           </div>
-          {algorithmData.name === 'Tompkins-Paige Algorithm' && (
+          {algorithmData.arguments >= 2 && (
             <div className="checkFonts">
               <label htmlFor={`direction${algorithmData.name}checkbox`}>
                 Direction:
@@ -281,7 +293,7 @@ class Algorithm extends Component {
                 type="checkbox"
                 name={`direction${algorithmData.name}checkbox`}
                 id={`direction${algorithmData.name}checkbox`}
-                onChange={e => this.tompkinsDirection(e)}
+                onChange={e => this.rotationDirection(e)}
               />
             </div>
           )}
