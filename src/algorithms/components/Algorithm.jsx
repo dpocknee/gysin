@@ -46,7 +46,12 @@ class Algorithm extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { numberOrText, numberOfElements, userSelectedArray } = this.props;
+    const {
+      numberOrText,
+      numberOfElements,
+      userSelectedArray,
+      algorithmData
+    } = this.props;
 
     const {
       rotation,
@@ -54,9 +59,11 @@ class Algorithm extends Component {
       reversePattern,
       rotationDirection
     } = this.state;
+
     if (
       numberOfElements !== prevProps.numberOfElements ||
-      rotationDirection !== prevState.rotationDirection
+      rotationDirection !== prevState.rotationDirection ||
+      algorithmData.name !== prevProps.algorithmData.name
     ) {
       // Number of Elements Changes
       this.permutationUpdate(0);

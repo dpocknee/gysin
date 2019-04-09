@@ -141,7 +141,7 @@ const algorithmDatabase = [
   },
   {
     algorithm: gysinSommerville,
-    code: ``,
+    code: `Code for these algorithms can be found as part of the author's historical-permutations javascript package https://github.com/dpocknee/historical-permutations`,
     year: 1960,
     arguments: 3,
     gysinVersion: 1,
@@ -152,7 +152,7 @@ const algorithmDatabase = [
   },
   {
     algorithm: gysinSommerville,
-    code: ``,
+    code: `Code for these algorithms can be found as part of the author's historical-permutations javascript package https://github.com/dpocknee/historical-permutations`,
     year: 1960,
     arguments: 3,
     gysinVersion: 2,
@@ -163,7 +163,7 @@ const algorithmDatabase = [
   },
   {
     algorithm: gysinSommerville,
-    code: ``,
+    code: `Code for these algorithms can be found as part of the author's historical-permutations javascript package https://github.com/dpocknee/historical-permutations`,
     year: 1960,
     arguments: 3,
     gysinVersion: 3,
@@ -174,7 +174,7 @@ const algorithmDatabase = [
   },
   {
     algorithm: gysinSommerville,
-    code: ``,
+    code: `Code for these algorithms can be found as part of the author's historical-permutations javascript package https://github.com/dpocknee/historical-permutations`,
     year: 1960,
     arguments: 3,
     gysinVersion: 4,

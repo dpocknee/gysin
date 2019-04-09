@@ -317,33 +317,39 @@ const poemDatabase = [
       },
       {
         name: 'I GOT IT MADE',
-        version: 'British Library Brion Gysin Tapes: C1400/4'
+        version: 'British Library Brion Gysin Tapes: C1400/4',
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
+        file: require('./not-yet-transcribed.txt')
       },
       {
         name: 'I AM THE MAN',
-        version: 'British Library Brion Gysin Tapes: C1400/4'
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./not-yet-transcribed.txt')
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       },
       {
         name: 'I AM THE MASTER',
-        version: 'British Library Brion Gysin Tapes: C1400/4'
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./not-yet-transcribed.txt')
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       },
       {
         name: 'THE FUZZ COULD BREAK',
-        version: 'British Library Brion Gysin Tapes: C1400/4'
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./not-yet-transcribed.txt')
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       },
       {
         name: 'LOVE MAKES THE WORLD GO ROUND',
-        version: 'British Library Brion Gysin Tapes: C1400/4'
+        version: 'British Library Brion Gysin Tapes: C1400/4',
+        file: require('./not-yet-transcribed.txt')
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       },
       {
         name: 'IN THE BEGINNING WAS THE WORD',
         version: 'British Library Brion Gysin Tapes: C1400/4',
-        note: 'this sounds very algorithmic! on side 2b'
+        note: 'this sounds very algorithmic! on side 2b',
+        file: require('./not-yet-transcribed.txt')
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       }
     ]
