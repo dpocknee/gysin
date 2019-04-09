@@ -63,7 +63,8 @@ class Algorithm extends Component {
     if (
       numberOfElements !== prevProps.numberOfElements ||
       rotationDirection !== prevState.rotationDirection ||
-      algorithmData.name !== prevProps.algorithmData.name
+      algorithmData.name !== prevProps.algorithmData.name ||
+      userSelectedArray !== prevProps.userSelectedArray
     ) {
       // Number of Elements Changes
       this.permutationUpdate(0);

@@ -14,7 +14,7 @@ const poemDatabase = [
     medium: 'book',
     poems: [
       {
-        name: 'CALLING ALL REACTIVE AGENTS',
+        name: 'CALLING ALL RE ACTIVE AGENTS',
         version: 'Minutes To Go',
         file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt'),
         images: [
@@ -22,21 +22,24 @@ const poemDatabase = [
           'calling-all-reactive-agents-2.jpg',
           'calling-all-reactive-agents-3.jpg'
         ],
-        folder: '1960-minutes-to-go'
+        folder: '1960-minutes-to-go',
+        analysis: ['ad hoc']
       },
       {
         name: 'I THINK THEREFORE I AM',
         version: 'Minutes To Go',
         file: require('./1960-minutes-to-go/text/i-think-therefore-i-am.txt'),
         images: ['i-think-therefore-i-am.jpg'],
-        folder: '1960-minutes-to-go'
+        folder: '1960-minutes-to-go',
+        analysis: ['ad hoc']
       },
       {
         name: 'RUB OUT THE WRITE WORD',
         version: 'Minutes To Go',
         file: require('./1960-minutes-to-go/text/rub-out-the-write-word.txt'),
         images: ['rub-out-the-write-word.jpg'],
-        folder: '1960-minutes-to-go'
+        folder: '1960-minutes-to-go',
+        analysis: ['ad hoc']
       }
     ]
   },
@@ -113,7 +116,7 @@ const poemDatabase = [
     authors: ['Brion Gysin', 'Ian Somerville'],
     notes: `This recording can be found in The British Library (shelfmark C1400/5)
     Side 1a (3:46): Pistol Poem / I've Come TO Free The Words / Pistol Poem (interlude) / No Poets Don't Own Words
-    Side 1b (5:01): Calling All Reactive Agents / Pistol Poem (interlude) / Junk Is No Good Baby (Exterminator Version) / Pistol Poem (interlude) / Kick That Habit Man (Exterminator version) / Pistol Poem (interlude)
+    Side 1b (5:01): Calling All Re active Agents / Pistol Poem (interlude) / Junk Is No Good Baby (Exterminator Version) / Pistol Poem (interlude) / Kick That Habit Man (Exterminator version) / Pistol Poem (interlude)
     Side 1c (3:07): I AM THAT I AM
     Total Time: 11:54`,
     medium: 'radio',
@@ -134,7 +137,7 @@ const poemDatabase = [
         file: require('./1961-bbc/text/no-poets-dont-own-words.txt')
       },
       {
-        name: 'CALLING ALL REACTIVE AGENTS',
+        name: 'CALLING ALL RE ACTIVE AGENTS',
         version: 'The Permutated Poems Of Brion Gysin (BBC)',
         file: require('./1961-bbc/text/calling-all-reactive-agents.txt')
       },
@@ -230,7 +233,7 @@ const poemDatabase = [
         file: require('./1986-british-library-tapes/C1400-4/you-belong-to-me.txt')
       },
       {
-        name: 'CALLING ALL REACTIVE AGENTS',
+        name: 'CALLING ALL RE ACTIVE AGENTS',
         version: 'Minutes To Go',
         file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt'),
         images: [
@@ -639,7 +642,7 @@ const poemDatabase = [
         folder: '1996-mektoub'
       },
       {
-        name: 'CALLING ALL RE-ACTIVE AGENTS',
+        name: 'CALLING ALL RE ACTIVE AGENTS',
         version: '???',
         audio: ['08-recalling-all-active-agents.mp3'],
         folder: '1996-mektoub'
