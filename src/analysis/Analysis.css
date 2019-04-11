@@ -18,4 +18,5 @@
 .analysis section .code {
   width: 90%;
   font-size: 0.65em;
+  overflow: scroll;
 }
