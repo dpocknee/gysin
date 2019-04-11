@@ -68,7 +68,7 @@ const Analysis = () => (
           words of the title:
         </p>
       </div>
-      <div className="code">
+      <div className="code" style={{ width: '200px' }}>
         <p>
           WHO SENDS THE MAN
           <br />
@@ -84,7 +84,7 @@ const Analysis = () => (
       <div className="text2">
         <p>This is then followed by a series of four stanzas:</p>
       </div>
-      <div className="code">
+      <div className="code" style={{ width: '200px' }}>
         <p>
           WHO SENDS THE MAN
           <br />
@@ -151,7 +151,25 @@ const Analysis = () => (
           uses this structure over and over again in his poems between 1960 and
           1965.
         </p>
-
+      </div>
+      <div className="code" style={{ width: '200px' }}>
+        <p>
+          WHO <span className="highlight">SENDS</span>{' '}
+          <span className="highlight">THE</span>{' '}
+          <span className="highlight">MAN</span>
+          <br />
+          WHO <span className="highlight">THE</span> MAN SENDS
+          <br />
+          WHO <span className="highlight">MAN</span> THE SENDS
+          <br />
+          WHO <span className="highlight">SENDS</span> MAN THEE
+          <br />
+          WHO <span className="highlight">THEE</span> SENDS MAN
+          <br />
+          WHO <span className="highlight">MAN</span> SENDS THEE
+        </p>
+      </div>
+      <div className="text2">
         <p>
           Much of the writing about Gysin's permutation poems from this period
           alleges that he used a computer to generate his poems from 1960
@@ -216,8 +234,20 @@ const Analysis = () => (
           computer in 1960, this would pre-date most of the important
           breakthroughs in the field which occured from 1962 onwards.{' '}
         </p>
+        <p>
+          Additionally, to see how easy it would be to create an algorithm that
+          could generate these types of magic square permutation poems, I
+          backwards engineered the patterns in some of Gysin's poems to create
+          four possible permutation algorithms, utilising the techniques
+          algorithmic permutations used at the time. These can be seen on the{' '}
+          <strong>Permutation Algorithms</strong> page as{' '}
+          <strong>Gysin-Sommerville</strong> algorithms #1-4.
+        </p>
       </div>
-      <div className="code">
+      <div
+        className="code"
+        style={{ width: '100%', whiteSpace: 'nowrap', overflow: 'scroll' }}
+      >
         <p>
           1234/1324/1342/1432/1243/1423|2134/2341/2143/2314/2431/2413|3124/3241/3214/3142/3421/3412|4123/4312/4321/4231/4132/4213
           (I DIG YOU MAN)
@@ -250,7 +280,9 @@ const Analysis = () => (
           (PLAY IT COOL FOOL)
         </p>
       </div>
-      <div className="text3">
+    </section>
+    <section>
+      <div className="text1">
         <h1>Reverse Lexicographic (1965-1973)</h1>
         <p>
           In 1965, Ian Sommerville ran Gysin's permutation poems through a
@@ -281,11 +313,433 @@ const Analysis = () => (
           <strong>The Communications of the ACM</strong> in May 1962, and this
           is most likely the algorithm implemented here.{' '}
         </p>
-        <p>EXAMPLE OF LEXICOGRAPHIC ORDERINGS HERE!</p>
+        <div className="code" style={{ width: '100%' }}>
+          <table>
+            <tbody>
+              <tr>
+                <td style={{ width: '50%' }}>
+                  <div>
+                    <b>Lexicographic Ordering</b>
+                  </div>
+                </td>
+                <td style={{ width: '50%' }}>
+                  <div>
+                    <b>Reverse Lexicographic Ordering</b>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <section>
+                    <div>1 2 3 4</div>
+                    <div>1 2 4 3</div>
+                    <div>1 3 2 4</div>
+                    <div>1 3 4 2</div>
+                    <div>1 4 2 3</div>
+                    <div>1 4 3 2</div>
+                    <div>2 1 3 4</div>
+                    <div>2 1 4 3</div>
+                    <div>2 3 1 4</div>
+                    <div>2 3 4 1</div>
+                    <div>2 4 1 3</div>
+                    <div>2 4 3 1</div>
+                    <div>3 1 2 4</div>
+                    <div>3 1 4 2</div>
+                    <div>3 2 1 4</div>
+                    <div>3 2 4 1</div>
+                    <div>3 4 1 2</div>
+                    <div>3 4 2 1</div>
+                    <div>4 1 2 3</div>
+                    <div>4 1 3 2</div>
+                    <div>4 2 1 3</div>
+                    <div>4 2 3 1</div>
+                    <div>4 3 1 2</div>
+                    <div>4 3 2 1</div>
+                  </section>
+                </td>
+                <td>
+                  <section>
+                    <div>1 2 3 4</div>
+                    <div>2 1 3 4</div>
+                    <div>1 3 2 4</div>
+                    <div>3 1 2 4</div>
+                    <div>2 3 1 4</div>
+                    <div>3 2 1 4</div>
+                    <div>1 2 4 3</div>
+                    <div>2 1 4 3</div>
+                    <div>1 4 2 3</div>
+                    <div>4 1 2 3</div>
+                    <div>2 4 1 3</div>
+                    <div>4 2 1 3</div>
+                    <div>1 3 4 2</div>
+                    <div>3 1 4 2</div>
+                    <div>1 4 3 2</div>
+                    <div>4 1 3 2</div>
+                    <div>3 4 1 2</div>
+                    <div>4 3 1 2</div>
+                    <div>2 3 4 1</div>
+                    <div>3 2 4 1</div>
+                    <div>2 4 3 1</div>
+                    <div>4 2 3 1</div>
+                    <div>3 4 2 1</div>
+                    <div>4 3 2 1</div>
+                  </section>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div className="text4">
+      <div className="text2">
         <h1>Random (1973)</h1>
-        <p />
+        <p>
+          In 1973, the book <strong>Brion Gysin Let The Mice In</strong> was
+          published. This was another collaboration between Gysin, Burroughs and
+          Sommerville. There were four permutation poems printed in this book:
+          one a version of <strong>JUNK IS NO GOOD BABY</strong> published
+          previously in <strong>The Third Mind</strong>; two of the reverse
+          lexicographic versions if <strong>I AM THAT I AM</strong> and{' '}
+          <strong>PISTOL POEM</strong> that were also printed in{' '}
+          <strong>The Third Mind</strong> but here presented as an extract of
+          the entire poem, both only running for around a quarter of their total
+          length; and a new version of <strong>KICK THAT HABIT MAN</strong>. The
+          new version of the latter poem appears to use some type of random
+          ordering not found in any other versions of these poems. This version
+          of the poem doesn't seem to have any obvious ordering but, when we
+          compare it to the previous reverse lexicographic version found in{' '}
+          <strong>The Third Mind</strong>, an indication of how it might have
+          been made can be seen.
+        </p>
+      </div>
+      <div className="code" style={{ width: '400px' }}>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <b>The Third Mind</b>
+              </td>
+              <td>
+                <b>...Let The Mice In</b>
+              </td>
+            </tr>
+            <tr>
+              <td style={{ width: '200px' }}>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement highlight">
+                      KICK&nbsp;THAT&nbsp;HABIT&nbsp;MAN
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      THAT&nbsp;KICK&nbsp;HABIT&nbsp;MAN
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      KICK&nbsp;HABIT&nbsp;THAT&nbsp;MAN
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      HABIT&nbsp;KICK&nbsp;THAT&nbsp;MAN
+                    </div>
+                  </div>
+                </div>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      THAT&nbsp;HABIT&nbsp;KICK&nbsp;MAN
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      HABIT&nbsp;THAT&nbsp;KICK&nbsp;MAN
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      KICK&nbsp;THAT&nbsp;MAN&nbsp;HABIT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      THAT&nbsp;KICK&nbsp;MAN&nbsp;HABIT
+                    </div>
+                  </div>
+                </div>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      KICK&nbsp;MAN&nbsp;THAT&nbsp;HABIT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      MAN&nbsp;KICK&nbsp;THAT&nbsp;HABIT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      THAT&nbsp;MAN&nbsp;KICK&nbsp;HABIT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      MAN&nbsp;THAT&nbsp;KICK&nbsp;HABIT
+                    </div>
+                  </div>
+                </div>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      KICK&nbsp;HABIT&nbsp;MAN&nbsp;THAT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      HABIT&nbsp;KICK&nbsp;MAN&nbsp;THAT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      KICK&nbsp;MAN&nbsp;HABIT&nbsp;THAT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      MAN&nbsp;KICK&nbsp;HABIT&nbsp;THAT
+                    </div>
+                  </div>
+                </div>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      HABIT&nbsp;MAN&nbsp;KICK&nbsp;THAT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      MAN&nbsp;HABIT&nbsp;KICK&nbsp;THAT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      THAT&nbsp;HABIT&nbsp;MAN&nbsp;KICK
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      HABIT&nbsp;THAT&nbsp;MAN&nbsp;KICK
+                    </div>
+                  </div>
+                </div>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement highlight">
+                      THAT&nbsp;MAN&nbsp;HABIT&nbsp;KICK
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement highlight">
+                      MAN&nbsp;THAT&nbsp;HABIT&nbsp;KICK
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement  highlight">
+                      HABIT&nbsp;MAN&nbsp;THAT&nbsp;KICK
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement  highlight">
+                      MAN&nbsp;HABIT&nbsp;THAT&nbsp;KICK
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement highlight">
+                      KICK&nbsp;THAT&nbsp;HABIT&nbsp;MAN
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      THAT&nbsp;HABIT&nbsp;KICK&nbsp;MAN
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      MAN&nbsp;KICK&nbsp;THAT&nbsp;HABIT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      KICK&nbsp;THAT&nbsp;MAN&nbsp;HABIT
+                    </div>
+                  </div>
+                </div>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      MAN&nbsp;HABIT&nbsp;KICK&nbsp;THAT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      THAT&nbsp;KICK&nbsp;MAN&nbsp;HABIT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      KICK&nbsp;HABIT&nbsp;MAN&nbsp;THAT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      HABIT&nbsp;MAN&nbsp;KICK&nbsp;THAT
+                    </div>
+                  </div>
+                </div>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      THAT&nbsp;KICK&nbsp;HABIT&nbsp;MAN
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      KICK&nbsp;HABIT&nbsp;THAT&nbsp;MAN
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      THAT&nbsp;HABIT&nbsp;MAN&nbsp;KICK
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      HABIT&nbsp;THAT&nbsp;MAN&nbsp;KICK
+                    </div>
+                  </div>
+                </div>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      MAN&nbsp;THAT&nbsp;KICK&nbsp;HABIT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      KICK&nbsp;MAN&nbsp;THAT&nbsp;HABIT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      HABIT&nbsp;KICK&nbsp;THAT&nbsp;MAN
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      THAT&nbsp;MAN&nbsp;KICK&nbsp;HABIT
+                    </div>
+                  </div>
+                </div>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      HABIT&nbsp;KICK&nbsp;MAN&nbsp;THAT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      KICK&nbsp;MAN&nbsp;HABIT&nbsp;THAT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      MAN&nbsp;KICK&nbsp;HABIT&nbsp;THAT
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement">
+                      HABIT&nbsp;THAT&nbsp;KICK&nbsp;MAN
+                    </div>
+                  </div>
+                </div>
+                <div className="stanza">
+                  <div className="poemRow">
+                    <div className="poemElement highlight">
+                      THAT&nbsp;MAN&nbsp;HABIT&nbsp;KICK
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement highlight">
+                      MAN&nbsp;THAT&nbsp;HABIT&nbsp;KICK
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement highlight">
+                      HABIT&nbsp;MAN&nbsp;THAT&nbsp;KICK
+                    </div>
+                  </div>
+                  <div className="poemRow">
+                    <div className="poemElement highlight">
+                      MAN&nbsp;HABIT&nbsp;THAT&nbsp;KICK
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="text2">
+        <p>
+          The fact that opening line and closing stanzas are the same indicates
+          that the reverse lexicographic version of the poem may have been used
+          as the basis for some random ordering.
+        </p>
+        <p>
+          Additionally, the fact that it appears only 19 of the possible
+          permutations has been reordered points to the idea that a Linear
+          Congruential Generator (or Lehmer Generator, or LCG) might have been
+          used. An LCG is a way of generating random numbers, originally
+          invented by D. H. Lehmer in 1951. It is a recursive function that
+          involves the iterative multiplying of the input modulo a prime number
+          (19 is a prime).{' '}
+        </p>
+        <p>Definition from wikipedia:</p>
+      </div>
+      <div className="abstract">
+        <p>The general formula is:</p>
+        <p>
+          <i>X</i>
+          <sub>
+            <i>k</i>+1
+          </sub>{' '}
+          = <i>a</i> &bull; <i>X</i>
+          <sub>
+            <i>k</i>
+          </sub>{' '}
+          mod <i>m</i>
+        </p>
+        <p>
+          where the modulus <i>m</i> is a prime number or a power of a prime
+          number, the multiplier <i>a</i> is an element of high multiplicative
+          order modulo <i>m</i> (e.g., a primitive root modulo <i>n</i>), and
+          the seed <i>X</i>
+          <sub>0</sub> is coprime to <i>m</i>.
+        </p>
+      </div>
+      <div className="text1">
+        <h1>No Poets Don't Own Words (1961/1982)</h1>
+        <p>
+          The only mystery left about Gysin's poems are the two versions of{' '}
+          <strong>NO POETS DON'T OWN WORDS</strong> from 1961 and 1982, which
+          have so far been resistant to analysis.
+        </p>
       </div>
     </section>
   </article>

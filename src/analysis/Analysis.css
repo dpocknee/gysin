@@ -1,7 +1,10 @@
-.analysis section {
+.analysis {
+  font-size: 0.9em;
+}
+/* .analysis section {
   width: 100%;
   max-width: 100%;
-}
+} */
 
 .analysis .text1 h1 {
   max-width: 80%;
@@ -16,7 +19,16 @@
 }
 
 .analysis section .code {
-  width: 90%;
-  font-size: 0.65em;
-  overflow: scroll;
+  width: 100%;
+  font-size: 0.8em;
+}
+
+.analysis section .code .highlight {
+  color: white;
+  background-color: #004c61;
+}
+
+.analysis section .code .highlight2 {
+  color: white;
+  background-color: #89002e;
 }
