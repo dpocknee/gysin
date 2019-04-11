@@ -25,6 +25,9 @@ const Header = () => (
           <Link to="/gysin/comparison">Comparison</Link>
         </li>
         <li>
+          <Link to="/gysin/analysis">Analysis</Link>
+        </li>
+        <li>
           <Link to="/gysin/bibliography">Bibliography</Link>
         </li>
       </ul>

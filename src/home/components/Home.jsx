@@ -30,7 +30,7 @@ const Home = () => (
         </div>
         <p>
           {' '}
-          Between 1958 and 1982, Brion Gysin wrote a series of 18{' '}
+          Between 1958 and 1982, Brion Gysin wrote a series of 43{' '}
           <strong>Permutation Poem</strong>, in which the four or five-word
           title of the poem would be permutated into some or all of its possible
           orders. Some of these permutation poems were run through a computer,

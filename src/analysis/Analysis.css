@@ -1,0 +1,21 @@
+.analysis section {
+  width: 100%;
+  max-width: 100%;
+}
+
+.analysis .text1 h1 {
+  max-width: 80%;
+}
+
+.analysis .text2 h1 {
+  max-width: 80%;
+}
+
+.analysis .text3 h1 {
+  max-width: 80%;
+}
+
+.analysis section .code {
+  width: 90%;
+  font-size: 0.65em;
+}

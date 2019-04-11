@@ -7,6 +7,7 @@ import Poems from './poems/Poems';
 import Timeline from './timeline/Timeline';
 import Comparison from './comparison/Comparison';
 import Bibliography from './bibliography/Bibliography';
+import Analysis from './analysis/Analysis';
 import Error from './error/Error';
 import './index.css';
 
@@ -19,6 +20,7 @@ const App = () => (
       <Poems path="/poems" />
       <Timeline path="/timeline" />
       <Comparison path="/comparison" />
+      <Analysis path="/analysis" />
       <Bibliography path="/bibliography" />
       <Error default />
     </Router>
