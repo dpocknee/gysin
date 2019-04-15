@@ -16,7 +16,7 @@ const poemDatabase = [
       {
         name: 'CALLING ALL RE ACTIVE AGENTS',
         version: 'Minutes To Go',
-        file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt'),
+        // file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt'),
         images: [
           'calling-all-reactive-agents-1.jpg',
           'calling-all-reactive-agents-2.jpg',
@@ -28,7 +28,7 @@ const poemDatabase = [
       {
         name: 'I THINK THEREFORE I AM',
         version: 'Minutes To Go',
-        file: require('./1960-minutes-to-go/text/i-think-therefore-i-am.txt'),
+        // file: require('./1960-minutes-to-go/text/i-think-therefore-i-am.txt'),
         images: ['i-think-therefore-i-am.jpg'],
         folder: '1960-minutes-to-go',
         analysis: ['ad hoc']
@@ -36,7 +36,7 @@ const poemDatabase = [
       {
         name: 'RUB OUT THE WRITE WORD',
         version: 'Minutes To Go',
-        file: require('./1960-minutes-to-go/text/rub-out-the-write-word.txt'),
+        // file: require('./1960-minutes-to-go/text/rub-out-the-write-word.txt'),
         images: ['rub-out-the-write-word.jpg'],
         folder: '1960-minutes-to-go',
         analysis: ['ad hoc']
@@ -52,42 +52,42 @@ const poemDatabase = [
       {
         name: 'WHO SENDS THE MAN',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/who-sends-the-man.txt'),
+        // file: require('./1960-the-exterminator/text/who-sends-the-man.txt'),
         images: ['who-sends-the-man.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'KICK THAT HABIT MAN',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/kick-that-habit-man.txt'),
+        // file: require('./1960-the-exterminator/text/kick-that-habit-man.txt'),
         images: ['kick-that-habit-man.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'JUNK IS NO GOOD BABY',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/junk-is-no-good-baby.txt'),
+        // file: require('./1960-the-exterminator/text/junk-is-no-good-baby.txt'),
         images: ['junk-is-no-good-baby.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'CAN MOTHER BE WRONG?',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/can-mother-be-wrong.txt'),
+        // file: require('./1960-the-exterminator/text/can-mother-be-wrong.txt'),
         images: ['can-mother-be-wrong.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'SHORT TIME TO GO',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/short-time-to-go.txt'),
+        // file: require('./1960-the-exterminator/text/short-time-to-go.txt'),
         images: ['short-time-to-go.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'IN THE BEGINNING WAS THE WORD',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/in-the-beginning-was-the-word.txt'),
+        // file: require('./1960-the-exterminator/text/in-the-beginning-was-the-word.txt'),
         images: [
           'in-the-beginning-was-the-word_1.jpg',
           'in-the-beginning-was-the-word_2.jpg'
@@ -97,14 +97,14 @@ const poemDatabase = [
       {
         name: 'RUB OUT THE WORD(S)',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/rub-out-the-words.txt'),
+        // file: require('./1960-the-exterminator/text/rub-out-the-words.txt'),
         images: ['rub-out-the-words.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'PROCLAIM PRESENT TIME OVER',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/proclaim-present-time-over.txt'),
+        // file: require('./1960-the-exterminator/text/proclaim-present-time-over.txt'),
         images: ['proclaim-present-time-over.jpg'],
         folder: '1960-the-exterminator'
       }
@@ -123,42 +123,42 @@ const poemDatabase = [
     poems: [
       {
         name: 'PISTOL POEM',
-        version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        file: require('./1961-bbc/text/pistol-poem.txt')
+        version: 'The Permutated Poems Of Brion Gysin (BBC)'
+        // file: require('./1961-bbc/text/pistol-poem.txt')
       },
       {
         name: 'COME TO FREE THE WORDS',
-        version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        file: require('./1961-bbc/text/come-to-free-the-words.txt')
+        version: 'The Permutated Poems Of Brion Gysin (BBC)'
+        // file: require('./1961-bbc/text/come-to-free-the-words.txt')
       },
       {
         name: "NO POETS DON'T OWN WORDS",
-        version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        file: require('./1961-bbc/text/no-poets-dont-own-words.txt')
+        version: 'The Permutated Poems Of Brion Gysin (BBC)'
+        // file: require('./1961-bbc/text/no-poets-dont-own-words.txt')
       },
       {
         name: 'CALLING ALL RE ACTIVE AGENTS',
-        version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        file: require('./1961-bbc/text/calling-all-reactive-agents.txt')
+        version: 'The Permutated Poems Of Brion Gysin (BBC)'
+        // file: require('./1961-bbc/text/calling-all-reactive-agents.txt')
       },
       {
         name: 'JUNK IS NO GOOD BABY',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/junk-is-no-good-baby.txt'),
+        // file: require('./1960-the-exterminator/text/junk-is-no-good-baby.txt'),
         images: ['junk-is-no-good-baby.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'KICK THAT HABIT MAN',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/kick-that-habit-man.txt'),
+        // file: require('./1960-the-exterminator/text/kick-that-habit-man.txt'),
         images: ['kick-that-habit-man.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'I AM THAT I AM',
-        version: 'The Permutated Poems Of Brion Gysin (BBC)',
-        file: require('./1961-bbc/text/i-am-that-i-am.txt')
+        version: 'The Permutated Poems Of Brion Gysin (BBC)'
+        // file: require('./1961-bbc/text/i-am-that-i-am.txt')
       }
     ]
   },
@@ -170,72 +170,72 @@ const poemDatabase = [
     poems: [
       {
         name: 'IN THE BEGINNING WAS THE WORD',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/in-the-beginning-was-the-word.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/in-the-beginning-was-the-word.txt')
       },
       {
         name: 'LORD I AM NOT WERE THEE',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/lord-i-am-not-worthy.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/lord-i-am-not-worthy.txt')
       },
       {
         name: 'WHO SENDS THE MAN',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/who-sends-the-man.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/who-sends-the-man.txt')
       },
       {
         name: 'THIS REALLY SENDS ME MAN',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/this-really-sends-me.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/this-really-sends-me.txt')
       },
       {
         name: 'PROCLAIM PRESENT TIME OVER',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/proclaim-present-time-over.txt'),
+        // file: require('./1960-the-exterminator/text/proclaim-present-time-over.txt'),
         images: ['proclaim-present-time-over.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'SHORT TIME TO GO',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/short-time-to-go.txt'),
+        // file: require('./1960-the-exterminator/text/short-time-to-go.txt'),
         images: ['short-time-to-go.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'PLAY IT COOL FOOL',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/play-it-cool-fool.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/play-it-cool-fool.txt')
       },
       {
         name: 'I AM I WHO ARE YOU',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/i-am-i-who-are-you.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/i-am-i-who-are-you.txt')
       },
       {
         name: 'THIS COULD BE YOU',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/this-could-be-you.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/this-could-be-you.txt')
       },
       {
         name: 'WHAT WORDS TO STEAL',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/what-words-to-steal.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/what-words-to-steal.txt')
       },
       {
         name: 'DO THEIR WORDS RUB OUT THERE',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/do-their-words-rub-out-there.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/do-their-words-rub-out-there.txt')
       },
       {
         name: 'YOU BELONG TO ME',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/you-belong-to-me.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/you-belong-to-me.txt')
       },
       {
         name: 'CALLING ALL RE ACTIVE AGENTS',
         version: 'Minutes To Go',
-        file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt'),
+        // file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt'),
         images: [
           'calling-all-reactive-agents-1.jpg',
           'calling-all-reactive-agents-2.jpg',
@@ -245,114 +245,114 @@ const poemDatabase = [
       },
       {
         name: 'LIKE YOU JUST SAID',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/like-you-just-said.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/like-you-just-said.txt')
       },
       {
         name: 'I LOVE YOU I DO',
         version: 'British Library Brion Gysin Tapes: C1400/4',
-        notes: 'files from here on are on side 2',
-        file: require('./1986-british-library-tapes/C1400-4/i-love-you-i-do.txt')
+        notes: 'files from here on are on side 2'
+        // file: require('./1986-british-library-tapes/C1400-4/i-love-you-i-do.txt')
       },
       {
         name: 'I GOT THE FEAR',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/i-got-the-fear.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/i-got-the-fear.txt')
       },
       {
         name: 'EVERYONE IS AHEAD NOW',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/everyone-is-ahead-now.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/everyone-is-ahead-now.txt')
       },
       {
         name: 'BE ON THE BEAT',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/be-on-the-beat.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/be-on-the-beat.txt')
       },
       {
         name: 'JUNK IS NO GOOD BABY',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/junk-is-no-good-baby.txt'),
+        // file: require('./1960-the-exterminator/text/junk-is-no-good-baby.txt'),
         images: ['junk-is-no-good-baby.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'KICK THAT HABIT MAN',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/kick-that-habit-man.txt'),
+        // file: require('./1960-the-exterminator/text/kick-that-habit-man.txt'),
         images: ['kick-that-habit-man.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'WHAT ARE YOU THINKING',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/what-are-you-thinking.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/what-are-you-thinking.txt')
       },
       {
         name: 'I DIG YOU MAN',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/i-dig-you-man.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/i-dig-you-man.txt')
       },
       {
         name: 'THIS TURNS ME ON',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/this-turns-me-on.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/this-turns-me-on.txt')
       },
       {
         name: 'I AM OUT ARE YOU IN',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/i-am-out-are-you-in.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/i-am-out-are-you-in.txt')
       },
       {
         name: 'THAT REALLY BUGS ME',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/that-really-bugs-me.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/that-really-bugs-me.txt')
       },
       {
         name: 'WHAT YOU NOT GOT IN THERE',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/what-you-not-got-in-there.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/what-you-not-got-in-there.txt')
       },
       {
         name: 'GOT SOME PART',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       },
       {
         name: 'I GOT IT MADE',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
+        version: 'British Library Brion Gysin Tapes: C1400/4'
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
-        file: require('./not-yet-transcribed.txt')
+        // file: require('./not-yet-transcribed.txt')
       },
       {
         name: 'I AM THE MAN',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./not-yet-transcribed.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./not-yet-transcribed.txt')
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       },
       {
         name: 'I AM THE MASTER',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./not-yet-transcribed.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./not-yet-transcribed.txt')
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       },
       {
         name: 'THE FUZZ COULD BREAK',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./not-yet-transcribed.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./not-yet-transcribed.txt')
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       },
       {
         name: 'LOVE MAKES THE WORLD GO ROUND',
-        version: 'British Library Brion Gysin Tapes: C1400/4',
-        file: require('./not-yet-transcribed.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/4'
+        // file: require('./not-yet-transcribed.txt')
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       },
       {
         name: 'IN THE BEGINNING WAS THE WORD',
         version: 'British Library Brion Gysin Tapes: C1400/4',
-        note: 'this sounds very algorithmic! on side 2b',
-        file: require('./not-yet-transcribed.txt')
+        note: 'this sounds very algorithmic! on side 2b'
+        // file: require('./not-yet-transcribed.txt')
         // file: require('./1986-british-library-tapes/C1400-4/got-some-part.txt')
       }
     ]
@@ -367,8 +367,8 @@ const poemDatabase = [
     poems: [
       {
         name: 'IN THE BEGINNING WAS THE WORD',
-        version: 'British Library Brion Gysin Tapes: C1400/6',
-        file: require('./1986-british-library-tapes/C1400-6/in-the-beginning-was-the-word.txt')
+        version: 'British Library Brion Gysin Tapes: C1400/6'
+        // file: require('./1986-british-library-tapes/C1400-6/in-the-beginning-was-the-word.txt')
       }
     ]
   },
@@ -386,16 +386,14 @@ const poemDatabase = [
       },
       {
         name: 'JUNK IS NO GOOD BABY',
-        version: 'British Library Brion Gysin Tapes: C1400/2',
-        notes: ' (side 1)',
-        file: require('./1986-british-library-tapes/C1400-2/junk-is-no-good-baby.txt'),
+        version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
+        // file: require('./1986-british-library-tapes/C1400-2/junk-is-no-good-baby.txt'),
         timing: '8:24'
       },
       {
         name: 'KICK THAT HABIT MAN',
-        version: 'British Library Brion Gysin Tapes: C1400/2',
-        notes: ' (side 1)',
-        file: require('./1986-british-library-tapes/C1400-2/kick-that-habit-man.txt'),
+        version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
+        // file: require('./1986-british-library-tapes/C1400-2/kick-that-habit-man.txt'),
         timing: '9:34'
       }
     ]
@@ -412,56 +410,56 @@ const poemDatabase = [
       {
         name: 'BREATHE IN THE WORDS',
         version: 'The Third Mind',
-        file: require('./1978-the-third-mind/text/breathe-in-the-words.txt'),
+        // file: require('./1978-the-third-mind/text/breathe-in-the-words.txt'),
         images: ['breathe-in-the-words.jpg'],
         folder: '1978-the-third-mind'
       },
       {
         name: 'I AM THAT I AM',
         version: 'The Third Mind',
-        file: require('./1978-the-third-mind/text/i-am-that-i-am.txt'),
+        // file: require('./1978-the-third-mind/text/i-am-that-i-am.txt'),
         images: ['i-am-that-i-am.jpg'],
         folder: '1978-the-third-mind'
       },
       {
         name: 'I THINK THEREFORE I AM',
         version: 'Minutes To Go',
-        file: require('./1960-minutes-to-go/text/i-think-therefore-i-am.txt'),
+        // file: require('./1960-minutes-to-go/text/i-think-therefore-i-am.txt'),
         images: ['i-think-therefore-i-am.jpg'],
         folder: '1978-the-third-mind'
       },
       {
         name: 'PROCLAIM PRESENT TIME OVER',
         version: 'The Exterminator',
-        file: require('./1960-the-exterminator/text/proclaim-present-time-over.txt'),
+        // file: require('./1960-the-exterminator/text/proclaim-present-time-over.txt'),
         images: ['present-time.jpg'],
         folder: '1960-the-exterminator'
       },
       {
         name: 'JUNK IS NO GOOD BABY',
         version: 'The Third Mind',
-        file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt'),
+        // file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt'),
         images: ['junk-is-no-good-baby.jpg'],
         folder: '1978-the-third-mind'
       },
       {
         name: 'KICK THAT HABIT MAN',
         version: 'The Third Mind',
-        file: require('./1978-the-third-mind/text/kick-that-habit-man.txt'),
+        // file: require('./1978-the-third-mind/text/kick-that-habit-man.txt'),
         images: ['kick-that-habit-man.jpg'],
         folder: '1978-the-third-mind'
       },
       {
         name: 'PISTOL POEM',
         version: 'The Third Mind',
-        file: require('./1978-the-third-mind/text/pistol-poem.txt'),
+        // file: require('./1978-the-third-mind/text/pistol-poem.txt'),
         images: ['pistol-poem1.jpg'],
         folder: '1978-the-third-mind'
       },
       {
         name: 'RUB OUT THE WORD(S)',
         version: 'The Third Mind',
-        file: require('./1978-the-third-mind/text/rub-out-the-word.txt'),
+        // file: require('./1978-the-third-mind/text/rub-out-the-word.txt'),
         images: ['rub-out-the-word.jpg'],
         folder: '1978-the-third-mind'
       }
@@ -478,7 +476,7 @@ const poemDatabase = [
       {
         name: 'I AM THAT I AM',
         version: 'Anthology Of Concrete Poetry',
-        file: require('./1967-anthology-of-concrete-poetry/text/i-am-that-i-am.txt'),
+        // file: require('./1967-anthology-of-concrete-poetry/text/i-am-that-i-am.txt'),
         images: ['i-am-that-i-am1.jpg', 'i-am-that-i-am2.jpg'],
         folder: '1967-anthology-of-concrete-poetry'
       }
@@ -495,7 +493,7 @@ const poemDatabase = [
       {
         name: 'THIS IS SAM FRANCIS',
         version: 'Exhibition Catalogue for "Sam Fancis, Paintings, 1947-1972"',
-        file: require('./1972-sam-francis-catalogue/text/this-is-sam-francis.txt'),
+        // file: require('./1972-sam-francis-catalogue/text/this-is-sam-francis.txt'),
         images: ['this-is-sam-francis.jpg'],
         folder: '2002-back-in-no-time'
       }
@@ -518,7 +516,7 @@ const poemDatabase = [
       {
         name: 'I AM THAT I AM',
         version: 'Brion Gysin Let The Mice In',
-        file: require('./1973-let-the-mice-in/text/i-am-that-i-am.txt'),
+        // file: require('./1973-let-the-mice-in/text/i-am-that-i-am.txt'),
         images: [
           'iamthatiam1.jpg',
           'iamthatiam2.jpg',
@@ -531,21 +529,21 @@ const poemDatabase = [
       {
         name: 'JUNK IS NO GOOD BABY',
         version: 'The Third Mind',
-        file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt'),
+        // file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt'),
         images: ['junk-is-no-good-baby.jpg'],
         folder: '1973-let-the-mice-in'
       },
       {
         name: 'KICK THAT HABIT MAN',
         version: 'Brion Gysin Let The Mice In',
-        file: require('./1973-let-the-mice-in/text/kick-that-habit-man.txt'),
+        // file: require('./1973-let-the-mice-in/text/kick-that-habit-man.txt'),
         images: ['kick-that-habit-man.jpg'],
         folder: '1973-let-the-mice-in'
       },
       {
         name: 'PISTOL POEM',
         version: 'Brion Gysin Let The Mice In',
-        file: require('./1973-let-the-mice-in/text/pistol-poem.txt'),
+        // file: require('./1973-let-the-mice-in/text/pistol-poem.txt'),
         images: ['pistol-poem1.jpg', 'pistol-poem2.jpg'],
         folder: '1973-let-the-mice-in'
       }
@@ -567,8 +565,8 @@ const poemDatabase = [
       },
       {
         name: "I DON'T WORK YOU DIG",
-        version: 'Songs',
-        file: require('./1981-songs/text/i-dont-work-you-dig.txt')
+        version: 'Songs'
+        // file: require('./1981-songs/text/i-dont-work-you-dig.txt')
       }
     ]
   },
@@ -580,8 +578,8 @@ const poemDatabase = [
     poems: [
       {
         name: "NO POETS DON'T OWN WORDS",
-        version: 'Orgy Boys',
-        file: require('./1982-orgy-boys/text/no-poets-dont-own-words.txt')
+        version: 'Orgy Boys'
+        // file: require('./1982-orgy-boys/text/no-poets-dont-own-words.txt')
       }
     ]
   },
@@ -594,8 +592,8 @@ const poemDatabase = [
     poems: [
       {
         name: 'I AM THAT I AM',
-        version: 'The Third Mind',
-        file: require('./1978-the-third-mind/text/i-am-that-i-am.txt')
+        version: 'The Third Mind'
+        // file: require('./1978-the-third-mind/text/i-am-that-i-am.txt')
       }
     ]
   },
@@ -677,27 +675,27 @@ const poemDatabase = [
     poems: [
       {
         name: 'I AM THAT I AM',
-        version: 'Brion Gysin Let The Mice In',
-        file: require('./1973-let-the-mice-in/text/i-am-that-i-am.txt')
+        version: 'Brion Gysin Let The Mice In'
+        // file: require('./1973-let-the-mice-in/text/i-am-that-i-am.txt')
       },
       {
         name: 'JUNK IS NO GOOD BABY',
         version: 'Back In No Time',
-        file: require('./2002-back-in-no-time/text/junk-is-no-good-baby.txt'),
+        // file: require('./2002-back-in-no-time/text/junk-is-no-good-baby.txt'),
         images: ['junk-is-no-good-baby.jpg'],
         folder: '2002-back-in-no-time'
       },
       {
         name: 'KICK THAT HABIT MAN',
         version: 'Back In No Time',
-        file: require('./2002-back-in-no-time/text/kick-that-habit-man.txt'),
+        // file: require('./2002-back-in-no-time/text/kick-that-habit-man.txt'),
         images: ['kick-that-habit-man.jpg'],
         folder: '2002-back-in-no-time'
       },
       {
         name: "NO POETS DON'T OWN WORDS",
         version: 'Orgy Boys',
-        file: require('./1982-orgy-boys/text/no-poets-dont-own-words.txt'),
+        // file: require('./1982-orgy-boys/text/no-poets-dont-own-words.txt'),
         images: [
           'no-poets-dont-own-words1.jpg',
           'no-poets-dont-own-words2.jpg',
@@ -709,14 +707,14 @@ const poemDatabase = [
       {
         name: "I DON'T WORK YOU DIG",
         version: 'Songs',
-        file: require('./1981-songs/text/i-dont-work-you-dig.txt'),
+        // file: require('./1981-songs/text/i-dont-work-you-dig.txt'),
         images: ['i-dont-work-you-dig.jpg'],
         folder: '2002-back-in-no-time'
       },
       {
         name: 'THIS IS SAM FRANCIS',
         version: 'Sam Francis Catalogue',
-        file: require('./1972-sam-francis-catalogue/text/this-is-sam-francis.txt'),
+        // file: require('./1972-sam-francis-catalogue/text/this-is-sam-francis.txt'),
         images: ['this-is-sam-francis.jpg'],
         folder: '2002-back-in-no-time'
       }
@@ -730,28 +728,28 @@ const poemDatabase = [
     poems: [
       {
         name: 'I AM THAT I AM',
-        version: 'The Third Mind',
-        file: require('./1978-the-third-mind/text/i-am-that-i-am.txt')
+        version: 'The Third Mind'
+        // file: require('./1978-the-third-mind/text/i-am-that-i-am.txt')
       },
       {
         name: 'CALLING ALL RE ACTIVE AGENTS',
-        version: 'Minutes To Go',
-        file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt')
+        version: 'Minutes To Go'
+        // file: require('./1960-minutes-to-go/text/calling-all-reactive-agents.txt')
       },
       {
         name: 'KICK THAT HABIT MAN',
-        version: 'The Third Mind',
-        file: require('./1978-the-third-mind/text/kick-that-habit-man.txt')
+        version: 'The Third Mind'
+        // file: require('./1978-the-third-mind/text/kick-that-habit-man.txt')
       },
       {
         name: 'BREATHE IN THE WORDS',
-        version: 'The Third Mind',
-        file: require('./1978-the-third-mind/text/breathe-in-the-words.txt')
+        version: 'The Third Mind'
+        // file: require('./1978-the-third-mind/text/breathe-in-the-words.txt')
       },
       {
         name: 'JUNK IS NO GOOD BABY',
-        version: 'Brion Gysin Let The Mice In',
-        file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt')
+        version: 'Brion Gysin Let The Mice In'
+        // file: require('./1973-let-the-mice-in/text/junk-is-no-good-baby.txt')
       },
       {
         name: 'COME TO FREE THE WORDS',
@@ -812,7 +810,7 @@ const poemDatabase = [
         name: 'I AM THAT I AM',
         version: 'British Library Brion Gysin Tapes: C1400/1',
         notes: 'side 2',
-        file: require('./1986-british-library-tapes/C1400-1/i-am-that-i-am.txt'),
+        // file: require('./1986-british-library-tapes/C1400-1/i-am-that-i-am.txt'),
         length: '1:40'
       }
     ]
@@ -826,12 +824,12 @@ const poemDatabase = [
     poems: [
       {
         name: 'per-mu-ta-tions',
-        version: 'British Library Brion Gysin Tapes: C1400/3',
-        file: require('./1986-british-library-tapes/C1400-3/per-mu-ta-tions.txt'),
+        version: 'British Library Brion Gysin Tapes: C1400/2 (side 1)',
+        // file: require('./1986-british-library-tapes/C1400-3/per-mu-ta-tions.txt'),
         length: '4:41'
       }
     ]
   }
 ];
 
-export default poemDatabase;
+module.exports = { poemDatabase };
