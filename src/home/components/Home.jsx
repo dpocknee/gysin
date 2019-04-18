@@ -74,7 +74,10 @@ const Home = () => (
         </p>
       </div>
 
-      <div className="code">
+      <div
+        className="code"
+        style={{ width: '100%', whiteSpace: 'nowrap', overflow: 'scroll' }}
+      >
         <p>
           {
             '["I", "AM", "THAT", "I", "AM"].reverse.permutation{|x| puts "#{x.reverse.join(" ")}"}'

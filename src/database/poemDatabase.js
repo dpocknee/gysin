@@ -163,6 +163,42 @@ const poemDatabase = [
     ]
   },
   {
+    name: 'British Library Brion Gysin Tapes: C1400/1',
+    year: 1900,
+    medium: 'Tape (digitized)',
+    authors: ['Brion Gysin'],
+    notes: `Side 1: 5mins: "I am Brion Gysin the painter" / NO POETS DON'T OWN WORDS / I am the poet Brion Gysin (continued)`,
+    poems: [
+      {
+        name: "NO POETS DON'T OWN WORDS",
+        notes: 'side 1',
+        version: 'The Permutated Poems Of Brion Gysin (BBC)'
+      },
+      {
+        name: 'I AM THAT I AM',
+        version: 'British Library Brion Gysin Tapes: C1400/1',
+        notes: 'side 2',
+        file: require('./1986-british-library-tapes/C1400-1/i-am-that-i-am.txt'),
+        length: '1:40'
+      }
+    ]
+  },
+  {
+    name: 'British Library Brion Gysin Tapes: C1400/3',
+    year: 1900,
+    medium: 'Tape (digitized)',
+    notes: `This recording features Gysin with J. L. Philippe simultaneously reading a permutation poem, counting and pronunciation is rhythmic and in French.  This is then interrupted by what is presumably Moroccan music.  The sticker on the spool says 'Sveriges Radio'`,
+    authors: ['Brion Gysin', 'J. L. Philippe'],
+    poems: [
+      {
+        name: 'PER MU TA TIONS',
+        version: 'British Library Brion Gysin Tapes: C1400/3',
+        file: require('./1986-british-library-tapes/C1400-3/per-mu-ta-tions.txt'),
+        length: '4:41'
+      }
+    ]
+  },
+  {
     name: 'British Library Brion Gysin Tapes: C1400/4',
     year: 1900,
     medium: 'Tape (digitized)',
@@ -793,42 +829,6 @@ const poemDatabase = [
       {
         name: 'I AM THAT I AM',
         version: 'The Permutated Poems Of Brion Gysin (BBC)'
-      }
-    ]
-  },
-  {
-    name: 'British Library Brion Gysin Tapes: C1400/1',
-    year: 1900,
-    medium: 'Tape (digitized)',
-    authors: ['Brion Gysin'],
-    notes: `Side 1: 5mins: "I am Brion Gysin the painter" / NO POETS DON'T OWN WORDS / I am the poet Brion Gysin (continued)`,
-    poems: [
-      {
-        name: "NO POETS DON'T OWN WORDS",
-        notes: 'side 1',
-        version: 'The Permutated Poems Of Brion Gysin (BBC)'
-      },
-      {
-        name: 'I AM THAT I AM',
-        version: 'British Library Brion Gysin Tapes: C1400/1',
-        notes: 'side 2',
-        file: require('./1986-british-library-tapes/C1400-1/i-am-that-i-am.txt'),
-        length: '1:40'
-      }
-    ]
-  },
-  {
-    name: 'British Library Brion Gysin Tapes: C1400/3',
-    year: 1900,
-    medium: 'Tape (digitized)',
-    notes: `This recording features Gysin with J. L. Philippe simultaneously reading a permutation poem, counting and pronunciation is rhythmic and in French.  This is then interrupted by what is presumably Moroccan music.  The sticker on the spool says 'Sveriges Radio'`,
-    authors: ['Brion Gysin', 'J. L. Philippe'],
-    poems: [
-      {
-        name: 'per-mu-ta-tions',
-        version: 'British Library Brion Gysin Tapes: C1400/3',
-        file: require('./1986-british-library-tapes/C1400-3/per-mu-ta-tions.txt'),
-        length: '4:41'
       }
     ]
   }

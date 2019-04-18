@@ -131,7 +131,7 @@ const algorithmDatabase = [
     arguments: 0,
     name: 'Hall',
     info:
-      'This is a permutation algorithm referred to by D.H. Lehmer as the Constant Difference Method.  As described in his 1958 (published in 1960) paper "Teaching Combinatorial Tricks To A Computer".',
+      'This is a permutation algorithm described by D.H. Lehmer in his 1958 (published in 1960) paper "Teaching Combinatorial Tricks To A Computer".',
     references: [
       [
         'Lehmer, D.H. "Teaching combinatorial tricks to a computer" (June 1960)',
